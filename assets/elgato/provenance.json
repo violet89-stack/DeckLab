@@ -1,0 +1,96 @@
+{
+  "attributedCreator": "Elgato and Will Johnson",
+  "priorLicenseAttribution": "CC-BY-4.0",
+  "licenseEvidence": {
+    "status": "verified",
+    "sourceUrl": "https://www.figma.com/community/file/1315040482142393672/stream-deck-templates",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "method": "Owner-provided screenshot of the resource page showing its creators, supported devices and Licensed under CC BY 4.0.",
+    "observedDate": "2026-09-30",
+    "files": [
+      "assets/licence-evidence/stream-deck-templates-source.png",
+      "assets/licence-evidence/cc-by-4.0-deed.png"
+    ]
+  },
+  "files": [
+    {
+      "name": "galleon-100-sd-module-reference.png",
+      "sha256": "ddeefb6b843872ae0e13cda060e86638edfed22ae7a1d0f8a10339498e68c7b6"
+    },
+    {
+      "name": "mk2-black.png",
+      "sha256": "99e6da0d7e6a7d2c33aa41da6402433366037b2904f9006b65a664db6173febd"
+    },
+    {
+      "name": "mk2-blue.png",
+      "sha256": "239612e118d4c120163fd7f457def715288f5bf97a0adfd616241a89692e5ad9"
+    },
+    {
+      "name": "mk2-green.png",
+      "sha256": "6b4138259e2372f168adff8eca4190a3ffbbcc9518d236a7b2fedc389592204f"
+    },
+    {
+      "name": "mk2-pink.png",
+      "sha256": "e212a7420139941a5e27f9b266c36dccc5106cb45ccd08694ecf91068d548948"
+    },
+    {
+      "name": "mk2-purple-transparent.png",
+      "sha256": "10697e4880e7cecca94acf12d204131a61b51e99e2ca28d74b4ded7f176c6fae"
+    },
+    {
+      "name": "mk2-purple.png",
+      "sha256": "6572cf6ad991c5d9fdb7eb7036dd19cce32c64d362b7f4fd27d3825781716309"
+    },
+    {
+      "name": "mk2-white.png",
+      "sha256": "4ffcedaeb43cac60f04fb59b62470c4ddb444fb39e72a797f0250c49951c3f38"
+    },
+    {
+      "name": "neo-black.png",
+      "sha256": "2b93273fd33f281f77adb70960e25805f91a6577344c5bc54be10ef06c1faa7d"
+    },
+    {
+      "name": "neo-white.png",
+      "sha256": "dcd50f46dc08350be5ce244d4e429798140c709e2f10582b574c6a6e46f1d729"
+    },
+    {
+      "name": "plus-black.png",
+      "sha256": "132406d3ad2b845ead93558fee4044d9f6d3111a4216f3524d97004c7ab5788e"
+    },
+    {
+      "name": "plus-white.png",
+      "sha256": "c3eb95a2637823a39c6f93fb6f778079694f1c29db94a3040b9ff8181634c71c"
+    },
+    {
+      "name": "stream-deck-mini-black.png",
+      "sha256": "1de83e365be294545846313f993bb7d84f635f7db783f9c50308c5d31d4605a6"
+    },
+    {
+      "name": "stream-deck-mk2-black.png",
+      "sha256": "99e6da0d7e6a7d2c33aa41da6402433366037b2904f9006b65a664db6173febd"
+    },
+    {
+      "name": "stream-deck-neo-black.png",
+      "sha256": "2b93273fd33f281f77adb70960e25805f91a6577344c5bc54be10ef06c1faa7d"
+    },
+    {
+      "name": "stream-deck-plus-black.png",
+      "sha256": "132406d3ad2b845ead93558fee4044d9f6d3111a4216f3524d97004c7ab5788e"
+    },
+    {
+      "name": "stream-deck-plus-xl-black.png",
+      "sha256": "31a4ba7dbdb7b851c485563bd4588934965d8fd553e2241881a0bef272fa5c3c"
+    },
+    {
+      "name": "stream-deck-studio.png",
+      "sha256": "057d54b698be7b8f2645dfa9766d3c23a5f6986c563a341c8b3445749519bfc2"
+    },
+    {
+      "name": "stream-deck-xl-black.png",
+      "sha256": "52b9d7b4ee2c1e57e6651f96d6048b37aa40aa8fcc67bef69527a731177045b1"
+    }
+  ],
+  "candidateSourceUrl": "https://www.figma.com/community/file/1315040482142393672/stream-deck-templates",
+  "license": "CC-BY-4.0",
+  "sourceUrl": "https://www.figma.com/community/file/1315040482142393672/stream-deck-templates"
+}
