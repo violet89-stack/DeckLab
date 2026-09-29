@@ -1,0 +1,64 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/layout.json",
+  "id": "com.decklab.hostdemo.neo.layout",
+  "controller": "Neo",
+  "items": [
+    {
+      "type": "text",
+      "key": "title",
+      "rect": [
+        8,
+        5,
+        130,
+        20
+      ],
+      "value": "DECKLAB",
+      "alignment": "left",
+      "color": "#ffffff",
+      "font": {
+        "size": 14,
+        "weight": 800
+      },
+      "zOrder": 1
+    },
+    {
+      "type": "text",
+      "key": "status",
+      "rect": [
+        8,
+        25,
+        160,
+        18
+      ],
+      "value": "LIVE HOST",
+      "alignment": "left",
+      "color": "#8fe9ff",
+      "font": {
+        "size": 11,
+        "weight": 600
+      },
+      "zOrder": 1
+    },
+    {
+      "type": "bar",
+      "key": "level",
+      "rect": [
+        174,
+        14,
+        50,
+        20
+      ],
+      "value": 48,
+      "range": {
+        "min": 0,
+        "max": 100
+      },
+      "subtype": 4,
+      "bar_bg_c": "#17202b",
+      "bar_border_c": "#4e5c70",
+      "bar_fill_c": "0:#c7a3ff,1:#8fe9ff",
+      "border_w": 1,
+      "zOrder": 1
+    }
+  ]
+}
