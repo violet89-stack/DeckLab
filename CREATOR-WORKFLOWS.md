@@ -34,3 +34,7 @@ Multi Actions contain ordered actions and waits. The sequence editor can move, d
 ## Import boundaries
 
 Icon/profile packages are data; imported scripts are not executed. Simple SVGs are validated and rasterized. Active or externally referenced SVG content is rejected, so some complex icons need conversion first. Large collections can exceed browser storage limits; keep exported backups. See [privacy](PRIVACY.md), [testing](TESTING.md) and [protocol coverage](PROTOCOL-COVERAGE.md).
+
+## Built-in samples
+
+Open **Build → Icon library**. The artwork picker includes **Built-in samples** alongside My artwork and Elgato icons. **Neo Dino Runner** is a bundled 232 × 50 animated GIF. Click to apply it to the selected action, or dock the picker and drag it onto an empty Neo Infobar to create an Artwork only action. The thumbnail and directly placed image stay animated. Saving it to My artwork enables favourites; removing that optional copy does not remove the bundled sample. Profile exports embed the original GIF bytes.

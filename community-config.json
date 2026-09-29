@@ -1,6 +1,6 @@
 {
-  "version": "1.3.10-alpha.32",
-  "build": "2026.09.29-artwork-layers",
+  "version": "1.3.11-alpha.33",
+  "build": "2026.09.30-builtin-dino",
   "releaseChannel": "Community Alpha",
   "repositoryUrl": "https://github.com/violet89-stack/DeckLab",
   "issuesUrl": "https://github.com/violet89-stack/DeckLab/issues",

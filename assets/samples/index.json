@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "license": "MPL-2.0",
+  "entries": [
+    {
+      "id": "neo-dino-runner",
+      "name": "Neo Dino Runner",
+      "description": "A running pixel dinosaur with scrolling scenery across the full Neo Infobar.",
+      "surface": "Neo Infobar",
+      "width": 232,
+      "height": 50,
+      "durationSeconds": 8,
+      "frames": 160,
+      "fps": 20,
+      "mime": "image/gif",
+      "path": "assets/samples/neo-dino-runner.gif",
+      "sha256": "1358ec1e5a8edaa6b79d5f5bdad7093e96a5e398d2ed7ea75bf13d5cd9f1b051",
+      "tags": [
+        "neo",
+        "infobar",
+        "dino",
+        "dinosaur",
+        "runner",
+        "pixel",
+        "animated",
+        "full screen"
+      ]
+    }
+  ]
+}

@@ -33,6 +33,12 @@ try{
  const icons=json('assets/elgato-icons/index.json');
  check(icons.license==='MIT'&&icons.entries.length===1241&&icons.licenseText.trim()===read('assets/elgato-icons/LICENSE').trim(),'Icon licence or inventory disagrees.');
  for(const e of icons.entries)check(crypto.createHash('sha256').update(e.svg).digest('hex')===e.sha256,'Icon source hash changed: '+e.id);
+ const samples=json('assets/samples/index.json');
+ for(const e of samples.entries){
+  const bytes=fs.readFileSync(path.join(root,e.path));
+  check(crypto.createHash('sha256').update(bytes).digest('hex')===e.sha256,'Sample artwork hash changed: '+e.id);
+  if(e.mime==='image/gif')check(/^GIF8[79]a$/.test(bytes.subarray(0,6).toString())&&bytes.readUInt16LE(6)===e.width&&bytes.readUInt16LE(8)===e.height,'Sample GIF size or format changed: '+e.id);
+ }
  check(pkg.license==='MPL-2.0'&&json('package-lock.json').packages[''].license==='MPL-2.0','Source licence metadata disagrees.');
  check(read('LICENSE').startsWith('Mozilla Public License Version 2.0'),'Official source licence text is missing.');
  if(process.argv.includes('--publish')){

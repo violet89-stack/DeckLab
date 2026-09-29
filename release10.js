@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MPL-2.0
 /* ----------------------------- DECKLAB 1.0 RELEASE STUDIO ----------------------------- */
 
-const DECKLAB_VERSION = '1.3.10-alpha.32';
+const DECKLAB_VERSION = '1.3.11-alpha.33';
 const PROJECT_STORAGE_KEY = 'decklab.project.autosave.v10';
 const ONBOARDING_KEY = 'decklab.onboarding.v10';
 
@@ -251,7 +251,7 @@ function exportQaComparison(){
 
 /* ----------------------------- ONBOARDING ----------------------------- */
 const onboardingSlides=[
-  {title:'DeckLab 1.3.10 Community Alpha',body:'This is experimental community-testing software. DeckLab is an independent project, not affiliated with Elgato or CORSAIR. It has no telemetry and never launches imported plugin executables; only start third-party plugin code you trust.',icon:'◇'},
+  {title:'DeckLab 1.3.11 Community Alpha',body:'This is experimental community-testing software. DeckLab is an independent project, not affiliated with Elgato or CORSAIR. It has no telemetry and never launches imported plugin executables; only start third-party plugin code you trust.',icon:'◇'},
   {title:'Safe by design',body:'DeckLab never launches plugin executables. Static inspection works entirely in the browser. For live SDK tests, you explicitly start a trusted plugin yourself and it connects to the localhost bridge.',icon:'⌾'},
   {title:'One device workspace',body:'Choose a device once, then Preview, Build, Test and Inspect around that same hardware surface. Advanced SDK tools stay out of the way until you ask for them.',icon:'▦'},
   {title:'QA with a memory',body:'Test Suite now keeps project QA history. Run the same plugin again after a change and DeckLab can show regressions, fixes and newly testable checks.',icon:'✓'}
