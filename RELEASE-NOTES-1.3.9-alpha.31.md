@@ -9,4 +9,6 @@
 - Adds 1,241 MIT-licensed Elgato icons inside the artwork library, with search, regular/filled variants, monochrome colour selection, transparent rendering, click/drag placement and save-to-library support. Exported profiles retain the complete MIT notice.
 - Creates the public violet89-stack/DeckLab repository and enables private vulnerability reporting.
 
-Previous local-companion security fixes and LCD/dial repairs remain included. Windows desktop/GPU behaviour, the first GitHub CI run and physical hardware comparisons remain unverified in this environment. Current test evidence is under verification/1.3.9/.
+Previous local-companion security fixes and LCD/dial repairs remain included. Windows desktop/GPU behaviour and physical hardware comparisons remain unverified. GitHub Windows/Linux CI results are available in Actions, separately from the recorded local Linux run. Current test evidence is under verification/1.3.9/.
+
+Packaging regenerates the release manifest when run from a repository checkout, avoiding a duplicate stale manifest entry.

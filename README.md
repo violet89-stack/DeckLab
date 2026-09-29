@@ -1,6 +1,6 @@
 # DeckLab — Community Alpha
 
-**1.3.9-alpha.31 · community testing candidate**
+**1.3.9-alpha.31 · community alpha**
 
 DeckLab is an independent local studio for building Stream Deck profiles, previewing artwork and testing documented plugin behaviour on virtual device models. It is not affiliated with, endorsed by, or supported by Elgato or CORSAIR.
 
@@ -53,7 +53,7 @@ DeckLab does not launch imported plugin executables. Only run code you trust; a 
 
 ## Developers and publication
 
-Run `npm ci --ignore-scripts`, `npx playwright install chromium`, then `npm test`. See [TESTING.md](TESTING.md) for prerequisites and test groups. All 22 suites passed in the local Linux browser environment. CI is configured for Windows and Linux but must run in the actual repository before its result can be claimed.
+Run `npm ci --ignore-scripts`, `npx playwright install chromium`, then `npm test`. See [TESTING.md](TESTING.md) for prerequisites and test groups. All 22 suites passed in the local Linux browser environment. The [GitHub Actions workflow](https://github.com/violet89-stack/DeckLab/actions) tests Windows and Linux; consult its actual run results separately from the recorded local tests.
 
 DeckLab is licensed under MPL-2.0. The product artwork and colour templates are separately licensed CC BY 4.0, with attribution to Elgato and Will Johnson. Elgato Icons are separately licensed MIT, copyright Corsair Memory Inc. The public repository is [violet89-stack/DeckLab](https://github.com/violet89-stack/DeckLab). See [publishing checklist](GITHUB-PUBLISHING-CHECKLIST.md), [licence status](LICENSE-NOTICE.md), [third-party notices](THIRD-PARTY-NOTICES.md) and [contributing](CONTRIBUTING.md).
 
