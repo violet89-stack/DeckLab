@@ -1,0 +1,6 @@
+{
+  "source": "opendeck",
+  "rows": [
+    {"id":"com.decklab.catalogue-example","name":"DeckLab catalogue example","author":"DeckLab","description":"Example metadata for trying search and plugin details. This is not an online listing or an installable plugin.","category":"Examples","version":"1.0","platforms":["windows","mac"]}
+  ]
+}

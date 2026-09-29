@@ -1,0 +1,27 @@
+{
+  "format": "DeckLabProfile",
+  "version": "0.8",
+  "name": "DeckLab Multi-Context Demo",
+  "plugin": {
+    "uuid": "com.decklab.hostdemo",
+    "name": "DeckLab Live Demo"
+  },
+  "target": "plus",
+  "rows": null,
+  "cols": null,
+  "pages": [
+    {"id":"page-1","name":"Page 1","parentPageId":null,"folderId":null},
+    {"id":"folder-page-1","name":"Folder 1","parentPageId":"page-1","folderId":"folder-1"}
+  ],
+  "globalSettings": {},
+  "placements": [
+    {"kind":"action","actionUuid":"com.decklab.hostdemo.toggle","controller":"Keypad","column":0,"row":0,"pageId":"page-1","settings":{"label":"Primary"},"state":0},
+    {"kind":"action","actionUuid":"com.decklab.hostdemo.toggle","controller":"Keypad","column":1,"row":0,"pageId":"page-1","settings":{"label":"Second context"},"state":0},
+    {"kind":"action","actionUuid":"com.decklab.hostdemo.animated","controller":"Keypad","column":2,"row":0,"pageId":"page-1","settings":{},"state":0},
+    {"kind":"folder","id":"folder-1","name":"Folder 1","controller":"Keypad","column":3,"row":0,"pageId":"page-1","childPageId":"folder-page-1"},
+    {"kind":"action","actionUuid":"com.decklab.hostdemo.cpu","controller":"Encoder","column":0,"row":0,"pageId":"page-1","settings":{},"state":0},
+    {"kind":"action","actionUuid":"com.decklab.hostdemo.cpu","controller":"Encoder","column":1,"row":0,"pageId":"page-1","settings":{},"state":0},
+    {"kind":"action","actionUuid":"com.decklab.hostdemo.toggle","controller":"Keypad","column":0,"row":0,"pageId":"folder-page-1","settings":{"label":"Inside folder"},"state":0},
+    {"kind":"action","actionUuid":"com.decklab.hostdemo.animated","controller":"Keypad","column":1,"row":0,"pageId":"folder-page-1","settings":{},"state":0}
+  ]
+}
