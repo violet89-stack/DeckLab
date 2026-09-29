@@ -4,6 +4,8 @@
 
 DeckLab is an independent local studio for building Stream Deck profiles, previewing artwork and testing documented plugin behaviour on virtual device models. It is not affiliated with, endorsed by, or supported by Elgato or CORSAIR.
 
+Read the [DeckLab Wiki](https://github.com/violet89-stack/DeckLab/wiki) for installation, creator workflows, devices, exports, testing and troubleshooting.
+
 ## Start on Windows
 
 You need Python 3.10 or newer and a recent Chrome or Edge browser. Normal use needs no npm installation.
@@ -53,7 +55,7 @@ DeckLab does not launch imported plugin executables. Only run code you trust; a 
 
 ## Developers and publication
 
-Run `npm ci --ignore-scripts`, `npx playwright install chromium`, then `npm test`. See [TESTING.md](TESTING.md) for prerequisites and test groups. All 24 suites passed in the local Linux browser environment. Evidence is recorded in `verification/1.3.11/`. Windows CI has not yet run for this local preview build. The [GitHub Actions workflow](https://github.com/violet89-stack/DeckLab/actions) tests Windows and Linux; consult its actual run results separately from the recorded local tests.
+Run `npm ci --ignore-scripts`, `npx playwright install chromium`, then `npm test`. See [TESTING.md](TESTING.md) for prerequisites and test groups. All 24 suites passed in the local Linux browser environment. Evidence is recorded in `verification/1.3.11/`. The [GitHub Actions workflow](https://github.com/violet89-stack/DeckLab/actions) tests Windows and Linux; consult the run for your exact commit and the published release notes for CI evidence, separately from the recorded local tests.
 
 DeckLab is licensed under MPL-2.0. The product artwork and colour templates are separately licensed CC BY 4.0, with attribution to Elgato and Will Johnson. Elgato Icons are separately licensed MIT, copyright Corsair Memory Inc. The public repository is [violet89-stack/DeckLab](https://github.com/violet89-stack/DeckLab). See [publishing checklist](GITHUB-PUBLISHING-CHECKLIST.md), [licence status](LICENSE-NOTICE.md), [third-party notices](THIRD-PARTY-NOTICES.md) and [contributing](CONTRIBUTING.md).
 
