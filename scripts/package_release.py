@@ -24,7 +24,7 @@ for file in sorted(ROOT.rglob('*')):
     if file.name.startswith('.env') or file.name in {'.DS_Store', 'Thumbs.db'} or file.suffix.lower() in skip_suffixes:
         continue
     # Root-level results/screenshots are historical scratch outputs, not current proof.
-    if len(rel.parts) == 1 and (file.suffix == '.png' or file.name.endswith('-results.json')):
+    if len(rel.parts) == 1 and (file.suffix == '.png' or file.name.endswith('-results.json') or file.name == 'RELEASE-MANIFEST.json'):
         continue
     files.append((file, rel))
 manifest = {'version': version, 'files': {str(rel).replace('\\', '/'): hashlib.sha256(file.read_bytes()).hexdigest() for file, rel in files}}
@@ -35,6 +35,8 @@ with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as z:
 with zipfile.ZipFile(archive) as z:
     if z.testzip():
         raise RuntimeError('Archive integrity check failed')
+    if len(z.namelist()) != len(set(z.namelist())):
+        raise RuntimeError('Duplicate archive paths')
 digest = hashlib.sha256(archive.read_bytes()).hexdigest()
 (out / (archive.name+'.sha256')).write_text(f'{digest}  {archive.name}\n')
 print(f'{archive}\n{len(files)+1} files; {archive.stat().st_size} bytes\nSHA256 {digest}')
