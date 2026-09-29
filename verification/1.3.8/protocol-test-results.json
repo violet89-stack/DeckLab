@@ -1,0 +1,4225 @@
+{
+  "generatedAt": "2026-09-29T16:38:08.186Z",
+  "revision": "2026-09-29.1",
+  "results": [
+    {
+      "id": "host-plugin.applicationDidLaunch.None",
+      "api": "host-plugin.applicationDidLaunch",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.applicationDidLaunch.invalid",
+      "api": "host-plugin.applicationDidLaunch",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.applicationDidTerminate.None",
+      "api": "host-plugin.applicationDidTerminate",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.applicationDidTerminate.invalid",
+      "api": "host-plugin.applicationDidTerminate",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.deviceDidChange.None",
+      "api": "host-plugin.deviceDidChange",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.deviceDidChange.invalid",
+      "api": "host-plugin.deviceDidChange",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.deviceDidChange.before-version",
+      "api": "host-plugin.deviceDidChange",
+      "controller": "None",
+      "version": "6.0",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.deviceDidConnect.None",
+      "api": "host-plugin.deviceDidConnect",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.deviceDidConnect.invalid",
+      "api": "host-plugin.deviceDidConnect",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.deviceDidDisconnect.None",
+      "api": "host-plugin.deviceDidDisconnect",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.deviceDidDisconnect.invalid",
+      "api": "host-plugin.deviceDidDisconnect",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialDown.Encoder",
+      "api": "host-plugin.dialDown",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialDown.invalid",
+      "api": "host-plugin.dialDown",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialDown.before-version",
+      "api": "host-plugin.dialDown",
+      "controller": "Encoder",
+      "version": "6.0",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "version.dialDown.6.0",
+      "api": "host-plugin.dialDown",
+      "controller": "Encoder",
+      "version": "6.0",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "version.dialDown.6.1",
+      "api": "host-plugin.dialDown",
+      "controller": "Encoder",
+      "version": "6.1",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "version.dialDown.6.5",
+      "api": "host-plugin.dialDown",
+      "controller": "Encoder",
+      "version": "6.5",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialDown.wrong-controller",
+      "api": "host-plugin.dialDown",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialDown.missing-controller",
+      "api": "host-plugin.dialDown",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialRotate.Encoder",
+      "api": "host-plugin.dialRotate",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialRotate.invalid",
+      "api": "host-plugin.dialRotate",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialRotate.wrong-controller",
+      "api": "host-plugin.dialRotate",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialRotate.missing-controller",
+      "api": "host-plugin.dialRotate",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialUp.Encoder",
+      "api": "host-plugin.dialUp",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialUp.invalid",
+      "api": "host-plugin.dialUp",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialUp.before-version",
+      "api": "host-plugin.dialUp",
+      "controller": "Encoder",
+      "version": "6.0",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialUp.wrong-controller",
+      "api": "host-plugin.dialUp",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialUp.missing-controller",
+      "api": "host-plugin.dialUp",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveDeepLink.None",
+      "api": "host-plugin.didReceiveDeepLink",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveDeepLink.invalid",
+      "api": "host-plugin.didReceiveDeepLink",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveDeepLink.before-version",
+      "api": "host-plugin.didReceiveDeepLink",
+      "controller": "None",
+      "version": "6.0",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveGlobalSettings.None",
+      "api": "host-plugin.didReceiveGlobalSettings",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveGlobalSettings.invalid",
+      "api": "host-plugin.didReceiveGlobalSettings",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.sendToPlugin.Keypad",
+      "api": "host-plugin.sendToPlugin",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.sendToPlugin.Encoder",
+      "api": "host-plugin.sendToPlugin",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.sendToPlugin.Neo",
+      "api": "host-plugin.sendToPlugin",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.sendToPlugin.MultiAction",
+      "api": "host-plugin.sendToPlugin",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.sendToPlugin.invalid",
+      "api": "host-plugin.sendToPlugin",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.sendToPlugin.neo-before-7.6",
+      "api": "host-plugin.sendToPlugin",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.sendToPlugin.missing-controller",
+      "api": "host-plugin.sendToPlugin",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveResources.Keypad",
+      "api": "host-plugin.didReceiveResources",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveResources.Encoder",
+      "api": "host-plugin.didReceiveResources",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveResources.Neo",
+      "api": "host-plugin.didReceiveResources",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveResources.MultiAction",
+      "api": "host-plugin.didReceiveResources",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveResources.invalid",
+      "api": "host-plugin.didReceiveResources",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveResources.before-version",
+      "api": "host-plugin.didReceiveResources",
+      "controller": "MultiAction",
+      "version": "6.0",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveResources.neo-before-7.6",
+      "api": "host-plugin.didReceiveResources",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveResources.missing-controller",
+      "api": "host-plugin.didReceiveResources",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveSettings.Keypad",
+      "api": "host-plugin.didReceiveSettings",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveSettings.Encoder",
+      "api": "host-plugin.didReceiveSettings",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveSettings.Neo",
+      "api": "host-plugin.didReceiveSettings",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveSettings.MultiAction",
+      "api": "host-plugin.didReceiveSettings",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveSettings.invalid",
+      "api": "host-plugin.didReceiveSettings",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveSettings.neo-before-7.6",
+      "api": "host-plugin.didReceiveSettings",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.didReceiveSettings.missing-controller",
+      "api": "host-plugin.didReceiveSettings",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.keyDown.Keypad",
+      "api": "host-plugin.keyDown",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.keyDown.MultiAction",
+      "api": "host-plugin.keyDown",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.keyDown.invalid",
+      "api": "host-plugin.keyDown",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.keyDown.wrong-controller",
+      "api": "host-plugin.keyDown",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.keyDown.missing-controller",
+      "api": "host-plugin.keyDown",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.keyUp.Keypad",
+      "api": "host-plugin.keyUp",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.keyUp.MultiAction",
+      "api": "host-plugin.keyUp",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.keyUp.invalid",
+      "api": "host-plugin.keyUp",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.keyUp.wrong-controller",
+      "api": "host-plugin.keyUp",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.keyUp.missing-controller",
+      "api": "host-plugin.keyUp",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.propertyInspectorDidAppear.Keypad",
+      "api": "host-plugin.propertyInspectorDidAppear",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.propertyInspectorDidAppear.Encoder",
+      "api": "host-plugin.propertyInspectorDidAppear",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.propertyInspectorDidAppear.Neo",
+      "api": "host-plugin.propertyInspectorDidAppear",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.propertyInspectorDidAppear.MultiAction",
+      "api": "host-plugin.propertyInspectorDidAppear",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.propertyInspectorDidAppear.invalid",
+      "api": "host-plugin.propertyInspectorDidAppear",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.propertyInspectorDidAppear.neo-before-7.6",
+      "api": "host-plugin.propertyInspectorDidAppear",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.propertyInspectorDidDisappear.Keypad",
+      "api": "host-plugin.propertyInspectorDidDisappear",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.propertyInspectorDidDisappear.Encoder",
+      "api": "host-plugin.propertyInspectorDidDisappear",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.propertyInspectorDidDisappear.Neo",
+      "api": "host-plugin.propertyInspectorDidDisappear",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.propertyInspectorDidDisappear.MultiAction",
+      "api": "host-plugin.propertyInspectorDidDisappear",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.propertyInspectorDidDisappear.invalid",
+      "api": "host-plugin.propertyInspectorDidDisappear",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.propertyInspectorDidDisappear.neo-before-7.6",
+      "api": "host-plugin.propertyInspectorDidDisappear",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.systemDidWakeUp.None",
+      "api": "host-plugin.systemDidWakeUp",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.systemDidWakeUp.invalid",
+      "api": "host-plugin.systemDidWakeUp",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.titleParametersDidChange.Keypad",
+      "api": "host-plugin.titleParametersDidChange",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.titleParametersDidChange.Encoder",
+      "api": "host-plugin.titleParametersDidChange",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.titleParametersDidChange.Neo",
+      "api": "host-plugin.titleParametersDidChange",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.titleParametersDidChange.MultiAction",
+      "api": "host-plugin.titleParametersDidChange",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.titleParametersDidChange.invalid",
+      "api": "host-plugin.titleParametersDidChange",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.titleParametersDidChange.neo-before-7.6",
+      "api": "host-plugin.titleParametersDidChange",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.titleParametersDidChange.missing-controller",
+      "api": "host-plugin.titleParametersDidChange",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.touchTap.Encoder",
+      "api": "host-plugin.touchTap",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.touchTap.invalid",
+      "api": "host-plugin.touchTap",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.touchTap.wrong-controller",
+      "api": "host-plugin.touchTap",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.touchTap.missing-controller",
+      "api": "host-plugin.touchTap",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.willAppear.Keypad",
+      "api": "host-plugin.willAppear",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.willAppear.Encoder",
+      "api": "host-plugin.willAppear",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.willAppear.Neo",
+      "api": "host-plugin.willAppear",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.willAppear.MultiAction",
+      "api": "host-plugin.willAppear",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.willAppear.invalid",
+      "api": "host-plugin.willAppear",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.willAppear.neo-before-7.6",
+      "api": "host-plugin.willAppear",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.willAppear.missing-controller",
+      "api": "host-plugin.willAppear",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.willAppear.legacy-multi",
+      "api": "host-plugin.willAppear",
+      "controller": "MultiAction",
+      "version": "6.0",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.willDisappear.Keypad",
+      "api": "host-plugin.willDisappear",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.willDisappear.Encoder",
+      "api": "host-plugin.willDisappear",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.willDisappear.Neo",
+      "api": "host-plugin.willDisappear",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.willDisappear.MultiAction",
+      "api": "host-plugin.willDisappear",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.willDisappear.invalid",
+      "api": "host-plugin.willDisappear",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.willDisappear.neo-before-7.6",
+      "api": "host-plugin.willDisappear",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.willDisappear.missing-controller",
+      "api": "host-plugin.willDisappear",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.willDisappear.legacy-multi",
+      "api": "host-plugin.willDisappear",
+      "controller": "MultiAction",
+      "version": "6.0",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialPress.Encoder",
+      "api": "host-plugin.dialPress",
+      "controller": "Encoder",
+      "version": "6.0",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialPress.invalid",
+      "api": "host-plugin.dialPress",
+      "controller": "Encoder",
+      "version": "6.0",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialPress.removed",
+      "api": "host-plugin.dialPress",
+      "controller": "Encoder",
+      "version": "6.5",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialPress.wrong-controller",
+      "api": "host-plugin.dialPress",
+      "controller": "Encoder",
+      "version": "6.0",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-plugin.dialPress.missing-controller",
+      "api": "host-plugin.dialPress",
+      "controller": "Encoder",
+      "version": "6.0",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.registerPlugin.None",
+      "api": "plugin-host.registerPlugin",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.registerPlugin.invalid",
+      "api": "plugin-host.registerPlugin",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.getGlobalSettings.None",
+      "api": "plugin-host.getGlobalSettings",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.getGlobalSettings.invalid",
+      "api": "plugin-host.getGlobalSettings",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.getResources.Keypad",
+      "api": "plugin-host.getResources",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.getResources.Encoder",
+      "api": "plugin-host.getResources",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.getResources.Neo",
+      "api": "plugin-host.getResources",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.getResources.MultiAction",
+      "api": "plugin-host.getResources",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.getResources.invalid",
+      "api": "plugin-host.getResources",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.getResources.before-version",
+      "api": "plugin-host.getResources",
+      "controller": "MultiAction",
+      "version": "6.0",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.getResources.neo-before-7.6",
+      "api": "plugin-host.getResources",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.getSettings.Keypad",
+      "api": "plugin-host.getSettings",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.getSettings.Encoder",
+      "api": "plugin-host.getSettings",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.getSettings.Neo",
+      "api": "plugin-host.getSettings",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.getSettings.MultiAction",
+      "api": "plugin-host.getSettings",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.getSettings.invalid",
+      "api": "plugin-host.getSettings",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.getSettings.neo-before-7.6",
+      "api": "plugin-host.getSettings",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.logMessage.None",
+      "api": "plugin-host.logMessage",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.logMessage.invalid",
+      "api": "plugin-host.logMessage",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.openUrl.None",
+      "api": "plugin-host.openUrl",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.openUrl.invalid",
+      "api": "plugin-host.openUrl",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.sendToPropertyInspector.Keypad",
+      "api": "plugin-host.sendToPropertyInspector",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.sendToPropertyInspector.Encoder",
+      "api": "plugin-host.sendToPropertyInspector",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.sendToPropertyInspector.Neo",
+      "api": "plugin-host.sendToPropertyInspector",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.sendToPropertyInspector.MultiAction",
+      "api": "plugin-host.sendToPropertyInspector",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.sendToPropertyInspector.invalid",
+      "api": "plugin-host.sendToPropertyInspector",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.sendToPropertyInspector.neo-before-7.6",
+      "api": "plugin-host.sendToPropertyInspector",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setFeedback.Encoder",
+      "api": "plugin-host.setFeedback",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setFeedback.Neo",
+      "api": "plugin-host.setFeedback",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setFeedback.invalid",
+      "api": "plugin-host.setFeedback",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setFeedback.wrong-controller",
+      "api": "plugin-host.setFeedback",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setFeedback.neo-before-7.6",
+      "api": "plugin-host.setFeedback",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setFeedbackLayout.Encoder",
+      "api": "plugin-host.setFeedbackLayout",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setFeedbackLayout.Neo",
+      "api": "plugin-host.setFeedbackLayout",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setFeedbackLayout.invalid",
+      "api": "plugin-host.setFeedbackLayout",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setFeedbackLayout.wrong-controller",
+      "api": "plugin-host.setFeedbackLayout",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setFeedbackLayout.neo-before-7.6",
+      "api": "plugin-host.setFeedbackLayout",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setGlobalSettings.None",
+      "api": "plugin-host.setGlobalSettings",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setGlobalSettings.invalid",
+      "api": "plugin-host.setGlobalSettings",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setImage.Keypad",
+      "api": "plugin-host.setImage",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setImage.MultiAction",
+      "api": "plugin-host.setImage",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setImage.invalid",
+      "api": "plugin-host.setImage",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setImage.wrong-controller",
+      "api": "plugin-host.setImage",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setResources.Keypad",
+      "api": "plugin-host.setResources",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setResources.Encoder",
+      "api": "plugin-host.setResources",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setResources.Neo",
+      "api": "plugin-host.setResources",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setResources.MultiAction",
+      "api": "plugin-host.setResources",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setResources.invalid",
+      "api": "plugin-host.setResources",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setResources.before-version",
+      "api": "plugin-host.setResources",
+      "controller": "MultiAction",
+      "version": "6.0",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setResources.neo-before-7.6",
+      "api": "plugin-host.setResources",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setSettings.Keypad",
+      "api": "plugin-host.setSettings",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setSettings.Encoder",
+      "api": "plugin-host.setSettings",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setSettings.Neo",
+      "api": "plugin-host.setSettings",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setSettings.MultiAction",
+      "api": "plugin-host.setSettings",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setSettings.invalid",
+      "api": "plugin-host.setSettings",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setSettings.neo-before-7.6",
+      "api": "plugin-host.setSettings",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setState.Keypad",
+      "api": "plugin-host.setState",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setState.MultiAction",
+      "api": "plugin-host.setState",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setState.invalid",
+      "api": "plugin-host.setState",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setState.wrong-controller",
+      "api": "plugin-host.setState",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setTitle.Keypad",
+      "api": "plugin-host.setTitle",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setTitle.MultiAction",
+      "api": "plugin-host.setTitle",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setTitle.invalid",
+      "api": "plugin-host.setTitle",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setTitle.wrong-controller",
+      "api": "plugin-host.setTitle",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setTriggerDescription.Encoder",
+      "api": "plugin-host.setTriggerDescription",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setTriggerDescription.invalid",
+      "api": "plugin-host.setTriggerDescription",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setTriggerDescription.before-version",
+      "api": "plugin-host.setTriggerDescription",
+      "controller": "Encoder",
+      "version": "6.0",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.setTriggerDescription.wrong-controller",
+      "api": "plugin-host.setTriggerDescription",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.showAlert.Keypad",
+      "api": "plugin-host.showAlert",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.showAlert.Encoder",
+      "api": "plugin-host.showAlert",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.showAlert.Neo",
+      "api": "plugin-host.showAlert",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.showAlert.MultiAction",
+      "api": "plugin-host.showAlert",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.showAlert.invalid",
+      "api": "plugin-host.showAlert",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.showAlert.neo-before-7.6",
+      "api": "plugin-host.showAlert",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.showOk.Keypad",
+      "api": "plugin-host.showOk",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.showOk.MultiAction",
+      "api": "plugin-host.showOk",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.showOk.invalid",
+      "api": "plugin-host.showOk",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.showOk.wrong-controller",
+      "api": "plugin-host.showOk",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.switchToProfile.None",
+      "api": "plugin-host.switchToProfile",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "plugin-host.switchToProfile.invalid",
+      "api": "plugin-host.switchToProfile",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.didReceiveGlobalSettings.None",
+      "api": "host-pi.didReceiveGlobalSettings",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.didReceiveGlobalSettings.invalid",
+      "api": "host-pi.didReceiveGlobalSettings",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.didReceiveResources.Keypad",
+      "api": "host-pi.didReceiveResources",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.didReceiveResources.Encoder",
+      "api": "host-pi.didReceiveResources",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.didReceiveResources.Neo",
+      "api": "host-pi.didReceiveResources",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.didReceiveResources.MultiAction",
+      "api": "host-pi.didReceiveResources",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.didReceiveResources.invalid",
+      "api": "host-pi.didReceiveResources",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.didReceiveResources.before-version",
+      "api": "host-pi.didReceiveResources",
+      "controller": "MultiAction",
+      "version": "6.0",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.didReceiveResources.neo-before-7.6",
+      "api": "host-pi.didReceiveResources",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.didReceiveResources.missing-controller",
+      "api": "host-pi.didReceiveResources",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.didReceiveSettings.Keypad",
+      "api": "host-pi.didReceiveSettings",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.didReceiveSettings.Encoder",
+      "api": "host-pi.didReceiveSettings",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.didReceiveSettings.Neo",
+      "api": "host-pi.didReceiveSettings",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.didReceiveSettings.MultiAction",
+      "api": "host-pi.didReceiveSettings",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.didReceiveSettings.invalid",
+      "api": "host-pi.didReceiveSettings",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.didReceiveSettings.neo-before-7.6",
+      "api": "host-pi.didReceiveSettings",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.didReceiveSettings.missing-controller",
+      "api": "host-pi.didReceiveSettings",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.didReceiveSettings.legacy-multi",
+      "api": "host-pi.didReceiveSettings",
+      "controller": "MultiAction",
+      "version": "6.5",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.sendToPropertyInspector.Keypad",
+      "api": "host-pi.sendToPropertyInspector",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.sendToPropertyInspector.Encoder",
+      "api": "host-pi.sendToPropertyInspector",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.sendToPropertyInspector.Neo",
+      "api": "host-pi.sendToPropertyInspector",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.sendToPropertyInspector.MultiAction",
+      "api": "host-pi.sendToPropertyInspector",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.sendToPropertyInspector.invalid",
+      "api": "host-pi.sendToPropertyInspector",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.sendToPropertyInspector.neo-before-7.6",
+      "api": "host-pi.sendToPropertyInspector",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "host-pi.sendToPropertyInspector.missing-controller",
+      "api": "host-pi.sendToPropertyInspector",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.registerPropertyInspector.None",
+      "api": "pi-host.registerPropertyInspector",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.registerPropertyInspector.invalid",
+      "api": "pi-host.registerPropertyInspector",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.getGlobalSettings.None",
+      "api": "pi-host.getGlobalSettings",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.getGlobalSettings.invalid",
+      "api": "pi-host.getGlobalSettings",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.getResources.Keypad",
+      "api": "pi-host.getResources",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.getResources.Encoder",
+      "api": "pi-host.getResources",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.getResources.Neo",
+      "api": "pi-host.getResources",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.getResources.MultiAction",
+      "api": "pi-host.getResources",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.getResources.invalid",
+      "api": "pi-host.getResources",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.getResources.before-version",
+      "api": "pi-host.getResources",
+      "controller": "MultiAction",
+      "version": "6.0",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.getResources.neo-before-7.6",
+      "api": "pi-host.getResources",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.getSettings.Keypad",
+      "api": "pi-host.getSettings",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.getSettings.Encoder",
+      "api": "pi-host.getSettings",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.getSettings.Neo",
+      "api": "pi-host.getSettings",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.getSettings.MultiAction",
+      "api": "pi-host.getSettings",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.getSettings.invalid",
+      "api": "pi-host.getSettings",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.getSettings.neo-before-7.6",
+      "api": "pi-host.getSettings",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.openUrl.None",
+      "api": "pi-host.openUrl",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "schema",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.openUrl.invalid",
+      "api": "pi-host.openUrl",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.sendToPlugin.Keypad",
+      "api": "pi-host.sendToPlugin",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.sendToPlugin.Encoder",
+      "api": "pi-host.sendToPlugin",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.sendToPlugin.Neo",
+      "api": "pi-host.sendToPlugin",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.sendToPlugin.MultiAction",
+      "api": "pi-host.sendToPlugin",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.sendToPlugin.invalid",
+      "api": "pi-host.sendToPlugin",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.sendToPlugin.neo-before-7.6",
+      "api": "pi-host.sendToPlugin",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.setGlobalSettings.None",
+      "api": "pi-host.setGlobalSettings",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.setGlobalSettings.invalid",
+      "api": "pi-host.setGlobalSettings",
+      "controller": "None",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.setResources.Keypad",
+      "api": "pi-host.setResources",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.setResources.Encoder",
+      "api": "pi-host.setResources",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.setResources.Neo",
+      "api": "pi-host.setResources",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.setResources.MultiAction",
+      "api": "pi-host.setResources",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.setResources.invalid",
+      "api": "pi-host.setResources",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.setResources.before-version",
+      "api": "pi-host.setResources",
+      "controller": "MultiAction",
+      "version": "6.0",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.setResources.neo-before-7.6",
+      "api": "pi-host.setResources",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.setSettings.Keypad",
+      "api": "pi-host.setSettings",
+      "controller": "Keypad",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.setSettings.Encoder",
+      "api": "pi-host.setSettings",
+      "controller": "Encoder",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.setSettings.Neo",
+      "api": "pi-host.setSettings",
+      "controller": "Neo",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.setSettings.MultiAction",
+      "api": "pi-host.setSettings",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "behavior",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.setSettings.invalid",
+      "api": "pi-host.setSettings",
+      "controller": "MultiAction",
+      "version": "7.6",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    },
+    {
+      "id": "pi-host.setSettings.neo-before-7.6",
+      "api": "pi-host.setSettings",
+      "controller": "Neo",
+      "version": "7.1",
+      "kind": "rejection",
+      "pass": true,
+      "errors": []
+    }
+  ],
+  "coverage": {
+    "revision": "2026-09-29.1",
+    "version": "7.6",
+    "rows": [
+      {
+        "id": "host-plugin.applicationDidLaunch",
+        "event": "applicationDidLaunch",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#applicationdidlaunch",
+        "fixtures": [
+          "host-plugin.applicationDidLaunch.None",
+          "host-plugin.applicationDidLaunch.invalid"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 2,
+        "fixtureCount": 2
+      },
+      {
+        "id": "host-plugin.applicationDidTerminate",
+        "event": "applicationDidTerminate",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#applicationdidterminate",
+        "fixtures": [
+          "host-plugin.applicationDidTerminate.None",
+          "host-plugin.applicationDidTerminate.invalid"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 2,
+        "fixtureCount": 2
+      },
+      {
+        "id": "host-plugin.deviceDidChange",
+        "event": "deviceDidChange",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": "7.0",
+        "minVersionNote": null,
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string",
+          "device": "string",
+          "deviceInfo": "object"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#devicedidchange",
+        "fixtures": [
+          "host-plugin.deviceDidChange.None",
+          "host-plugin.deviceDidChange.invalid",
+          "host-plugin.deviceDidChange.before-version"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 3,
+        "fixtureCount": 3
+      },
+      {
+        "id": "host-plugin.deviceDidConnect",
+        "event": "deviceDidConnect",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string",
+          "device": "string",
+          "deviceInfo": "object"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#devicedidconnect",
+        "fixtures": [
+          "host-plugin.deviceDidConnect.None",
+          "host-plugin.deviceDidConnect.invalid"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 2,
+        "fixtureCount": 2
+      },
+      {
+        "id": "host-plugin.deviceDidDisconnect",
+        "event": "deviceDidDisconnect",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string",
+          "device": "string"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#devicediddisconnect",
+        "fixtures": [
+          "host-plugin.deviceDidDisconnect.None",
+          "host-plugin.deviceDidDisconnect.invalid"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 2,
+        "fixtureCount": 2
+      },
+      {
+        "id": "host-plugin.dialDown",
+        "event": "dialDown",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": "6.1",
+        "minVersionNote": null,
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Encoder"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "device": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#dialdown",
+        "fixtures": [
+          "host-plugin.dialDown.Encoder",
+          "host-plugin.dialDown.invalid",
+          "host-plugin.dialDown.before-version",
+          "version.dialDown.6.0",
+          "version.dialDown.6.1",
+          "version.dialDown.6.5",
+          "host-plugin.dialDown.wrong-controller",
+          "host-plugin.dialDown.missing-controller"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 8,
+        "fixtureCount": 8
+      },
+      {
+        "id": "host-plugin.dialRotate",
+        "event": "dialRotate",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": "6.0",
+        "minVersionNote": null,
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Encoder"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "device": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#dialrotate",
+        "fixtures": [
+          "host-plugin.dialRotate.Encoder",
+          "host-plugin.dialRotate.invalid",
+          "host-plugin.dialRotate.wrong-controller",
+          "host-plugin.dialRotate.missing-controller"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 4,
+        "fixtureCount": 4
+      },
+      {
+        "id": "host-plugin.dialUp",
+        "event": "dialUp",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": "6.1",
+        "minVersionNote": null,
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Encoder"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "device": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#dialup",
+        "fixtures": [
+          "host-plugin.dialUp.Encoder",
+          "host-plugin.dialUp.invalid",
+          "host-plugin.dialUp.before-version",
+          "host-plugin.dialUp.wrong-controller",
+          "host-plugin.dialUp.missing-controller"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 5,
+        "fixtureCount": 5
+      },
+      {
+        "id": "host-plugin.didReceiveDeepLink",
+        "event": "didReceiveDeepLink",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": "6.5",
+        "minVersionNote": null,
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#didreceivedeeplink",
+        "fixtures": [
+          "host-plugin.didReceiveDeepLink.None",
+          "host-plugin.didReceiveDeepLink.invalid",
+          "host-plugin.didReceiveDeepLink.before-version"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 3,
+        "fixtureCount": 3
+      },
+      {
+        "id": "host-plugin.didReceiveGlobalSettings",
+        "event": "didReceiveGlobalSettings",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string",
+          "payload": "object"
+        },
+        "status": "implemented-needs-hardware",
+        "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#didreceiveglobalsettings",
+        "fixtures": [
+          "host-plugin.didReceiveGlobalSettings.None",
+          "host-plugin.didReceiveGlobalSettings.invalid"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 2,
+        "fixtureCount": 2
+      },
+      {
+        "id": "host-plugin.sendToPlugin",
+        "event": "sendToPlugin",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "payload": "json"
+        },
+        "status": "implemented-needs-hardware",
+        "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#didreceivepropertyinspectormessage",
+        "fixtures": [
+          "host-plugin.sendToPlugin.Keypad",
+          "host-plugin.sendToPlugin.Encoder",
+          "host-plugin.sendToPlugin.Neo",
+          "host-plugin.sendToPlugin.MultiAction",
+          "host-plugin.sendToPlugin.invalid",
+          "host-plugin.sendToPlugin.neo-before-7.6",
+          "host-plugin.sendToPlugin.missing-controller"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 7,
+        "fixtureCount": 7
+      },
+      {
+        "id": "host-plugin.didReceiveResources",
+        "event": "didReceiveResources",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": "7.1",
+        "minVersionNote": null,
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "device": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Resource maps and correlation supported; resource file copying/embedding into native exports not implemented.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#didreceiveresources",
+        "fixtures": [
+          "host-plugin.didReceiveResources.Keypad",
+          "host-plugin.didReceiveResources.Encoder",
+          "host-plugin.didReceiveResources.Neo",
+          "host-plugin.didReceiveResources.MultiAction",
+          "host-plugin.didReceiveResources.invalid",
+          "host-plugin.didReceiveResources.before-version",
+          "host-plugin.didReceiveResources.neo-before-7.6",
+          "host-plugin.didReceiveResources.missing-controller"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 8,
+        "fixtureCount": 8
+      },
+      {
+        "id": "host-plugin.didReceiveSettings",
+        "event": "didReceiveSettings",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "device": "string",
+          "payload": "object"
+        },
+        "status": "implemented-needs-hardware",
+        "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#didreceivesettings",
+        "fixtures": [
+          "host-plugin.didReceiveSettings.Keypad",
+          "host-plugin.didReceiveSettings.Encoder",
+          "host-plugin.didReceiveSettings.Neo",
+          "host-plugin.didReceiveSettings.MultiAction",
+          "host-plugin.didReceiveSettings.invalid",
+          "host-plugin.didReceiveSettings.neo-before-7.6",
+          "host-plugin.didReceiveSettings.missing-controller"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 7,
+        "fixtureCount": 7
+      },
+      {
+        "id": "host-plugin.keyDown",
+        "event": "keyDown",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "device": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#keydown",
+        "fixtures": [
+          "host-plugin.keyDown.Keypad",
+          "host-plugin.keyDown.MultiAction",
+          "host-plugin.keyDown.invalid",
+          "host-plugin.keyDown.wrong-controller",
+          "host-plugin.keyDown.missing-controller"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 5,
+        "fixtureCount": 5
+      },
+      {
+        "id": "host-plugin.keyUp",
+        "event": "keyUp",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "device": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#keyup",
+        "fixtures": [
+          "host-plugin.keyUp.Keypad",
+          "host-plugin.keyUp.MultiAction",
+          "host-plugin.keyUp.invalid",
+          "host-plugin.keyUp.wrong-controller",
+          "host-plugin.keyUp.missing-controller"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 5,
+        "fixtureCount": 5
+      },
+      {
+        "id": "host-plugin.propertyInspectorDidAppear",
+        "event": "propertyInspectorDidAppear",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "device": "string"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#propertyinspectordidappear",
+        "fixtures": [
+          "host-plugin.propertyInspectorDidAppear.Keypad",
+          "host-plugin.propertyInspectorDidAppear.Encoder",
+          "host-plugin.propertyInspectorDidAppear.Neo",
+          "host-plugin.propertyInspectorDidAppear.MultiAction",
+          "host-plugin.propertyInspectorDidAppear.invalid",
+          "host-plugin.propertyInspectorDidAppear.neo-before-7.6"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 6,
+        "fixtureCount": 6
+      },
+      {
+        "id": "host-plugin.propertyInspectorDidDisappear",
+        "event": "propertyInspectorDidDisappear",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "device": "string"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#propertyinspectordiddisappear",
+        "fixtures": [
+          "host-plugin.propertyInspectorDidDisappear.Keypad",
+          "host-plugin.propertyInspectorDidDisappear.Encoder",
+          "host-plugin.propertyInspectorDidDisappear.Neo",
+          "host-plugin.propertyInspectorDidDisappear.MultiAction",
+          "host-plugin.propertyInspectorDidDisappear.invalid",
+          "host-plugin.propertyInspectorDidDisappear.neo-before-7.6"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 6,
+        "fixtureCount": 6
+      },
+      {
+        "id": "host-plugin.systemDidWakeUp",
+        "event": "systemDidWakeUp",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": "4.3",
+        "minVersionNote": null,
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#systemdidwakeup",
+        "fixtures": [
+          "host-plugin.systemDidWakeUp.None",
+          "host-plugin.systemDidWakeUp.invalid"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 2,
+        "fixtureCount": 2
+      },
+      {
+        "id": "host-plugin.titleParametersDidChange",
+        "event": "titleParametersDidChange",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "device": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#titleparametersdidchange",
+        "fixtures": [
+          "host-plugin.titleParametersDidChange.Keypad",
+          "host-plugin.titleParametersDidChange.Encoder",
+          "host-plugin.titleParametersDidChange.Neo",
+          "host-plugin.titleParametersDidChange.MultiAction",
+          "host-plugin.titleParametersDidChange.invalid",
+          "host-plugin.titleParametersDidChange.neo-before-7.6",
+          "host-plugin.titleParametersDidChange.missing-controller"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 7,
+        "fixtureCount": 7
+      },
+      {
+        "id": "host-plugin.touchTap",
+        "event": "touchTap",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": "6.0",
+        "minVersionNote": null,
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Encoder"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "device": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#touchtap",
+        "fixtures": [
+          "host-plugin.touchTap.Encoder",
+          "host-plugin.touchTap.invalid",
+          "host-plugin.touchTap.wrong-controller",
+          "host-plugin.touchTap.missing-controller"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 4,
+        "fixtureCount": 4
+      },
+      {
+        "id": "host-plugin.willAppear",
+        "event": "willAppear",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "device": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#willappear",
+        "fixtures": [
+          "host-plugin.willAppear.Keypad",
+          "host-plugin.willAppear.Encoder",
+          "host-plugin.willAppear.Neo",
+          "host-plugin.willAppear.MultiAction",
+          "host-plugin.willAppear.invalid",
+          "host-plugin.willAppear.neo-before-7.6",
+          "host-plugin.willAppear.missing-controller",
+          "host-plugin.willAppear.legacy-multi"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 8,
+        "fixtureCount": 8
+      },
+      {
+        "id": "host-plugin.willDisappear",
+        "event": "willDisappear",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "device": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#willdisappear",
+        "fixtures": [
+          "host-plugin.willDisappear.Keypad",
+          "host-plugin.willDisappear.Encoder",
+          "host-plugin.willDisappear.Neo",
+          "host-plugin.willDisappear.MultiAction",
+          "host-plugin.willDisappear.invalid",
+          "host-plugin.willDisappear.neo-before-7.6",
+          "host-plugin.willDisappear.missing-controller",
+          "host-plugin.willDisappear.legacy-multi"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 8,
+        "fixtureCount": 8
+      },
+      {
+        "id": "host-plugin.dialPress",
+        "event": "dialPress",
+        "channel": "host->plugin",
+        "direction": "host->plugin",
+        "minVersion": "6.0",
+        "minVersionNote": null,
+        "removedVersion": "6.5",
+        "deprecatedVersion": "6.1",
+        "controllers": [
+          "Encoder"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "device": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#dialpress",
+        "fixtures": [
+          "host-plugin.dialPress.Encoder",
+          "host-plugin.dialPress.invalid",
+          "host-plugin.dialPress.removed",
+          "host-plugin.dialPress.wrong-controller",
+          "host-plugin.dialPress.missing-controller"
+        ],
+        "applicable": false,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 5,
+        "fixtureCount": 5
+      },
+      {
+        "id": "plugin-host.registerPlugin",
+        "event": "registerPlugin",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string",
+          "uuid": "string"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#registration",
+        "fixtures": [
+          "plugin-host.registerPlugin.None",
+          "plugin-host.registerPlugin.invalid"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 2,
+        "fixtureCount": 2
+      },
+      {
+        "id": "plugin-host.getGlobalSettings",
+        "event": "getGlobalSettings",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string",
+          "context": "string"
+        },
+        "status": "implemented-needs-hardware",
+        "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#getglobalsettings",
+        "fixtures": [
+          "plugin-host.getGlobalSettings.None",
+          "plugin-host.getGlobalSettings.invalid"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 2,
+        "fixtureCount": 2
+      },
+      {
+        "id": "plugin-host.getResources",
+        "event": "getResources",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": "7.1",
+        "minVersionNote": null,
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string"
+        },
+        "status": "partial",
+        "limitations": "Resource maps and correlation supported; resource file copying/embedding into native exports not implemented.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#getresources",
+        "fixtures": [
+          "plugin-host.getResources.Keypad",
+          "plugin-host.getResources.Encoder",
+          "plugin-host.getResources.Neo",
+          "plugin-host.getResources.MultiAction",
+          "plugin-host.getResources.invalid",
+          "plugin-host.getResources.before-version",
+          "plugin-host.getResources.neo-before-7.6"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 7,
+        "fixtureCount": 7
+      },
+      {
+        "id": "plugin-host.getSettings",
+        "event": "getSettings",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string"
+        },
+        "status": "implemented-needs-hardware",
+        "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#getsettings",
+        "fixtures": [
+          "plugin-host.getSettings.Keypad",
+          "plugin-host.getSettings.Encoder",
+          "plugin-host.getSettings.Neo",
+          "plugin-host.getSettings.MultiAction",
+          "plugin-host.getSettings.invalid",
+          "plugin-host.getSettings.neo-before-7.6"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 6,
+        "fixtureCount": 6
+      },
+      {
+        "id": "plugin-host.logMessage",
+        "event": "logMessage",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string",
+          "payload": "object"
+        },
+        "status": "implemented-needs-hardware",
+        "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#logmessage",
+        "fixtures": [
+          "plugin-host.logMessage.None",
+          "plugin-host.logMessage.invalid"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 2,
+        "fixtureCount": 2
+      },
+      {
+        "id": "plugin-host.openUrl",
+        "event": "openUrl",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "URL request logged in the simulator; the OS browser is not launched.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#openurl",
+        "fixtures": [
+          "plugin-host.openUrl.None",
+          "plugin-host.openUrl.invalid"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 2,
+        "fixtureCount": 2
+      },
+      {
+        "id": "plugin-host.sendToPropertyInspector",
+        "event": "sendToPropertyInspector",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "payload": "json"
+        },
+        "status": "implemented-needs-hardware",
+        "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#sendtopropertyinspector",
+        "fixtures": [
+          "plugin-host.sendToPropertyInspector.Keypad",
+          "plugin-host.sendToPropertyInspector.Encoder",
+          "plugin-host.sendToPropertyInspector.Neo",
+          "plugin-host.sendToPropertyInspector.MultiAction",
+          "plugin-host.sendToPropertyInspector.invalid",
+          "plugin-host.sendToPropertyInspector.neo-before-7.6"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 6,
+        "fixtureCount": 6
+      },
+      {
+        "id": "plugin-host.setFeedback",
+        "event": "setFeedback",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": "6.0",
+        "minVersionNote": null,
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Encoder",
+          "Neo"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Existing renderer adapter; only a subset of layout behavior is supported.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#setfeedback",
+        "fixtures": [
+          "plugin-host.setFeedback.Encoder",
+          "plugin-host.setFeedback.Neo",
+          "plugin-host.setFeedback.invalid",
+          "plugin-host.setFeedback.wrong-controller",
+          "plugin-host.setFeedback.neo-before-7.6"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 5,
+        "fixtureCount": 5
+      },
+      {
+        "id": "plugin-host.setFeedbackLayout",
+        "event": "setFeedbackLayout",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": "6.0",
+        "minVersionNote": null,
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Encoder",
+          "Neo"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Existing renderer adapter; only a subset of layout behavior is supported.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#setfeedbacklayout",
+        "fixtures": [
+          "plugin-host.setFeedbackLayout.Encoder",
+          "plugin-host.setFeedbackLayout.Neo",
+          "plugin-host.setFeedbackLayout.invalid",
+          "plugin-host.setFeedbackLayout.wrong-controller",
+          "plugin-host.setFeedbackLayout.neo-before-7.6"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 5,
+        "fixtureCount": 5
+      },
+      {
+        "id": "plugin-host.setGlobalSettings",
+        "event": "setGlobalSettings",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "payload": "object"
+        },
+        "status": "implemented-needs-hardware",
+        "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#setglobalsettings",
+        "fixtures": [
+          "plugin-host.setGlobalSettings.None",
+          "plugin-host.setGlobalSettings.invalid"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 2,
+        "fixtureCount": 2
+      },
+      {
+        "id": "plugin-host.setImage",
+        "event": "setImage",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#setimage",
+        "fixtures": [
+          "plugin-host.setImage.Keypad",
+          "plugin-host.setImage.MultiAction",
+          "plugin-host.setImage.invalid",
+          "plugin-host.setImage.wrong-controller"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 4,
+        "fixtureCount": 4
+      },
+      {
+        "id": "plugin-host.setResources",
+        "event": "setResources",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": "7.1",
+        "minVersionNote": null,
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Resource maps and correlation supported; resource file copying/embedding into native exports not implemented.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#setresources",
+        "fixtures": [
+          "plugin-host.setResources.Keypad",
+          "plugin-host.setResources.Encoder",
+          "plugin-host.setResources.Neo",
+          "plugin-host.setResources.MultiAction",
+          "plugin-host.setResources.invalid",
+          "plugin-host.setResources.before-version",
+          "plugin-host.setResources.neo-before-7.6"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 7,
+        "fixtureCount": 7
+      },
+      {
+        "id": "plugin-host.setSettings",
+        "event": "setSettings",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "payload": "object"
+        },
+        "status": "implemented-needs-hardware",
+        "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#setsettings",
+        "fixtures": [
+          "plugin-host.setSettings.Keypad",
+          "plugin-host.setSettings.Encoder",
+          "plugin-host.setSettings.Neo",
+          "plugin-host.setSettings.MultiAction",
+          "plugin-host.setSettings.invalid",
+          "plugin-host.setSettings.neo-before-7.6"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 6,
+        "fixtureCount": 6
+      },
+      {
+        "id": "plugin-host.setState",
+        "event": "setState",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#setstate",
+        "fixtures": [
+          "plugin-host.setState.Keypad",
+          "plugin-host.setState.MultiAction",
+          "plugin-host.setState.invalid",
+          "plugin-host.setState.wrong-controller"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 4,
+        "fixtureCount": 4
+      },
+      {
+        "id": "plugin-host.setTitle",
+        "event": "setTitle",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#settitle",
+        "fixtures": [
+          "plugin-host.setTitle.Keypad",
+          "plugin-host.setTitle.MultiAction",
+          "plugin-host.setTitle.invalid",
+          "plugin-host.setTitle.wrong-controller"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 4,
+        "fixtureCount": 4
+      },
+      {
+        "id": "plugin-host.setTriggerDescription",
+        "event": "setTriggerDescription",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": "6.4",
+        "minVersionNote": null,
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Encoder"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "payload": "object"
+        },
+        "status": "implemented-needs-hardware",
+        "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#settriggerdescription",
+        "fixtures": [
+          "plugin-host.setTriggerDescription.Encoder",
+          "plugin-host.setTriggerDescription.invalid",
+          "plugin-host.setTriggerDescription.before-version",
+          "plugin-host.setTriggerDescription.wrong-controller"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 4,
+        "fixtureCount": 4
+      },
+      {
+        "id": "plugin-host.showAlert",
+        "event": "showAlert",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#showalert",
+        "fixtures": [
+          "plugin-host.showAlert.Keypad",
+          "plugin-host.showAlert.Encoder",
+          "plugin-host.showAlert.Neo",
+          "plugin-host.showAlert.MultiAction",
+          "plugin-host.showAlert.invalid",
+          "plugin-host.showAlert.neo-before-7.6"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 6,
+        "fixtureCount": 6
+      },
+      {
+        "id": "plugin-host.showOk",
+        "event": "showOk",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#showok",
+        "fixtures": [
+          "plugin-host.showOk.Keypad",
+          "plugin-host.showOk.MultiAction",
+          "plugin-host.showOk.invalid",
+          "plugin-host.showOk.wrong-controller"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 4,
+        "fixtureCount": 4
+      },
+      {
+        "id": "plugin-host.switchToProfile",
+        "event": "switchToProfile",
+        "channel": "plugin->host",
+        "direction": "plugin->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "device": "string",
+          "payload": "object"
+        },
+        "status": "todo",
+        "limitations": "Plugin-distributed profile installation, prior-profile restoration and page selection not implemented.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#switchtoprofile",
+        "fixtures": [
+          "plugin-host.switchToProfile.None",
+          "plugin-host.switchToProfile.invalid"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 2,
+        "fixtureCount": 2
+      },
+      {
+        "id": "host-pi.didReceiveGlobalSettings",
+        "event": "didReceiveGlobalSettings",
+        "channel": "host->pi",
+        "direction": "host->pi",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string",
+          "payload": "object"
+        },
+        "status": "implemented-needs-hardware",
+        "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#didreceiveglobalsettings",
+        "fixtures": [
+          "host-pi.didReceiveGlobalSettings.None",
+          "host-pi.didReceiveGlobalSettings.invalid"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 2,
+        "fixtureCount": 2
+      },
+      {
+        "id": "host-pi.didReceiveResources",
+        "event": "didReceiveResources",
+        "channel": "host->pi",
+        "direction": "host->pi",
+        "minVersion": "7.1",
+        "minVersionNote": null,
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "device": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Resource maps and correlation supported; resource file copying/embedding into native exports not implemented.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#didreceiveresources",
+        "fixtures": [
+          "host-pi.didReceiveResources.Keypad",
+          "host-pi.didReceiveResources.Encoder",
+          "host-pi.didReceiveResources.Neo",
+          "host-pi.didReceiveResources.MultiAction",
+          "host-pi.didReceiveResources.invalid",
+          "host-pi.didReceiveResources.before-version",
+          "host-pi.didReceiveResources.neo-before-7.6",
+          "host-pi.didReceiveResources.missing-controller"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 8,
+        "fixtureCount": 8
+      },
+      {
+        "id": "host-pi.didReceiveSettings",
+        "event": "didReceiveSettings",
+        "channel": "host->pi",
+        "direction": "host->pi",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "device": "string",
+          "payload": "object"
+        },
+        "status": "implemented-needs-hardware",
+        "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#didreceivesettings",
+        "fixtures": [
+          "host-pi.didReceiveSettings.Keypad",
+          "host-pi.didReceiveSettings.Encoder",
+          "host-pi.didReceiveSettings.Neo",
+          "host-pi.didReceiveSettings.MultiAction",
+          "host-pi.didReceiveSettings.invalid",
+          "host-pi.didReceiveSettings.neo-before-7.6",
+          "host-pi.didReceiveSettings.missing-controller",
+          "host-pi.didReceiveSettings.legacy-multi"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 8,
+        "fixtureCount": 8
+      },
+      {
+        "id": "host-pi.sendToPropertyInspector",
+        "event": "sendToPropertyInspector",
+        "channel": "host->pi",
+        "direction": "host->pi",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "payload": "json"
+        },
+        "status": "implemented-needs-hardware",
+        "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#sendtopropertyinspector",
+        "fixtures": [
+          "host-pi.sendToPropertyInspector.Keypad",
+          "host-pi.sendToPropertyInspector.Encoder",
+          "host-pi.sendToPropertyInspector.Neo",
+          "host-pi.sendToPropertyInspector.MultiAction",
+          "host-pi.sendToPropertyInspector.invalid",
+          "host-pi.sendToPropertyInspector.neo-before-7.6",
+          "host-pi.sendToPropertyInspector.missing-controller"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 7,
+        "fixtureCount": 7
+      },
+      {
+        "id": "pi-host.registerPropertyInspector",
+        "event": "registerPropertyInspector",
+        "channel": "pi->host",
+        "direction": "pi->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string",
+          "uuid": "string"
+        },
+        "status": "partial",
+        "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#registration",
+        "fixtures": [
+          "pi-host.registerPropertyInspector.None",
+          "pi-host.registerPropertyInspector.invalid"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 2,
+        "fixtureCount": 2
+      },
+      {
+        "id": "pi-host.getGlobalSettings",
+        "event": "getGlobalSettings",
+        "channel": "pi->host",
+        "direction": "pi->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string",
+          "context": "string"
+        },
+        "status": "implemented-needs-hardware",
+        "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#getglobalsettings",
+        "fixtures": [
+          "pi-host.getGlobalSettings.None",
+          "pi-host.getGlobalSettings.invalid"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 2,
+        "fixtureCount": 2
+      },
+      {
+        "id": "pi-host.getResources",
+        "event": "getResources",
+        "channel": "pi->host",
+        "direction": "pi->host",
+        "minVersion": "7.1",
+        "minVersionNote": null,
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string"
+        },
+        "status": "partial",
+        "limitations": "Resource maps and correlation supported; resource file copying/embedding into native exports not implemented.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#getresources",
+        "fixtures": [
+          "pi-host.getResources.Keypad",
+          "pi-host.getResources.Encoder",
+          "pi-host.getResources.Neo",
+          "pi-host.getResources.MultiAction",
+          "pi-host.getResources.invalid",
+          "pi-host.getResources.before-version",
+          "pi-host.getResources.neo-before-7.6"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 7,
+        "fixtureCount": 7
+      },
+      {
+        "id": "pi-host.getSettings",
+        "event": "getSettings",
+        "channel": "pi->host",
+        "direction": "pi->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string"
+        },
+        "status": "implemented-needs-hardware",
+        "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#getsettings",
+        "fixtures": [
+          "pi-host.getSettings.Keypad",
+          "pi-host.getSettings.Encoder",
+          "pi-host.getSettings.Neo",
+          "pi-host.getSettings.MultiAction",
+          "pi-host.getSettings.invalid",
+          "pi-host.getSettings.neo-before-7.6"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 6,
+        "fixtureCount": 6
+      },
+      {
+        "id": "pi-host.openUrl",
+        "event": "openUrl",
+        "channel": "pi->host",
+        "direction": "pi->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "URL request logged in the simulator; the OS browser is not launched.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#openurl",
+        "fixtures": [
+          "pi-host.openUrl.None",
+          "pi-host.openUrl.invalid"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": false,
+        "fixturePasses": 2,
+        "fixtureCount": 2
+      },
+      {
+        "id": "pi-host.sendToPlugin",
+        "event": "sendToPlugin",
+        "channel": "pi->host",
+        "direction": "pi->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "payload": "json"
+        },
+        "status": "implemented-needs-hardware",
+        "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#sendtoplugin",
+        "fixtures": [
+          "pi-host.sendToPlugin.Keypad",
+          "pi-host.sendToPlugin.Encoder",
+          "pi-host.sendToPlugin.Neo",
+          "pi-host.sendToPlugin.MultiAction",
+          "pi-host.sendToPlugin.invalid",
+          "pi-host.sendToPlugin.neo-before-7.6"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 6,
+        "fixtureCount": 6
+      },
+      {
+        "id": "pi-host.setGlobalSettings",
+        "event": "setGlobalSettings",
+        "channel": "pi->host",
+        "direction": "pi->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "payload": "object"
+        },
+        "status": "implemented-needs-hardware",
+        "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#setglobalsettings",
+        "fixtures": [
+          "pi-host.setGlobalSettings.None",
+          "pi-host.setGlobalSettings.invalid"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 2,
+        "fixtureCount": 2
+      },
+      {
+        "id": "pi-host.setResources",
+        "event": "setResources",
+        "channel": "pi->host",
+        "direction": "pi->host",
+        "minVersion": "7.1",
+        "minVersionNote": null,
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "payload": "object"
+        },
+        "status": "partial",
+        "limitations": "Resource maps and correlation supported; resource file copying/embedding into native exports not implemented.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#setresources",
+        "fixtures": [
+          "pi-host.setResources.Keypad",
+          "pi-host.setResources.Encoder",
+          "pi-host.setResources.Neo",
+          "pi-host.setResources.MultiAction",
+          "pi-host.setResources.invalid",
+          "pi-host.setResources.before-version",
+          "pi-host.setResources.neo-before-7.6"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 7,
+        "fixtureCount": 7
+      },
+      {
+        "id": "pi-host.setSettings",
+        "event": "setSettings",
+        "channel": "pi->host",
+        "direction": "pi->host",
+        "minVersion": null,
+        "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+        "removedVersion": null,
+        "deprecatedVersion": null,
+        "controllers": [
+          "Keypad",
+          "Encoder",
+          "Neo",
+          "MultiAction"
+        ],
+        "required": {
+          "event": "string",
+          "context": "string",
+          "action": "string",
+          "payload": "object"
+        },
+        "status": "implemented-needs-hardware",
+        "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+        "hardwareValidation": "unverified",
+        "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#setsettings",
+        "fixtures": [
+          "pi-host.setSettings.Keypad",
+          "pi-host.setSettings.Encoder",
+          "pi-host.setSettings.Neo",
+          "pi-host.setSettings.MultiAction",
+          "pi-host.setSettings.invalid",
+          "pi-host.setSettings.neo-before-7.6"
+        ],
+        "applicable": true,
+        "tested": true,
+        "testedBehavior": true,
+        "fixturePasses": 6,
+        "fixtureCount": 6
+      }
+    ],
+    "total": 54,
+    "testedBehavior": 33,
+    "full": 0,
+    "hardwareValidated": 0
+  }
+}

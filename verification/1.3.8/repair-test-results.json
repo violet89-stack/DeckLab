@@ -1,0 +1,23 @@
+{
+  "build": "1.3.8-alpha.30",
+  "date": "2026-09-29T16:38:36.693Z",
+  "result": {
+    "stateTargets": true,
+    "layouts": true,
+    "globals": true
+  },
+  "checks": [
+    "state and target visual overrides",
+    "requested Encoder and Neo layouts",
+    "layout validation and persistence",
+    "plugin-local settings and migration",
+    "Build navigation and icon library",
+    "preview-only display effects and Light off touch routing",
+    "LCD insets and transparent preview layers",
+    "six-device three-zoom stability",
+    "idle layout dock identity",
+    "appearance persistence"
+  ],
+  "pageErrors": [],
+  "hardwareValidated": false
+}
