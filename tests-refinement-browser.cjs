@@ -1,0 +1,31 @@
+// SPDX-License-Identifier: MPL-2.0
+const {chromium,launchOptions,artifactDir,isInside}=require('./scripts/test-support.cjs');const fs=require('fs'),path=require('path'),assert=require('assert');
+(async()=>{const browser=await chromium.launch(launchOptions());const page=await browser.newPage({viewport:{width:1440,height:1000}});const errors=[];page.on('pageerror',e=>errors.push(e.stack));
+const root=__dirname;
+await page.route('http://decklab.test/**',async r=>{const p=decodeURIComponent(new URL(r.request().url()).pathname);const f=path.resolve(root,'.'+(p==='/'?'/index.html':p));if(!isInside(root,f)||!fs.existsSync(f)||fs.statSync(f).isDirectory())return r.fulfill({status:404,body:'Not found'});const mime={'.js':'application/javascript','.css':'text/css','.html':'text/html','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.gif':'image/gif'}[path.extname(f)]||'application/octet-stream';await r.fulfill({body:fs.readFileSync(f),contentType:mime});});
+await page.addInitScript(()=>{if(window===window.top)localStorage.setItem('decklab.onboarding.v10','complete')});
+await page.goto('http://decklab.test/',{waitUntil:'load'});await page.evaluate(()=>{switchMode('profile');});
+
+await page.waitForFunction(()=>window.DeckLabArtwork&&document.getElementById('openArtworkLibrary'));
+await page.evaluate(async()=>{DeckLabUX11.selectStudioDevice('plus');resetProfileSession({target:'plus'});for(let column=0;column<4;column++){const idx=profileAvailableActions().findIndex(a=>a.UUID==='com.decklab.demo.'+['volume','brightness','cpu','media'][column]);await createProfileActionPlacement(idx,'Encoder',column,0);}renderProfileLab();selectProfilePlacement(profileState.placements[0]);});
+await page.waitForFunction(()=>document.querySelectorAll('#profileDeck .lcd-demo').length===4);
+await page.evaluate(()=>{const p=profileState.placements[0];profileEmitInput(p,'dialRotate',{ticks:5});if(p.settings.value!==73)throw Error('demo rotation');profileEmitInput(p,'dialUp',{});if(p.settings.active!==false)throw Error('demo mute');});
+assert((await page.locator('#profileDeck .lcd-demo').first().innerText()).includes('73%'));
+await page.locator('#profileDeck .profile-dial-control').first().focus();await page.keyboard.press('ArrowUp');assert.equal(await page.evaluate(()=>profileState.placements[0].settings.value),74);
+await page.locator('#visualTitle').fill('Desk audio');await page.waitForFunction(()=>document.querySelectorAll('#profileDeck .lcd-demo').length===4);
+await page.evaluate(()=>DeckLabUX11.goStudio('preview'));
+await page.evaluate(()=>DeckLabUX11.goStudio('build'));
+await page.locator('#openArtworkLibrary').click();
+await page.evaluate(async()=>{const c=document.createElement('canvas');c.width=c.height=72;c.getContext('2d').fillRect(0,0,72,72);await DeckLabArtwork.add('Test icon',c.toDataURL());});
+assert.equal(await page.locator('.artwork-use').count(),1);
+await page.locator('.artwork-use').click();
+await page.waitForFunction(()=>!document.getElementById('artworkDialog').open);
+assert(await page.evaluate(()=>profileState.placements[0].customVisual.image.startsWith('data:image/png')));
+await page.locator('#openArtworkLibrary').click();await page.locator('#artworkSearch').fill('missing');assert.equal(await page.locator('.artwork-use').count(),0);await page.locator('#artworkSearch').fill('');
+const downloaded=page.waitForEvent('download');await page.locator('#artworkExport').click();const backup=await downloaded;const backupPath=await backup.path();
+await page.locator('.artwork-remove').click();await page.waitForFunction(()=>document.querySelectorAll('.artwork-use').length===0);assert(await page.evaluate(()=>!!profileState.placements[0].customVisual.image));await page.locator('#artworkBackup').setInputFiles({name:'artwork.json',mimeType:'application/json',buffer:fs.readFileSync(backupPath)});await page.waitForFunction(()=>document.querySelectorAll('.artwork-use').length===1);await page.screenshot({path:artifactDir+'/refinement-library.png'});await page.locator('#artworkClose').click();
+await page.locator('#visualReset').click();await page.waitForFunction(()=>document.querySelectorAll('#profileDeck .lcd-demo').length===4);
+const persisted=await page.evaluate(()=>profileSerializableData());await page.evaluate(async data=>{await importDeckLabProfileData(data);renderProfileLab()},persisted);await page.waitForFunction(()=>document.querySelectorAll('#profileDeck .lcd-demo').length===4);
+await page.screenshot({path:artifactDir+'/refinement-build.png',fullPage:false});
+assert.deepEqual(errors,[]);await browser.close();console.log('PASS refinement: LCD demos, rotation/mute, title overlay, artwork apply/search/delete, profile round trip, no page errors.');
+})().catch(e=>{console.error(e);process.exit(1)});

@@ -1,0 +1,1666 @@
+{
+  "schemaVersion": 1,
+  "revision": "2026-09-29.1",
+  "documentationSnapshot": "2026-09-29",
+  "baseline": "6.0",
+  "current": "7.6",
+  "versions": [
+    "6.0",
+    "6.1",
+    "6.4",
+    "6.5",
+    "6.7",
+    "7.0",
+    "7.1",
+    "7.6"
+  ],
+  "scope": "All message names in the current Plugin and Property Inspector WebSocket reference, plus registration and historical dialPress. Field validation is an explicit subset, not an exhaustive JSON schema.",
+  "sources": [
+    "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/",
+    "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/",
+    "https://docs.elgato.com/streamdeck/sdk/references/websocket/changelog/"
+  ],
+  "excluded": [
+    "DRM and Marketplace internals",
+    "Undocumented messages"
+  ],
+  "rules": {
+    "neoMinVersion": "7.6",
+    "resourceMinVersion": "7.1",
+    "multiLifecycleControllerMinVersion": "6.5",
+    "piMultiActionMinVersion": "6.7",
+    "profilePageMinVersion": "6.5"
+  },
+  "apis": [
+    {
+      "id": "host-plugin.applicationDidLaunch",
+      "event": "applicationDidLaunch",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#applicationdidlaunch",
+      "fixtures": [
+        "host-plugin.applicationDidLaunch.None",
+        "host-plugin.applicationDidLaunch.invalid"
+      ]
+    },
+    {
+      "id": "host-plugin.applicationDidTerminate",
+      "event": "applicationDidTerminate",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#applicationdidterminate",
+      "fixtures": [
+        "host-plugin.applicationDidTerminate.None",
+        "host-plugin.applicationDidTerminate.invalid"
+      ]
+    },
+    {
+      "id": "host-plugin.deviceDidChange",
+      "event": "deviceDidChange",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": "7.0",
+      "minVersionNote": null,
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string",
+        "device": "string",
+        "deviceInfo": "object"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#devicedidchange",
+      "fixtures": [
+        "host-plugin.deviceDidChange.None",
+        "host-plugin.deviceDidChange.invalid",
+        "host-plugin.deviceDidChange.before-version"
+      ]
+    },
+    {
+      "id": "host-plugin.deviceDidConnect",
+      "event": "deviceDidConnect",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string",
+        "device": "string",
+        "deviceInfo": "object"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#devicedidconnect",
+      "fixtures": [
+        "host-plugin.deviceDidConnect.None",
+        "host-plugin.deviceDidConnect.invalid"
+      ]
+    },
+    {
+      "id": "host-plugin.deviceDidDisconnect",
+      "event": "deviceDidDisconnect",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string",
+        "device": "string"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#devicediddisconnect",
+      "fixtures": [
+        "host-plugin.deviceDidDisconnect.None",
+        "host-plugin.deviceDidDisconnect.invalid"
+      ]
+    },
+    {
+      "id": "host-plugin.dialDown",
+      "event": "dialDown",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": "6.1",
+      "minVersionNote": null,
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Encoder"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "device": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#dialdown",
+      "fixtures": [
+        "host-plugin.dialDown.Encoder",
+        "host-plugin.dialDown.invalid",
+        "host-plugin.dialDown.before-version",
+        "version.dialDown.6.0",
+        "version.dialDown.6.1",
+        "version.dialDown.6.5",
+        "host-plugin.dialDown.wrong-controller",
+        "host-plugin.dialDown.missing-controller"
+      ]
+    },
+    {
+      "id": "host-plugin.dialRotate",
+      "event": "dialRotate",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": "6.0",
+      "minVersionNote": null,
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Encoder"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "device": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#dialrotate",
+      "fixtures": [
+        "host-plugin.dialRotate.Encoder",
+        "host-plugin.dialRotate.invalid",
+        "host-plugin.dialRotate.wrong-controller",
+        "host-plugin.dialRotate.missing-controller"
+      ]
+    },
+    {
+      "id": "host-plugin.dialUp",
+      "event": "dialUp",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": "6.1",
+      "minVersionNote": null,
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Encoder"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "device": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#dialup",
+      "fixtures": [
+        "host-plugin.dialUp.Encoder",
+        "host-plugin.dialUp.invalid",
+        "host-plugin.dialUp.before-version",
+        "host-plugin.dialUp.wrong-controller",
+        "host-plugin.dialUp.missing-controller"
+      ]
+    },
+    {
+      "id": "host-plugin.didReceiveDeepLink",
+      "event": "didReceiveDeepLink",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": "6.5",
+      "minVersionNote": null,
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#didreceivedeeplink",
+      "fixtures": [
+        "host-plugin.didReceiveDeepLink.None",
+        "host-plugin.didReceiveDeepLink.invalid",
+        "host-plugin.didReceiveDeepLink.before-version"
+      ]
+    },
+    {
+      "id": "host-plugin.didReceiveGlobalSettings",
+      "event": "didReceiveGlobalSettings",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string",
+        "payload": "object"
+      },
+      "status": "implemented-needs-hardware",
+      "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#didreceiveglobalsettings",
+      "fixtures": [
+        "host-plugin.didReceiveGlobalSettings.None",
+        "host-plugin.didReceiveGlobalSettings.invalid"
+      ]
+    },
+    {
+      "id": "host-plugin.sendToPlugin",
+      "event": "sendToPlugin",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "payload": "json"
+      },
+      "status": "implemented-needs-hardware",
+      "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#didreceivepropertyinspectormessage",
+      "fixtures": [
+        "host-plugin.sendToPlugin.Keypad",
+        "host-plugin.sendToPlugin.Encoder",
+        "host-plugin.sendToPlugin.Neo",
+        "host-plugin.sendToPlugin.MultiAction",
+        "host-plugin.sendToPlugin.invalid",
+        "host-plugin.sendToPlugin.neo-before-7.6",
+        "host-plugin.sendToPlugin.missing-controller"
+      ]
+    },
+    {
+      "id": "host-plugin.didReceiveResources",
+      "event": "didReceiveResources",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": "7.1",
+      "minVersionNote": null,
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "device": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Resource maps and correlation supported; resource file copying/embedding into native exports not implemented.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#didreceiveresources",
+      "fixtures": [
+        "host-plugin.didReceiveResources.Keypad",
+        "host-plugin.didReceiveResources.Encoder",
+        "host-plugin.didReceiveResources.Neo",
+        "host-plugin.didReceiveResources.MultiAction",
+        "host-plugin.didReceiveResources.invalid",
+        "host-plugin.didReceiveResources.before-version",
+        "host-plugin.didReceiveResources.neo-before-7.6",
+        "host-plugin.didReceiveResources.missing-controller"
+      ]
+    },
+    {
+      "id": "host-plugin.didReceiveSettings",
+      "event": "didReceiveSettings",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "device": "string",
+        "payload": "object"
+      },
+      "status": "implemented-needs-hardware",
+      "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#didreceivesettings",
+      "fixtures": [
+        "host-plugin.didReceiveSettings.Keypad",
+        "host-plugin.didReceiveSettings.Encoder",
+        "host-plugin.didReceiveSettings.Neo",
+        "host-plugin.didReceiveSettings.MultiAction",
+        "host-plugin.didReceiveSettings.invalid",
+        "host-plugin.didReceiveSettings.neo-before-7.6",
+        "host-plugin.didReceiveSettings.missing-controller"
+      ]
+    },
+    {
+      "id": "host-plugin.keyDown",
+      "event": "keyDown",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "device": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#keydown",
+      "fixtures": [
+        "host-plugin.keyDown.Keypad",
+        "host-plugin.keyDown.MultiAction",
+        "host-plugin.keyDown.invalid",
+        "host-plugin.keyDown.wrong-controller",
+        "host-plugin.keyDown.missing-controller"
+      ]
+    },
+    {
+      "id": "host-plugin.keyUp",
+      "event": "keyUp",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "device": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#keyup",
+      "fixtures": [
+        "host-plugin.keyUp.Keypad",
+        "host-plugin.keyUp.MultiAction",
+        "host-plugin.keyUp.invalid",
+        "host-plugin.keyUp.wrong-controller",
+        "host-plugin.keyUp.missing-controller"
+      ]
+    },
+    {
+      "id": "host-plugin.propertyInspectorDidAppear",
+      "event": "propertyInspectorDidAppear",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "device": "string"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#propertyinspectordidappear",
+      "fixtures": [
+        "host-plugin.propertyInspectorDidAppear.Keypad",
+        "host-plugin.propertyInspectorDidAppear.Encoder",
+        "host-plugin.propertyInspectorDidAppear.Neo",
+        "host-plugin.propertyInspectorDidAppear.MultiAction",
+        "host-plugin.propertyInspectorDidAppear.invalid",
+        "host-plugin.propertyInspectorDidAppear.neo-before-7.6"
+      ]
+    },
+    {
+      "id": "host-plugin.propertyInspectorDidDisappear",
+      "event": "propertyInspectorDidDisappear",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "device": "string"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#propertyinspectordiddisappear",
+      "fixtures": [
+        "host-plugin.propertyInspectorDidDisappear.Keypad",
+        "host-plugin.propertyInspectorDidDisappear.Encoder",
+        "host-plugin.propertyInspectorDidDisappear.Neo",
+        "host-plugin.propertyInspectorDidDisappear.MultiAction",
+        "host-plugin.propertyInspectorDidDisappear.invalid",
+        "host-plugin.propertyInspectorDidDisappear.neo-before-7.6"
+      ]
+    },
+    {
+      "id": "host-plugin.systemDidWakeUp",
+      "event": "systemDidWakeUp",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": "4.3",
+      "minVersionNote": null,
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#systemdidwakeup",
+      "fixtures": [
+        "host-plugin.systemDidWakeUp.None",
+        "host-plugin.systemDidWakeUp.invalid"
+      ]
+    },
+    {
+      "id": "host-plugin.titleParametersDidChange",
+      "event": "titleParametersDidChange",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "device": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#titleparametersdidchange",
+      "fixtures": [
+        "host-plugin.titleParametersDidChange.Keypad",
+        "host-plugin.titleParametersDidChange.Encoder",
+        "host-plugin.titleParametersDidChange.Neo",
+        "host-plugin.titleParametersDidChange.MultiAction",
+        "host-plugin.titleParametersDidChange.invalid",
+        "host-plugin.titleParametersDidChange.neo-before-7.6",
+        "host-plugin.titleParametersDidChange.missing-controller"
+      ]
+    },
+    {
+      "id": "host-plugin.touchTap",
+      "event": "touchTap",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": "6.0",
+      "minVersionNote": null,
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Encoder"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "device": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#touchtap",
+      "fixtures": [
+        "host-plugin.touchTap.Encoder",
+        "host-plugin.touchTap.invalid",
+        "host-plugin.touchTap.wrong-controller",
+        "host-plugin.touchTap.missing-controller"
+      ]
+    },
+    {
+      "id": "host-plugin.willAppear",
+      "event": "willAppear",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "device": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#willappear",
+      "fixtures": [
+        "host-plugin.willAppear.Keypad",
+        "host-plugin.willAppear.Encoder",
+        "host-plugin.willAppear.Neo",
+        "host-plugin.willAppear.MultiAction",
+        "host-plugin.willAppear.invalid",
+        "host-plugin.willAppear.neo-before-7.6",
+        "host-plugin.willAppear.missing-controller",
+        "host-plugin.willAppear.legacy-multi"
+      ]
+    },
+    {
+      "id": "host-plugin.willDisappear",
+      "event": "willDisappear",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "device": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#willdisappear",
+      "fixtures": [
+        "host-plugin.willDisappear.Keypad",
+        "host-plugin.willDisappear.Encoder",
+        "host-plugin.willDisappear.Neo",
+        "host-plugin.willDisappear.MultiAction",
+        "host-plugin.willDisappear.invalid",
+        "host-plugin.willDisappear.neo-before-7.6",
+        "host-plugin.willDisappear.missing-controller",
+        "host-plugin.willDisappear.legacy-multi"
+      ]
+    },
+    {
+      "id": "host-plugin.dialPress",
+      "event": "dialPress",
+      "channel": "host->plugin",
+      "direction": "host->plugin",
+      "minVersion": "6.0",
+      "minVersionNote": null,
+      "removedVersion": "6.5",
+      "deprecatedVersion": "6.1",
+      "controllers": [
+        "Encoder"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "device": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#dialpress",
+      "fixtures": [
+        "host-plugin.dialPress.Encoder",
+        "host-plugin.dialPress.invalid",
+        "host-plugin.dialPress.removed",
+        "host-plugin.dialPress.wrong-controller",
+        "host-plugin.dialPress.missing-controller"
+      ]
+    },
+    {
+      "id": "plugin-host.registerPlugin",
+      "event": "registerPlugin",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string",
+        "uuid": "string"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#registration",
+      "fixtures": [
+        "plugin-host.registerPlugin.None",
+        "plugin-host.registerPlugin.invalid"
+      ]
+    },
+    {
+      "id": "plugin-host.getGlobalSettings",
+      "event": "getGlobalSettings",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string",
+        "context": "string"
+      },
+      "status": "implemented-needs-hardware",
+      "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#getglobalsettings",
+      "fixtures": [
+        "plugin-host.getGlobalSettings.None",
+        "plugin-host.getGlobalSettings.invalid"
+      ]
+    },
+    {
+      "id": "plugin-host.getResources",
+      "event": "getResources",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": "7.1",
+      "minVersionNote": null,
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string"
+      },
+      "status": "partial",
+      "limitations": "Resource maps and correlation supported; resource file copying/embedding into native exports not implemented.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#getresources",
+      "fixtures": [
+        "plugin-host.getResources.Keypad",
+        "plugin-host.getResources.Encoder",
+        "plugin-host.getResources.Neo",
+        "plugin-host.getResources.MultiAction",
+        "plugin-host.getResources.invalid",
+        "plugin-host.getResources.before-version",
+        "plugin-host.getResources.neo-before-7.6"
+      ]
+    },
+    {
+      "id": "plugin-host.getSettings",
+      "event": "getSettings",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string"
+      },
+      "status": "implemented-needs-hardware",
+      "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#getsettings",
+      "fixtures": [
+        "plugin-host.getSettings.Keypad",
+        "plugin-host.getSettings.Encoder",
+        "plugin-host.getSettings.Neo",
+        "plugin-host.getSettings.MultiAction",
+        "plugin-host.getSettings.invalid",
+        "plugin-host.getSettings.neo-before-7.6"
+      ]
+    },
+    {
+      "id": "plugin-host.logMessage",
+      "event": "logMessage",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string",
+        "payload": "object"
+      },
+      "status": "implemented-needs-hardware",
+      "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#logmessage",
+      "fixtures": [
+        "plugin-host.logMessage.None",
+        "plugin-host.logMessage.invalid"
+      ]
+    },
+    {
+      "id": "plugin-host.openUrl",
+      "event": "openUrl",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "URL request logged in the simulator; the OS browser is not launched.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#openurl",
+      "fixtures": [
+        "plugin-host.openUrl.None",
+        "plugin-host.openUrl.invalid"
+      ]
+    },
+    {
+      "id": "plugin-host.sendToPropertyInspector",
+      "event": "sendToPropertyInspector",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "payload": "json"
+      },
+      "status": "implemented-needs-hardware",
+      "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#sendtopropertyinspector",
+      "fixtures": [
+        "plugin-host.sendToPropertyInspector.Keypad",
+        "plugin-host.sendToPropertyInspector.Encoder",
+        "plugin-host.sendToPropertyInspector.Neo",
+        "plugin-host.sendToPropertyInspector.MultiAction",
+        "plugin-host.sendToPropertyInspector.invalid",
+        "plugin-host.sendToPropertyInspector.neo-before-7.6"
+      ]
+    },
+    {
+      "id": "plugin-host.setFeedback",
+      "event": "setFeedback",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": "6.0",
+      "minVersionNote": null,
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Encoder",
+        "Neo"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Existing renderer adapter; only a subset of layout behavior is supported.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#setfeedback",
+      "fixtures": [
+        "plugin-host.setFeedback.Encoder",
+        "plugin-host.setFeedback.Neo",
+        "plugin-host.setFeedback.invalid",
+        "plugin-host.setFeedback.wrong-controller",
+        "plugin-host.setFeedback.neo-before-7.6"
+      ]
+    },
+    {
+      "id": "plugin-host.setFeedbackLayout",
+      "event": "setFeedbackLayout",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": "6.0",
+      "minVersionNote": null,
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Encoder",
+        "Neo"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Existing renderer adapter; only a subset of layout behavior is supported.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#setfeedbacklayout",
+      "fixtures": [
+        "plugin-host.setFeedbackLayout.Encoder",
+        "plugin-host.setFeedbackLayout.Neo",
+        "plugin-host.setFeedbackLayout.invalid",
+        "plugin-host.setFeedbackLayout.wrong-controller",
+        "plugin-host.setFeedbackLayout.neo-before-7.6"
+      ]
+    },
+    {
+      "id": "plugin-host.setGlobalSettings",
+      "event": "setGlobalSettings",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "payload": "object"
+      },
+      "status": "implemented-needs-hardware",
+      "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#setglobalsettings",
+      "fixtures": [
+        "plugin-host.setGlobalSettings.None",
+        "plugin-host.setGlobalSettings.invalid"
+      ]
+    },
+    {
+      "id": "plugin-host.setImage",
+      "event": "setImage",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#setimage",
+      "fixtures": [
+        "plugin-host.setImage.Keypad",
+        "plugin-host.setImage.MultiAction",
+        "plugin-host.setImage.invalid",
+        "plugin-host.setImage.wrong-controller"
+      ]
+    },
+    {
+      "id": "plugin-host.setResources",
+      "event": "setResources",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": "7.1",
+      "minVersionNote": null,
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Resource maps and correlation supported; resource file copying/embedding into native exports not implemented.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#setresources",
+      "fixtures": [
+        "plugin-host.setResources.Keypad",
+        "plugin-host.setResources.Encoder",
+        "plugin-host.setResources.Neo",
+        "plugin-host.setResources.MultiAction",
+        "plugin-host.setResources.invalid",
+        "plugin-host.setResources.before-version",
+        "plugin-host.setResources.neo-before-7.6"
+      ]
+    },
+    {
+      "id": "plugin-host.setSettings",
+      "event": "setSettings",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "payload": "object"
+      },
+      "status": "implemented-needs-hardware",
+      "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#setsettings",
+      "fixtures": [
+        "plugin-host.setSettings.Keypad",
+        "plugin-host.setSettings.Encoder",
+        "plugin-host.setSettings.Neo",
+        "plugin-host.setSettings.MultiAction",
+        "plugin-host.setSettings.invalid",
+        "plugin-host.setSettings.neo-before-7.6"
+      ]
+    },
+    {
+      "id": "plugin-host.setState",
+      "event": "setState",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#setstate",
+      "fixtures": [
+        "plugin-host.setState.Keypad",
+        "plugin-host.setState.MultiAction",
+        "plugin-host.setState.invalid",
+        "plugin-host.setState.wrong-controller"
+      ]
+    },
+    {
+      "id": "plugin-host.setTitle",
+      "event": "setTitle",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#settitle",
+      "fixtures": [
+        "plugin-host.setTitle.Keypad",
+        "plugin-host.setTitle.MultiAction",
+        "plugin-host.setTitle.invalid",
+        "plugin-host.setTitle.wrong-controller"
+      ]
+    },
+    {
+      "id": "plugin-host.setTriggerDescription",
+      "event": "setTriggerDescription",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": "6.4",
+      "minVersionNote": null,
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Encoder"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "payload": "object"
+      },
+      "status": "implemented-needs-hardware",
+      "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#settriggerdescription",
+      "fixtures": [
+        "plugin-host.setTriggerDescription.Encoder",
+        "plugin-host.setTriggerDescription.invalid",
+        "plugin-host.setTriggerDescription.before-version",
+        "plugin-host.setTriggerDescription.wrong-controller"
+      ]
+    },
+    {
+      "id": "plugin-host.showAlert",
+      "event": "showAlert",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#showalert",
+      "fixtures": [
+        "plugin-host.showAlert.Keypad",
+        "plugin-host.showAlert.Encoder",
+        "plugin-host.showAlert.Neo",
+        "plugin-host.showAlert.MultiAction",
+        "plugin-host.showAlert.invalid",
+        "plugin-host.showAlert.neo-before-7.6"
+      ]
+    },
+    {
+      "id": "plugin-host.showOk",
+      "event": "showOk",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#showok",
+      "fixtures": [
+        "plugin-host.showOk.Keypad",
+        "plugin-host.showOk.MultiAction",
+        "plugin-host.showOk.invalid",
+        "plugin-host.showOk.wrong-controller"
+      ]
+    },
+    {
+      "id": "plugin-host.switchToProfile",
+      "event": "switchToProfile",
+      "channel": "plugin->host",
+      "direction": "plugin->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "device": "string",
+        "payload": "object"
+      },
+      "status": "todo",
+      "limitations": "Plugin-distributed profile installation, prior-profile restoration and page selection not implemented.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/plugin/#switchtoprofile",
+      "fixtures": [
+        "plugin-host.switchToProfile.None",
+        "plugin-host.switchToProfile.invalid"
+      ]
+    },
+    {
+      "id": "host-pi.didReceiveGlobalSettings",
+      "event": "didReceiveGlobalSettings",
+      "channel": "host->pi",
+      "direction": "host->pi",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string",
+        "payload": "object"
+      },
+      "status": "implemented-needs-hardware",
+      "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#didreceiveglobalsettings",
+      "fixtures": [
+        "host-pi.didReceiveGlobalSettings.None",
+        "host-pi.didReceiveGlobalSettings.invalid"
+      ]
+    },
+    {
+      "id": "host-pi.didReceiveResources",
+      "event": "didReceiveResources",
+      "channel": "host->pi",
+      "direction": "host->pi",
+      "minVersion": "7.1",
+      "minVersionNote": null,
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "device": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Resource maps and correlation supported; resource file copying/embedding into native exports not implemented.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#didreceiveresources",
+      "fixtures": [
+        "host-pi.didReceiveResources.Keypad",
+        "host-pi.didReceiveResources.Encoder",
+        "host-pi.didReceiveResources.Neo",
+        "host-pi.didReceiveResources.MultiAction",
+        "host-pi.didReceiveResources.invalid",
+        "host-pi.didReceiveResources.before-version",
+        "host-pi.didReceiveResources.neo-before-7.6",
+        "host-pi.didReceiveResources.missing-controller"
+      ]
+    },
+    {
+      "id": "host-pi.didReceiveSettings",
+      "event": "didReceiveSettings",
+      "channel": "host->pi",
+      "direction": "host->pi",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "device": "string",
+        "payload": "object"
+      },
+      "status": "implemented-needs-hardware",
+      "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#didreceivesettings",
+      "fixtures": [
+        "host-pi.didReceiveSettings.Keypad",
+        "host-pi.didReceiveSettings.Encoder",
+        "host-pi.didReceiveSettings.Neo",
+        "host-pi.didReceiveSettings.MultiAction",
+        "host-pi.didReceiveSettings.invalid",
+        "host-pi.didReceiveSettings.neo-before-7.6",
+        "host-pi.didReceiveSettings.missing-controller",
+        "host-pi.didReceiveSettings.legacy-multi"
+      ]
+    },
+    {
+      "id": "host-pi.sendToPropertyInspector",
+      "event": "sendToPropertyInspector",
+      "channel": "host->pi",
+      "direction": "host->pi",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "payload": "json"
+      },
+      "status": "implemented-needs-hardware",
+      "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#sendtopropertyinspector",
+      "fixtures": [
+        "host-pi.sendToPropertyInspector.Keypad",
+        "host-pi.sendToPropertyInspector.Encoder",
+        "host-pi.sendToPropertyInspector.Neo",
+        "host-pi.sendToPropertyInspector.MultiAction",
+        "host-pi.sendToPropertyInspector.invalid",
+        "host-pi.sendToPropertyInspector.neo-before-7.6",
+        "host-pi.sendToPropertyInspector.missing-controller"
+      ]
+    },
+    {
+      "id": "pi-host.registerPropertyInspector",
+      "event": "registerPropertyInspector",
+      "channel": "pi->host",
+      "direction": "pi->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string",
+        "uuid": "string"
+      },
+      "status": "partial",
+      "limitations": "Packet semantics tested in isolation; physical timing and external integration unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#registration",
+      "fixtures": [
+        "pi-host.registerPropertyInspector.None",
+        "pi-host.registerPropertyInspector.invalid"
+      ]
+    },
+    {
+      "id": "pi-host.getGlobalSettings",
+      "event": "getGlobalSettings",
+      "channel": "pi->host",
+      "direction": "pi->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string",
+        "context": "string"
+      },
+      "status": "implemented-needs-hardware",
+      "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#getglobalsettings",
+      "fixtures": [
+        "pi-host.getGlobalSettings.None",
+        "pi-host.getGlobalSettings.invalid"
+      ]
+    },
+    {
+      "id": "pi-host.getResources",
+      "event": "getResources",
+      "channel": "pi->host",
+      "direction": "pi->host",
+      "minVersion": "7.1",
+      "minVersionNote": null,
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string"
+      },
+      "status": "partial",
+      "limitations": "Resource maps and correlation supported; resource file copying/embedding into native exports not implemented.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#getresources",
+      "fixtures": [
+        "pi-host.getResources.Keypad",
+        "pi-host.getResources.Encoder",
+        "pi-host.getResources.Neo",
+        "pi-host.getResources.MultiAction",
+        "pi-host.getResources.invalid",
+        "pi-host.getResources.before-version",
+        "pi-host.getResources.neo-before-7.6"
+      ]
+    },
+    {
+      "id": "pi-host.getSettings",
+      "event": "getSettings",
+      "channel": "pi->host",
+      "direction": "pi->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string"
+      },
+      "status": "implemented-needs-hardware",
+      "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#getsettings",
+      "fixtures": [
+        "pi-host.getSettings.Keypad",
+        "pi-host.getSettings.Encoder",
+        "pi-host.getSettings.Neo",
+        "pi-host.getSettings.MultiAction",
+        "pi-host.getSettings.invalid",
+        "pi-host.getSettings.neo-before-7.6"
+      ]
+    },
+    {
+      "id": "pi-host.openUrl",
+      "event": "openUrl",
+      "channel": "pi->host",
+      "direction": "pi->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "URL request logged in the simulator; the OS browser is not launched.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#openurl",
+      "fixtures": [
+        "pi-host.openUrl.None",
+        "pi-host.openUrl.invalid"
+      ]
+    },
+    {
+      "id": "pi-host.sendToPlugin",
+      "event": "sendToPlugin",
+      "channel": "pi->host",
+      "direction": "pi->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "payload": "json"
+      },
+      "status": "implemented-needs-hardware",
+      "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#sendtoplugin",
+      "fixtures": [
+        "pi-host.sendToPlugin.Keypad",
+        "pi-host.sendToPlugin.Encoder",
+        "pi-host.sendToPlugin.Neo",
+        "pi-host.sendToPlugin.MultiAction",
+        "pi-host.sendToPlugin.invalid",
+        "pi-host.sendToPlugin.neo-before-7.6"
+      ]
+    },
+    {
+      "id": "pi-host.setGlobalSettings",
+      "event": "setGlobalSettings",
+      "channel": "pi->host",
+      "direction": "pi->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "payload": "object"
+      },
+      "status": "implemented-needs-hardware",
+      "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#setglobalsettings",
+      "fixtures": [
+        "pi-host.setGlobalSettings.None",
+        "pi-host.setGlobalSettings.invalid"
+      ]
+    },
+    {
+      "id": "pi-host.setResources",
+      "event": "setResources",
+      "channel": "pi->host",
+      "direction": "pi->host",
+      "minVersion": "7.1",
+      "minVersionNote": null,
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "payload": "object"
+      },
+      "status": "partial",
+      "limitations": "Resource maps and correlation supported; resource file copying/embedding into native exports not implemented.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#setresources",
+      "fixtures": [
+        "pi-host.setResources.Keypad",
+        "pi-host.setResources.Encoder",
+        "pi-host.setResources.Neo",
+        "pi-host.setResources.MultiAction",
+        "pi-host.setResources.invalid",
+        "pi-host.setResources.before-version",
+        "pi-host.setResources.neo-before-7.6"
+      ]
+    },
+    {
+      "id": "pi-host.setSettings",
+      "event": "setSettings",
+      "channel": "pi->host",
+      "direction": "pi->host",
+      "minVersion": null,
+      "minVersionNote": "Present in the 6.0 baseline; original introduction not asserted.",
+      "removedVersion": null,
+      "deprecatedVersion": null,
+      "controllers": [
+        "Keypad",
+        "Encoder",
+        "Neo",
+        "MultiAction"
+      ],
+      "required": {
+        "event": "string",
+        "context": "string",
+        "action": "string",
+        "payload": "object"
+      },
+      "status": "implemented-needs-hardware",
+      "limitations": "Core behavior implemented and fixture-tested; hardware/official-host equivalence unverified.",
+      "hardwareValidation": "unverified",
+      "source": "https://docs.elgato.com/streamdeck/sdk/references/websocket/ui/#setsettings",
+      "fixtures": [
+        "pi-host.setSettings.Keypad",
+        "pi-host.setSettings.Encoder",
+        "pi-host.setSettings.Neo",
+        "pi-host.setSettings.MultiAction",
+        "pi-host.setSettings.invalid",
+        "pi-host.setSettings.neo-before-7.6"
+      ]
+    }
+  ]
+}

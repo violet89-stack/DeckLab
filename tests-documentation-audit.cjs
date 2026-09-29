@@ -1,0 +1,43 @@
+// SPDX-License-Identifier: MPL-2.0
+const {chromium,launchOptions,artifactDir,isInside}=require('./scripts/test-support.cjs');const fs=require('fs'),path=require('path'),assert=require('assert');
+(async()=>{const browser=await chromium.launch(launchOptions());const page=await browser.newPage({viewport:{width:1440,height:1000}});const errors=[];page.on('pageerror',e=>errors.push(e.stack));
+const root=__dirname;
+await page.route('http://decklab.test/**',async r=>{const p=decodeURIComponent(new URL(r.request().url()).pathname);const f=path.resolve(root,'.'+(p==='/'?'/index.html':p));if(!isInside(root,f)||!fs.existsSync(f)||fs.statSync(f).isDirectory())return r.fulfill({status:404,body:'Not found'});const mime={'.js':'application/javascript','.css':'text/css','.html':'text/html','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.jpg':'image/jpeg','.gif':'image/gif'}[path.extname(f)]||'application/octet-stream';await r.fulfill({body:fs.readFileSync(f),contentType:mime});});
+await page.addInitScript(()=>{if(window===window.top)localStorage.setItem('decklab.onboarding.v10','complete')});
+await page.goto('http://decklab.test/',{waitUntil:'load'});await page.evaluate(()=>{switchMode('profile');});
+
+await page.waitForTimeout(300);
+await page.evaluate(async()=>{await loadSamplePlugin();DeckLabUX11.selectStudioDevice('plus');await buildProfileDemo();DeckLabUX11.goStudio('build');});
+const results=await page.evaluate(async()=>{
+ const results=[];
+ const record=(id,expected,observed,pass)=>results.push({id,expected,observed,status:pass?'pass':'gap'});
+ const encoder=profileState.placements.find(p=>p.kind==='action'&&p.controller==='Encoder');
+ const action=profileActionFor(encoder);
+ const alternate={id:'audit-alternate',controller:'Encoder',items:[{key:'audit',type:'text',rect:[0,0,200,30],value:'alternate'}]};
+ pluginState.layouts.push({path:'audit-alternate.json',layout:alternate});
+ await handleLivePluginMessage({event:'setFeedbackLayout',context:encoder.context,payload:{layout:'audit-alternate.json'}});
+ record('layout-request','audit-alternate',encoder.layout?.id,encoder.layout?.id==='audit-alternate');
+ const key=profileState.placements.find(p=>p.kind==='action'&&p.controller==='Keypad');
+ profileActionFor(key).States=[{Title:'state zero'},{Title:'state one'}];
+ key.state=0;key.title='state zero';
+ await handleLivePluginMessage({event:'setTitle',context:key.context,payload:{title:'state one',state:1,target:0}});
+ record('inactive-state-title','state zero',key.title,key.title==='state zero');
+ profileState.globalSettings={auditCanary:'synthetic-only'};
+ const exported=profileSerializableData();
+ record('global-export-policy','Global settings excluded from ordinary profile export',!!exported.globalSettings?.auditCanary,!exported.globalSettings?.auditCanary);
+ action.VisibleInActionsList=false;action.Name='AUDIT HIDDEN ACTION';renderProfileActionLibrary();
+ const visible=[...document.querySelectorAll('.builder-action-card')].some(n=>n.textContent.includes('AUDIT HIDDEN ACTION'));
+ record('hidden-catalogue-action',false,visible,!visible);
+ const info=profileInfoObject();
+ record('pi-hover-colour','string',typeof info.colors.buttonMouseOverBackgroundColor,typeof info.colors.buttonMouseOverBackgroundColor==='string');
+ DeckLabProtocolRuntime.engine.trace=[];DeckLabProtocolRuntime.inject('systemDidWakeUp');
+ const wakeEvents=DeckLabProtocolRuntime.engine.trace.filter(t=>t.channel==='host->plugin').map(t=>t.packet.event);
+ record('wake-lifecycle','Visible action willAppear plus systemDidWakeUp',wakeEvents,wakeEvents.includes('willAppear')&&wakeEvents.includes('systemDidWakeUp'));
+ return results;
+});
+const report={date:new Date().toISOString(),build:fs.readFileSync(path.join(__dirname,'BUILD.txt'),'utf8').trim(),scope:'Browser adapter audit probes; synthetic data; no physical hardware',results,pageErrors:errors};
+fs.writeFileSync(path.join(process.env.AUDIT_OUTPUT||artifactDir,'audit-probe-results.json'),JSON.stringify(report,null,2));
+console.log(JSON.stringify(report,null,2));await browser.close();
+if(errors.length)process.exitCode=2;
+else if(results.some(r=>r.status==='gap')&&!process.argv.includes('--report-only'))process.exitCode=1;
+})().catch(e=>{console.error(e);process.exit(2)});
