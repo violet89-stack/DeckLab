@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "UUID": "com.decklab.example",
+  "Name": "DeckLab Example Plugin",
+  "Description": "Static example package for DeckLab 0.3 import testing.",
+  "Author": "DeckLab",
+  "Version": "0.3.0.0",
+  "SDKVersion": 3,
+  "CodePath": "bin/plugin.js",
+  "Icon": "assets/plugin",
+  "Software": { "MinimumVersion": "7.6" },
+  "OS": [
+    { "Platform": "windows", "MinimumVersion": "11" },
+    { "Platform": "mac", "MinimumVersion": "13" }
+  ],
+  "Actions": [
+    {
+      "Name": "RGB Toggle",
+      "UUID": "com.decklab.example.rgb-toggle",
+      "Icon": "assets/toggle",
+      "Controllers": ["Keypad"],
+      "PropertyInspectorPath": "ui/toggle.html",
+      "States": [
+        { "Image": "assets/toggle-off", "Title": "OFF" },
+        { "Image": "assets/toggle-on", "Title": "ON" }
+      ]
+    },
+    {
+      "Name": "CPU Monitor",
+      "UUID": "com.decklab.example.cpu-monitor",
+      "Icon": "assets/cpu",
+      "Controllers": ["Keypad", "Encoder"],
+      "Encoder": {
+        "Icon": "assets/cpu",
+        "layout": "layouts/cpu.json",
+        "TriggerDescription": {
+          "Rotate": "Adjust threshold",
+          "Push": "Reset peak"
+        }
+      },
+      "States": [
+        { "Image": "assets/cpu" }
+      ]
+    },
+    {
+      "Name": "Status Infobar",
+      "UUID": "com.decklab.example.status-infobar",
+      "Icon": "assets/status",
+      "Controllers": ["Neo"],
+      "States": [
+        { "Image": "assets/status" }
+      ]
+    }
+  ]
+}
