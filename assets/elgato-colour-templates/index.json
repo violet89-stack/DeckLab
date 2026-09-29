@@ -1,0 +1,701 @@
+{
+  "source": "https://www.figma.com/community/file/1315040482142393672/stream-deck-templates",
+  "creator": "Elgato and Will Johnson",
+  "archive": "Stream Deck Template Color.zip",
+  "archiveSha256": "1171c5b240ac068638a65920a5e932b152eed78ab06f74ad3e5480a4eec61df7",
+  "license": "CC-BY-4.0",
+  "geometry": {
+    "columnWidth": 896,
+    "key": [
+      48,
+      48,
+      144,
+      144
+    ],
+    "segment": [
+      48,
+      240,
+      200,
+      100
+    ],
+    "strips": [
+      [
+        48,
+        240,
+        800,
+        100
+      ],
+      [
+        48,
+        388,
+        800,
+        100
+      ],
+      [
+        48,
+        536,
+        800,
+        100
+      ],
+      [
+        48,
+        684,
+        800,
+        100
+      ],
+      [
+        48,
+        832,
+        800,
+        100
+      ],
+      [
+        48,
+        980,
+        800,
+        100
+      ],
+      [
+        48,
+        1128,
+        800,
+        100
+      ],
+      [
+        48,
+        1276,
+        800,
+        100
+      ]
+    ]
+  },
+  "entries": [
+    {
+      "id": "glass-contour",
+      "style": "Glass",
+      "colour": "Contour",
+      "path": "assets/elgato-colour-templates/Glass/Contour.png",
+      "size": [
+        896,
+        1424
+      ],
+      "tones": [
+        "Standard"
+      ],
+      "swatch": "#191919",
+      "sha256": "447a5dac9ad96eedfecc085965e2ab165a92d7c25804d1fba5b15eefc7f59876"
+    },
+    {
+      "id": "glass-aurora",
+      "style": "Glass",
+      "colour": "Aurora",
+      "path": "assets/elgato-colour-templates/Glass/Aurora.png",
+      "size": [
+        1792,
+        1424
+      ],
+      "tones": [
+        "Soft",
+        "Ribbon"
+      ],
+      "swatch": "#632992",
+      "sha256": "604c46169a0b00d04879e7be513e96742e351d48e1c3fd42e6ccbbef151c76b5"
+    },
+    {
+      "id": "glass-cyan",
+      "style": "Glass",
+      "colour": "Cyan",
+      "path": "assets/elgato-colour-templates/Glass/Cyan.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#53ddff",
+      "sha256": "ce86693d94de2d9462a18af5dad09fe3fe04dcd2247f259959b74dcd4be5ec0d"
+    },
+    {
+      "id": "glass-teal",
+      "style": "Glass",
+      "colour": "Teal",
+      "path": "assets/elgato-colour-templates/Glass/Teal.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#50cec6",
+      "sha256": "003f7e6cb029d392cc64da5e25f0562b3677f72092bb5ee346bd9c2949eb0f22"
+    },
+    {
+      "id": "glass-green",
+      "style": "Glass",
+      "colour": "Green",
+      "path": "assets/elgato-colour-templates/Glass/Green.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#63ea81",
+      "sha256": "c37594d38babd4c72856f5867bf0077d56e6c82607e6070e93d2b83913f53dd4"
+    },
+    {
+      "id": "glass-orange",
+      "style": "Glass",
+      "colour": "Orange",
+      "path": "assets/elgato-colour-templates/Glass/Orange.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#fa871f",
+      "sha256": "d259fb6fd9f230f43ddad2c11666822064446a7cbedeb15d554dcb8ba75416fb"
+    },
+    {
+      "id": "glass-red",
+      "style": "Glass",
+      "colour": "Red",
+      "path": "assets/elgato-colour-templates/Glass/Red.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#ff495f",
+      "sha256": "c6dfe5e8dd6f57325659188ac69dc283a40cd1dea2d0c8b7f95f528f3149052c"
+    },
+    {
+      "id": "glass-magenta",
+      "style": "Glass",
+      "colour": "Magenta",
+      "path": "assets/elgato-colour-templates/Glass/Magenta.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#ff64d9",
+      "sha256": "fc15fb3b3da1073d7f908f9e84d3748c7860b9e49e349f1c0343919c19aaa0ed"
+    },
+    {
+      "id": "glass-purple",
+      "style": "Glass",
+      "colour": "Purple",
+      "path": "assets/elgato-colour-templates/Glass/Purple.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#ad4bfb",
+      "sha256": "051c223813400f628628fddbb952148ba789592738d730d0ffdc1a0809ad691f"
+    },
+    {
+      "id": "glass-blue",
+      "style": "Glass",
+      "colour": "Blue",
+      "path": "assets/elgato-colour-templates/Glass/Blue.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#3f6bff",
+      "sha256": "2a4f3ee1a7be06e6840701cbdbbba8aa45a9154e1f8bd6f26e6c58f13103f1ea"
+    },
+    {
+      "id": "glass-gray",
+      "style": "Glass",
+      "colour": "Gray",
+      "path": "assets/elgato-colour-templates/Glass/Gray.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#ebebeb",
+      "sha256": "f05caec7cbafaee1c46c20d83ae20454a72ffca860ab4febdc881d9493b4dfe2"
+    },
+    {
+      "id": "gradient-cyan",
+      "style": "Gradient",
+      "colour": "Cyan",
+      "path": "assets/elgato-colour-templates/Gradient/Cyan.png",
+      "size": [
+        896,
+        1424
+      ],
+      "tones": [
+        "Standard"
+      ],
+      "swatch": "#0082c2",
+      "sha256": "c696e9f6882effde80479cf09a8ec8722cc326f3b26c681b00310ccda0643ce0"
+    },
+    {
+      "id": "gradient-teal",
+      "style": "Gradient",
+      "colour": "Teal",
+      "path": "assets/elgato-colour-templates/Gradient/Teal.png",
+      "size": [
+        896,
+        1424
+      ],
+      "tones": [
+        "Standard"
+      ],
+      "swatch": "#00736b",
+      "sha256": "1ba07f89e52631de7a6153aff4dad316ce86ceeed5557e5d9868eac685ad27a0"
+    },
+    {
+      "id": "gradient-green",
+      "style": "Gradient",
+      "colour": "Green",
+      "path": "assets/elgato-colour-templates/Gradient/Green.png",
+      "size": [
+        896,
+        1424
+      ],
+      "tones": [
+        "Standard"
+      ],
+      "swatch": "#088f26",
+      "sha256": "600dc5d5c7f722db828ca2aa6d86ba3325fa5e09ae212206361ec7a02638bb21"
+    },
+    {
+      "id": "gradient-orange",
+      "style": "Gradient",
+      "colour": "Orange",
+      "path": "assets/elgato-colour-templates/Gradient/Orange.png",
+      "size": [
+        896,
+        1424
+      ],
+      "tones": [
+        "Standard"
+      ],
+      "swatch": "#9f2c00",
+      "sha256": "444cc28681607ff9325f00a10470f6c5e4b0d2818a91d28cc379bab770d39c0c"
+    },
+    {
+      "id": "gradient-red",
+      "style": "Gradient",
+      "colour": "Red",
+      "path": "assets/elgato-colour-templates/Gradient/Red.png",
+      "size": [
+        896,
+        1424
+      ],
+      "tones": [
+        "Standard"
+      ],
+      "swatch": "#a50004",
+      "sha256": "7cec0540af7a294cfcf4398f4a3ee00f97b1a16a46561d556d9e427ed3e05477"
+    },
+    {
+      "id": "gradient-magenta",
+      "style": "Gradient",
+      "colour": "Magenta",
+      "path": "assets/elgato-colour-templates/Gradient/Magenta.png",
+      "size": [
+        896,
+        1424
+      ],
+      "tones": [
+        "Standard"
+      ],
+      "swatch": "#ac097e",
+      "sha256": "def34d8db9773ba9934e76991bc7b01248050df77d2301eacb6ad3f6c68c1f93"
+    },
+    {
+      "id": "gradient-purple",
+      "style": "Gradient",
+      "colour": "Purple",
+      "path": "assets/elgato-colour-templates/Gradient/Purple.png",
+      "size": [
+        896,
+        1424
+      ],
+      "tones": [
+        "Standard"
+      ],
+      "swatch": "#5200a0",
+      "sha256": "e05641d6b022be98d6393307badfcbf33fb8ad9d1e70026efce17daf40058124"
+    },
+    {
+      "id": "gradient-blue",
+      "style": "Gradient",
+      "colour": "Blue",
+      "path": "assets/elgato-colour-templates/Gradient/Blue.png",
+      "size": [
+        896,
+        1424
+      ],
+      "tones": [
+        "Standard"
+      ],
+      "swatch": "#0010c2",
+      "sha256": "091e9b470e7c7f6351b6121d390048843f60fcdd68f1b1b1b227c511ff28bcd4"
+    },
+    {
+      "id": "gradient-gray",
+      "style": "Gradient",
+      "colour": "Gray",
+      "path": "assets/elgato-colour-templates/Gradient/Gray.png",
+      "size": [
+        896,
+        1424
+      ],
+      "tones": [
+        "Standard"
+      ],
+      "swatch": "#141414",
+      "sha256": "5ce56ae26a002dfa74d1aade3e9415d569e6eef465549f60222d15bff2951204"
+    },
+    {
+      "id": "stroke-cyan",
+      "style": "Stroke",
+      "colour": "Cyan",
+      "path": "assets/elgato-colour-templates/Stroke/Cyan.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#34befe",
+      "sha256": "6fd9bec9305728cd99e5cb01da99172a5ef2f26a9f757a44dcfbd3c4afbfa34c"
+    },
+    {
+      "id": "stroke-teal",
+      "style": "Stroke",
+      "colour": "Teal",
+      "path": "assets/elgato-colour-templates/Stroke/Teal.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#31afa7",
+      "sha256": "ada940b43ac520c2480427ee7fbe4e33d39f364b8d9fd2d7a7cca3229cdb84f6"
+    },
+    {
+      "id": "stroke-green",
+      "style": "Stroke",
+      "colour": "Green",
+      "path": "assets/elgato-colour-templates/Stroke/Green.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#44cb62",
+      "sha256": "c8385a3d40d65b80c9b230d0dabb6d30e2f5c2a9800ecc2de06839ca9ccb9315"
+    },
+    {
+      "id": "stroke-orange",
+      "style": "Stroke",
+      "colour": "Orange",
+      "path": "assets/elgato-colour-templates/Stroke/Orange.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#db6800",
+      "sha256": "d72316ce733150101db60dc01b5a52ac5aa4a595551f2832e65efda3041cbe09"
+    },
+    {
+      "id": "stroke-red",
+      "style": "Stroke",
+      "colour": "Red",
+      "path": "assets/elgato-colour-templates/Stroke/Red.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#e12a40",
+      "sha256": "73432a1b818be298282b948ffbdaac6ddac4ec74928181499845509095d2521c"
+    },
+    {
+      "id": "stroke-magenta",
+      "style": "Stroke",
+      "colour": "Magenta",
+      "path": "assets/elgato-colour-templates/Stroke/Magenta.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#e845ba",
+      "sha256": "b6cebee57e144ab9907d7828ab3778b768a972b40d6e914be22cff13f2e6e53a"
+    },
+    {
+      "id": "stroke-purple",
+      "style": "Stroke",
+      "colour": "Purple",
+      "path": "assets/elgato-colour-templates/Stroke/Blue.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#8e2cdc",
+      "sha256": "2a8ce11c18d9c22b1f10a9b9d24ab888c7a91939f7202f8e3f84c29d4e9053e5"
+    },
+    {
+      "id": "stroke-blue",
+      "style": "Stroke",
+      "colour": "Blue",
+      "path": "assets/elgato-colour-templates/Stroke/Gray.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#204cfe",
+      "sha256": "d2f543077ca588d744d64306a9ce34c54c552ca69ef7f3def912a888c100ec5d"
+    },
+    {
+      "id": "stroke-gray",
+      "style": "Stroke",
+      "colour": "Gray",
+      "path": "assets/elgato-colour-templates/Stroke/Gray-1.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#ffffff",
+      "sha256": "0525f9901cc82cdea9521bfd6448d16f94bbf15546413cc4c54b7221844ba761"
+    },
+    {
+      "id": "flat-cyan",
+      "style": "Flat",
+      "colour": "Cyan",
+      "path": "assets/elgato-colour-templates/Flat/Cyan.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#5ae4ff",
+      "sha256": "3d95790c0049b823d10910f27ebc3e305b089fcd4162cebb2e879482be8d4ffc"
+    },
+    {
+      "id": "flat-teal",
+      "style": "Flat",
+      "colour": "Teal",
+      "path": "assets/elgato-colour-templates/Flat/Teal.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#57d5cd",
+      "sha256": "d14f92b29f6e5caf4365e7da4f2a9e63e49eff8e18ad5078c98954c65de048fb"
+    },
+    {
+      "id": "flat-green",
+      "style": "Flat",
+      "colour": "Green",
+      "path": "assets/elgato-colour-templates/Flat/Green.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#6af188",
+      "sha256": "e0efb7b4d1897a1f11ff0e15ca66da46f4dd8a61e3f5ac2f82b1dd5b8a023980"
+    },
+    {
+      "id": "flat-orange",
+      "style": "Flat",
+      "colour": "Orange",
+      "path": "assets/elgato-colour-templates/Flat/Orange.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#ff8e26",
+      "sha256": "0baf1fcd7082b1d953dcf2ad9efca2082ea3ced2a737186e6536b2facf8008cb"
+    },
+    {
+      "id": "flat-red",
+      "style": "Flat",
+      "colour": "Red",
+      "path": "assets/elgato-colour-templates/Flat/Red.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#ff5066",
+      "sha256": "855b4616cbae9d8c2ca30e3755b26647a6975c7e7f0d19d2ad0f75c924b75777"
+    },
+    {
+      "id": "flat-magenta",
+      "style": "Flat",
+      "colour": "Magenta",
+      "path": "assets/elgato-colour-templates/Flat/Magenta.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#ff6be0",
+      "sha256": "39af9e92437dcd49f1aaed2b3a17cf1ccf4f0b2e7e1df9163568562dccf66d08"
+    },
+    {
+      "id": "flat-purple",
+      "style": "Flat",
+      "colour": "Purple",
+      "path": "assets/elgato-colour-templates/Flat/Purple.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#b452ff",
+      "sha256": "ffc1a8f5eb21500a67cc8e0c0c88fb42a63e1876a278800d5c342719f60a0742"
+    },
+    {
+      "id": "flat-blue",
+      "style": "Flat",
+      "colour": "Blue",
+      "path": "assets/elgato-colour-templates/Flat/Blue.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#4672ff",
+      "sha256": "ca4fe4822a586698d1549fbdb4f481baf14ac5665597f3ace537932d047b086c"
+    },
+    {
+      "id": "flat-gray",
+      "style": "Flat",
+      "colour": "Gray",
+      "path": "assets/elgato-colour-templates/Flat/Gray.png",
+      "size": [
+        2688,
+        1424
+      ],
+      "tones": [
+        "Standard",
+        "Light",
+        "Dark"
+      ],
+      "swatch": "#dbdbdb",
+      "sha256": "5cdbc1089bdea0e363eda3d3204b1844c8435832d96d1d8641fca0f8f221dcae"
+    }
+  ],
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "evidence": "assets/licence-evidence/stream-deck-templates-source.png"
+}
