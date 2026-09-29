@@ -22,4 +22,4 @@ New browser tests cover four distinct contexts, 2×2 placement coordinates, inde
 
 Physical-device packet validation remains outstanding: GALLEON uses a provisional 2×2 logical encoder-coordinate model. Short press events are emitted on release so a long hold can be reserved for dial-set switching. Full/split compositions are DeckLab preview/editor features, not a claim that every composition exports to native Stream Deck/iCUE software. SDK coverage percentages are unchanged.
 
-See RESOURCE-REVIEW-1.3.5.md for SDK and iCUE findings and source links.
+See PROTOCOL-COVERAGE.md for current SDK support and sources. iCUE widget packages remain a separate, unimplemented ecosystem.

@@ -1,61 +1,28 @@
-# Unified Device Surface — DeckLab 1.1.2-alpha.11
+# Device rendering
 
-DeckLab 1.1.0 removes workspace-owned device geometry.
+`device-surface.js` owns the shared device geometry: chassis canvas, control rectangles and responsive scaling. Build, Live Preview and compatibility thumbnails use those coordinates. `ARTWORK_CALIBRATION` records landmarks in the bundled product images; `controlRect` maps them into the device canvas. Correct positions there rather than adding workspace-specific offsets.
 
-## Why this refactor exists
+The device photograph is a presentation layer with no pointer input. Action content is inset within each LCD aperture; editable selection and hit zones sit above it. Display appearance (Original, Backlit effect, Light off) changes the preview only. Product artwork provenance and licences are in [third-party notices](THIRD-PARTY-NOTICES.md).
 
-Older builds had separate DOM/layout implementations for Device Preview, Profile Lab, and compatibility thumbnails. They shared device metadata but could still drift visually. A device correction therefore risked being fixed in one workspace and remaining wrong in another.
+## LCD surfaces
 
-1.0.6 makes `device-surface.js` the canonical source for:
+| Device | Artwork canvas | Segments / controls |
+|---|---|---|
+| Stream Deck + | 800 × 100 | Four 200 × 100 segments, left to right |
+| Stream Deck + XL | 1200 × 100 | Six 200 × 100 segments, left to right |
+| GALLEON | 400 × 200 | Four regions: 1/2 left, 3/4 right |
+| Neo | 232 × 50 SDK action canvas | One informational Infobar action |
 
-- device definitions;
-- physical/body canvas dimensions;
-- key coordinates and pitch;
-- dial coordinates;
-- Stream Deck + / + XL touchscreen coordinates;
-- Neo Infobar and Touch Point coordinates;
-- SCIMITAR, GALLEON, Pedal, and Studio hardware-specific surfaces;
-- uniform responsive scaling.
+Full-screen, vertical split, horizontal split and segment compositions are editor previews. They do not create additional physical dials or establish a native profile-export format. GALLEON has four independent action placements controlled through two dial sets; selecting an LCD region is a simulator shortcut on a non-touch screen. Exact GALLEON packet coordinates still need hardware traces.
 
-## One surface, different interaction layers
+Each dial has an independent session angle. A 15-degree visual increment per simulated tick makes movement visible; it is not a claim about physical detents. Reduced-motion preferences disable the transition while keeping position feedback.
 
-The geometry renderer creates the same surface in three modes:
+## Artwork layers
 
-- **Preview** — demo state, click/wheel interactions, animated/static visual preview.
-- **Build profile** — drag/drop slots, placement selection, Property Inspector, live action contexts.
-- **Compatibility** — read-only miniature using the same normalized coordinates.
+`studio-visuals.js` resolves placement artwork. `customVisual.background` stores the background image and its attribution; `customVisual.image` and `artworkCredit` store the foreground. State-specific overrides use `customVisual.states`. Older template-only image fields are interpreted as backgrounds when resolved and migrated on edit. DOM image layers retain transparent pixels and GIF animation; the static asset creator edits the foreground independently.
 
-The workspace is no longer allowed to decide where a control is. It only supplies the content and behavior placed into each canonical control slot.
+`display-artwork.js` uses the same two-layer representation for each page's full/split/segment LCD artwork. These page layers sit beneath action feedback and widgets. Action backgrounds and page backgrounds are separate: an opaque action image can cover page artwork.
 
-## Coordinate model
+## Validation boundaries
 
-Each device has one logical face canvas. Physical devices use millimetre-backed chassis dimensions when available. Internally calibrated control positions are stored in the same coordinate space. Virtual/mobile/display targets use a stable logical canvas.
-
-The renderer converts each control rectangle into percentages of the face canvas. The browser can therefore shrink or enlarge the whole surface uniformly without independently stretching buttons, gaps, touch displays, or dial rows.
-
-## Geometry regression contract
-
-For a given device target, Preview, Build, and Compatibility must return the same normalized control rectangles. Only presentation scale and interactivity may differ.
-
-`DeckLabSurface.snapshot(deviceKey)` exposes the canonical canvas and rectangles for regression tests.
-
-Examples of invariants:
-
-- Mini and MK.2 use the same calibrated physical key size.
-- Stream Deck + touch and dial controls stay anchored to the same face coordinates in Preview and Build.
-- Studio remains 2×16 with end encoders in every workspace.
-- SCIMITAR remains a 4×3 side Key Slider in every workspace.
-- Neo Infobar and Touch Points use one lower-row geometry everywhere.
-
-## UI simplification
-
-The top-level navigation now presents **Device Studio** instead of separate Device Preview and Profile Lab concepts. Within Device Studio:
-
-- **Preview** opens the clean interactive simulator.
-- **Build profile** opens the editing layer around the same canonical device model.
-
-The old Profile workspace is retained internally for compatibility with saved navigation/state and existing code paths, but it is no longer exposed as a separate top-level product concept.
-
-## 1.0.8 artwork layer
-
-The canonical surface now supports an optional official artwork layer. Geometry remains authoritative; artwork is a non-interactive visual layer beneath the same controls. This avoids creating a second image-specific renderer and preserves Preview/Build/compatibility consistency.
+Geometry tests compare rendered rectangles with recorded image landmarks across device colours and preview scales. Artwork tests check rendered transparency, state isolation, persistence and independent layer editing. These are specification/reference checks; no physical-device validation is claimed. See [testing](TESTING.md) and [hardware validation](HARDWARE-VALIDATION.md).

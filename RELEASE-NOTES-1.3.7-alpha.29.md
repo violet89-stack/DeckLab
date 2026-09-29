@@ -31,6 +31,6 @@ LCD clicks are a DeckLab selection shortcut. GALLEON remains modeled as a non-to
 
 All 19 automated suites pass. The new regression suite exercises all 14 physical dials and all 16 Encoder action slots across Stream Deck +, + XL, GALLEON and Studio: selection, reassignment, occupied drops, keyboard/wheel/drag operation, press feedback, visible feedback, touch-zone routing where supported, and profile reload. It also checks GALLEON region selection/long holds, full-screen source preservation, legacy segment mappings and LCD aspect/inset geometry at two zoom levels.
 
-The broader suite includes 256 protocol fixtures, 1,148 image-landmark checks, import/export, creator workflows, artwork, stable zoom, runtime layouts and the actual Python localhost HTTP/WebSocket companion. See `VERIFICATION-1.3.7.md`, `release-test-results.json` and `dial-display-test-results.json`.
+The broader suite includes 256 protocol fixtures, 1,148 image-landmark checks, import/export, creator workflows, artwork, stable zoom, runtime layouts and the actual Python localhost HTTP/WebSocket companion. See `TESTING.md` and the historical records under `verification/1.3.7/`.
 
 Physical-device validation and Windows GPU/compositor testing remain outstanding. Studio is still a modeled Bitfocus-host device, not certified Stream Deck-app compatibility. This repair does not increase SDK conformance or hardware-validation claims. Built-in widgets use simulated values; imported plugin feedback still depends on the connected plugin.

@@ -1,3 +1,7 @@
+## 1.3.10-alpha.32 — 2026-09-29
+
+Independent template backgrounds and image/icon foregrounds across keys, Neo, Encoder actions and LCD regions; legacy migration; separate removal; layered persistence and attribution; library template roles; documentation cleanup and current workflow guidance.
+
 ## 1.3.9-alpha.31 — 2026-09-30
 
 MPL-2.0 source licensing; confirmed CC BY 4.0 product/template attribution; 38 built-in colour-template sheets with 93 tone variants; native-sized key/LCD artwork, region selection, portable credits and regression coverage; 1,241 MIT-licensed Elgato icons with search, recolouring, drag placement and portable licence notices; public DeckLab repository setup.
@@ -148,7 +152,7 @@ Added Plugins workspace, read-only catalogue source adapters, cached discovery, 
 - Added calibrated key gaps and centered bezels rather than stretching key grids with `1fr`.
 - Stream Deck + and + XL touch-strip widths now follow the published 108 mm and 161 mm dimensions in physical previews.
 - Applied the same geometry model to Device Preview, Profile Lab and compatibility mini previews.
-- Added `PHYSICAL-CALIBRATION.md` documenting what is published fact versus an unverified visual estimate.
+- Added `UNIFIED-DEVICE-SURFACE.md` documenting what is published fact versus an unverified visual estimate.
 
 # DeckLab changelog
 

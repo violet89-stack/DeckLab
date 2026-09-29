@@ -7,4 +7,4 @@
 - Fixed refreshes on LCD actions without a feedback layout, title-size CSS overriding the inspector, and duplicate root-page breadcrumbs.
 - Added dial keyboard controls, visible keyboard focus and height-aware LCD typography.
 
-See REVIEW-1.2.1.md for checks and limitations. SDK coverage is unchanged from alpha.20; this release focuses on the studio workflow.
+See TESTING.md for checks and limitations. SDK coverage is unchanged from alpha.20; this release focuses on the studio workflow.

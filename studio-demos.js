@@ -6,7 +6,7 @@
  const demo=p=>profileActionFor(p)?.demo;
  const face=profileActionFace;
  profileActionFace=function(p,opts){const spec=demo(p);if(!spec||p.customVisual?.image||p.customVisual?.states||window.DeckLabCreator?.isPreview(p)||opts?.inputOnly)return face(p,opts);
-  const s=p.settings||{},value=Number(s.value)||0,active=s.active!==false,d=document.createElement('div');d.className='profile-action-face lcd-demo';d.style.setProperty('--demo-accent',spec.colour);d.title=spec.hint;
+  const s=p.settings||{},value=Number(s.value)||0,active=s.active!==false,d=document.createElement('div');d.className='profile-action-face lcd-demo';d.style.setProperty('--demo-accent',spec.colour);d.title=spec.hint;DeckLabVisuals.appendLayers(d,{background:DeckLabVisuals.visual(p).background});
   const label=document.createElement('span');label.className='lcd-demo-label';label.textContent=profileActionFor(p).Name;
   const read=document.createElement('strong');read.className='lcd-demo-value';read.textContent=spec.id==='media'?(active?'▶':'Ⅱ'):String(value)+(spec.id==='counter'?'':'%');
   const detail=document.createElement('span');detail.className='lcd-demo-detail';detail.textContent=spec.id==='media'?tracks[((value%3)+3)%3]:!active?'OFF':spec.id==='cpu'||spec.id==='memory'?'SAMPLE DATA':spec.id==='counter'?'TAP +1':'LEVEL';

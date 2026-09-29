@@ -1394,3 +1394,21 @@ button:focus-visible,.builder-action-card:focus-visible,summary:focus-visible{ou
 #templateDialog .artwork-heading button{background:#182332;border:1px solid #344254;border-radius:8px;color:#e4edf7;cursor:pointer}#templateDialog .artwork-heading button:hover{background:#23354b}
 
 #elgatoIconOptions{display:flex;align-items:end;gap:18px;margin-bottom:16px;font-size:12px}#elgatoIconOptions[hidden]{display:none}#elgatoIconOptions label{display:grid;gap:5px}#elgatoIconOptions input[type=color]{width:68px;height:35px;padding:3px}#elgatoIconOptions a{margin-left:auto;color:#92dfff;font-size:11px}.elgato-icon-card .artwork-use img{height:52px}.elgato-icon-save{position:absolute;right:4px;top:4px;width:24px;height:24px;padding:0;border-radius:6px;background:#263b50;border:1px solid #507190;color:#e4edf7}.elgato-icons-more{grid-column:1/-1}.artwork-tools>[hidden]{display:none}
+
+/* Independent artwork layers; each image keeps its alpha and animation. */
+.artwork-layer-editor{margin:12px 0;padding:10px;border:1px solid var(--line);border-radius:10px;background:#0b1018}
+.artwork-layer-label{display:block;margin-bottom:8px;font-size:11px;font-weight:600;color:var(--muted)}
+.artwork-layer-controls{display:flex;align-items:center;gap:8px;min-width:0}
+.artwork-layer-controls img{flex:0 0 42px;width:42px;height:42px;object-fit:contain;background:#05080e;border-radius:6px}
+.artwork-layer-controls img[hidden]{display:none}
+.artwork-layer-controls>button:not(.layer-remove),.artwork-layer-controls>div{flex:1;min-width:0}
+.artwork-layer-controls>div>button{width:100%}
+.artwork-layer-controls button{padding:8px;font-size:11px}
+.artwork-layer-controls .layer-remove{flex:0 0 28px;padding:5px;font-size:18px}
+.artwork-layer-controls.visual-image-row{margin:0}
+#displayArtworkPreview{width:42px;height:42px;margin:0}
+.display-art-layer>img{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.profile-action-face>.artwork-background,.display-art-layer>.artwork-background{z-index:0}
+.profile-action-face>.artwork-foreground,.display-art-layer>.artwork-foreground{z-index:1}
+
+.lcd-demo :is(.lcd-demo-label,.lcd-demo-value,.lcd-demo-detail,.lcd-demo-track){position:relative;z-index:2}

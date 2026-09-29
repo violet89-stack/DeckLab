@@ -21,4 +21,4 @@ Chromium: artwork upload, title editing, retained artwork on action reassignment
 
 ## Protocol status
 
-Read PROTOCOL-COVERAGE-AUDIT.md for code references and remaining work. Canonical contract, exhaustive fixtures, version-aware dispatch, coverage calculation and paired hardware traces remain future work. Existing event handlers and QA checks are foundations, not full conformance evidence.
+Read TESTING.md for code references and remaining work. Canonical contract, exhaustive fixtures, version-aware dispatch, coverage calculation and paired hardware traces remain future work. Existing event handlers and QA checks are foundations, not full conformance evidence.

@@ -1,4 +1,4 @@
-DECKLAB 1.3.9 COMMUNITY ALPHA — WINDOWS QUICK START
+DECKLAB 1.3.10 COMMUNITY ALPHA — WINDOWS QUICK START
 
 1. Close any earlier DeckLab PowerShell/companion window. Extract this release into a new folder.
 2. Open the extracted folder in File Explorer.
@@ -27,7 +27,7 @@ FIRST TEST
 - Try Original, Backlit effect and Light off in Display appearance.
 - Select a physical dial to change its action. On GALLEON, click a top/bottom LCD region to choose the dial action.
 - Advanced contains Test and Inspect; Reports contains protocol coverage.
-- Help should show 1.3.9 Community Alpha. Use the same localhost address/port to retain browser data.
+- Help should show 1.3.10 Community Alpha. Use the same localhost address/port to retain browser data.
 
 FOUND A BUG?
 - Take a screenshot for visual issues.

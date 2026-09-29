@@ -4,8 +4,8 @@
 (function(){
  const own=(o,k)=>Object.prototype.hasOwnProperty.call(o||{},k);
  function actionFor(i){return i===hostState?hostAction():profileActionFor(i);}
- function base(i,state){const a=actionFor(i)||{},s=a.States?.[state]||a.States?.[0]||{},n=i.nativeStates?.[state]||i.nativeStates?.[0]||{},v={...i.customVisual,...i.customVisual?.states?.[state]};const ref=s.Image||a.Icon||null;
-  return {title:v.title??n.Title??s.Title??'',image:v.image||n._image||pluginAssetUrl(ref)||null,imageRef:ref};
+ function base(i,state){const a=actionFor(i)||{},s=a.States?.[state]||a.States?.[0]||{},n=i.nativeStates?.[state]||i.nativeStates?.[0]||{},v=window.DeckLabVisuals?DeckLabVisuals.visual({...i,state}):{...i.customVisual,...i.customVisual?.states?.[state]};const ref=s.Image||a.Icon||null;
+  return {title:v.title??n.Title??s.Title??'',image:own(v,'image')?v.image:n._image||pluginAssetUrl(ref)||null,imageRef:ref};
  }
  function init(i){if(i.runtimeVisuals)return;const count=Math.max(1,actionFor(i)?.States?.length||1);i.runtimeVisuals={hardware:{},software:{},base:{}};for(let n=0;n<count;n++)i.runtimeVisuals.base[n]=base(i,n);const s=Number(i.state)||0;i.runtimeVisuals.base[s]={...i.runtimeVisuals.base[s],title:i.title??'',image:i.image??null,imageRef:i.imageRef??null};}
  function resolve(i,target='hardware'){if(!i.runtimeVisuals)return i;const s=Number(i.state)||0,o=i.runtimeVisuals[target]?.[s]||{};return {...i,...i.runtimeVisuals.base[s],...o};}

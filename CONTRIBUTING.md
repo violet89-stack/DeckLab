@@ -42,4 +42,4 @@ Code contributions are welcome under MPL-2.0. By submitting a contribution, you 
 
 ## Run checks locally
 
-Use Node.js 22+ and Python 3.10+. Run `npm ci --ignore-scripts`, `npx playwright install chromium`, `npm run check:release`, then `npm test`. Logs and screenshots go to `test-results/`. See TESTING.md for groups and environment overrides. CI covers Windows/Linux once the workflow has run in the repository. Do not commit generated logs, personal profiles or imported third-party plugins.
+Use Node.js 22+ and Python 3.10+. Run `npm ci --ignore-scripts`, `npx playwright install chromium`, `npm run check:release`, then `npm test`. Logs and screenshots go to `test-results/`. See TESTING.md for groups and environment overrides. CI runs on Windows and Linux; check the results for your commit. Do not commit generated logs, personal profiles or imported third-party plugins.

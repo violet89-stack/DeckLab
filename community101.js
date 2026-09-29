@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MPL-2.0
-/* ----------------------------- DECKLAB 1.3.9 COMMUNITY ALPHA ----------------------------- */
+/* ----------------------------- DECKLAB 1.3.10 COMMUNITY ALPHA ----------------------------- */
 
-const COMMUNITY_VERSION = '1.3.9-alpha.31';
-const COMMUNITY_BUILD = '2026.09.30-colour-templates';
+const COMMUNITY_VERSION = '1.3.10-alpha.32';
+const COMMUNITY_BUILD = '2026.09.29-artwork-layers';
 const COMMUNITY_NOTICE_KEY = 'decklab.communityAlphaNotice.v101';
 let communityConfig = {
   version: COMMUNITY_VERSION,
@@ -270,6 +270,6 @@ try{
   communityLoadConfig();
   communityAlphaFirstRun();
   // Update release-visible labels that intentionally do not affect 1.0 schema versions.
-  document.querySelectorAll('.tiny-label').forEach(el=>{if(el.textContent.trim()==='DECKLAB 1.0')el.textContent='DECKLAB 1.3.9 COMMUNITY ALPHA';});
-  if(document.title.includes('DeckLab 1.0'))document.title=document.title.replace('DeckLab 1.0','DeckLab 1.3.9 Community Alpha');
+  document.querySelectorAll('.tiny-label').forEach(el=>{if(el.textContent.trim()==='DECKLAB 1.0')el.textContent='DECKLAB 1.3.10 COMMUNITY ALPHA';});
+  if(document.title.includes('DeckLab 1.0'))document.title=document.title.replace('DeckLab 1.0','DeckLab 1.3.10 Community Alpha');
 })();
