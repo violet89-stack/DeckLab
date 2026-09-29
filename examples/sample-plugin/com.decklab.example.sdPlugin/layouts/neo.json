@@ -1,0 +1,10 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/layout.json",
+  "id": "decklab.example.neo",
+  "controller": "Neo",
+  "items": [
+    { "type": "pixmap", "key": "leading", "rect": [8, 11, 28, 28], "value": "../assets/status.svg", "zOrder": 1 },
+    { "type": "text", "key": "title", "rect": [43, 6, 181, 18], "value": "SYSTEM ONLINE", "alignment": "left", "color": "#ffffff", "font": { "size": 13, "weight": 800 }, "zOrder": 1 },
+    { "type": "text", "key": "status", "rect": [43, 26, 181, 16], "value": "CPU 42% · GPU 36%", "alignment": "left", "color": "#8fe9ff", "font": { "size": 10, "weight": 600 }, "zOrder": 1 }
+  ]
+}
