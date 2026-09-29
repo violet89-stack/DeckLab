@@ -1,0 +1,84 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "SDKVersion": 3,
+  "Author": "DeckLab",
+  "Name": "DeckLab Live Demo",
+  "UUID": "com.decklab.hostdemo",
+  "Version": "1.0.0.0",
+  "Description": "DeckLab 1.0 safe external WebSocket integration demo.",
+  "CodePath": "bin/plugin.js",
+  "Nodejs": {
+    "Version": "20"
+  },
+  "Software": {
+    "MinimumVersion": "7.6"
+  },
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    },
+    {
+      "Platform": "mac",
+      "MinimumVersion": "13"
+    }
+  ],
+  "Icon": "images/action",
+  "Actions": [
+    {
+      "Name": "Host Toggle",
+      "UUID": "com.decklab.hostdemo.toggle",
+      "Icon": "images/action",
+      "PropertyInspectorPath": "pi/index.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "images/action.svg",
+          "Title": "READY"
+        },
+        {
+          "Image": "images/action.svg",
+          "Title": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "Name": "Animated Manifest Key",
+      "UUID": "com.decklab.hostdemo.animated",
+      "Icon": "images/action",
+      "PropertyInspectorPath": "pi/index.html",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "images/animated.gif",
+          "Title": "GIF"
+        }
+      ]
+    },
+    {
+      "Name": "CPU Dial",
+      "UUID": "com.decklab.hostdemo.cpu",
+      "Icon": "images/action",
+      "PropertyInspectorPath": "pi/index.html",
+      "Controllers": [
+        "Encoder"
+      ],
+      "Encoder": {
+        "layout": "layouts/encoder.json"
+      }
+    },
+    {
+      "Name": "Neo Status",
+      "UUID": "com.decklab.hostdemo.neo",
+      "Icon": "images/action",
+      "PropertyInspectorPath": "pi/index.html",
+      "Controllers": [
+        "Neo"
+      ]
+    }
+  ]
+}
