@@ -1,0 +1,55 @@
+{
+  "id": "host-plugin.dialDown.before-version",
+  "kind": "rejection",
+  "version": "6.0",
+  "controller": "Encoder",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Encoder",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": false,
+      "state": 0,
+      "stateCount": 1,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "host->plugin",
+  "packet": {
+    "event": "dialDown",
+    "context": "context-fixture",
+    "action": "com.decklab.fixture.action",
+    "device": "device-fixture",
+    "payload": {
+      "controller": "Encoder",
+      "settings": {
+        "enabled": true
+      },
+      "coordinates": {
+        "column": 1,
+        "row": 0
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  },
+  "operation": "host",
+  "expectedStatus": "rejected",
+  "expectedOutputs": [],
+  "extra": {},
+  "api": "host-plugin.dialDown"
+}

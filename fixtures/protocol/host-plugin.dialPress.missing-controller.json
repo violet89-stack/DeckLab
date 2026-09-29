@@ -1,0 +1,58 @@
+{
+  "id": "host-plugin.dialPress.missing-controller",
+  "kind": "rejection",
+  "version": "6.0",
+  "controller": "Encoder",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Encoder",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": false,
+      "state": 0,
+      "stateCount": 1,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "host->plugin",
+  "packet": {
+    "event": "dialPress",
+    "context": "context-fixture",
+    "action": "com.decklab.fixture.action",
+    "device": "device-fixture",
+    "payload": {
+      "settings": {
+        "enabled": true
+      },
+      "coordinates": {
+        "column": 1,
+        "row": 0
+      },
+      "pressed": true
+    }
+  },
+  "operation": "host",
+  "expectedStatus": "rejected",
+  "expectedOutputs": [],
+  "expectedInstance": {},
+  "expectedGlobal": {
+    "theme": "dark"
+  },
+  "extra": {
+    "pressed": true
+  },
+  "api": "host-plugin.dialPress"
+}

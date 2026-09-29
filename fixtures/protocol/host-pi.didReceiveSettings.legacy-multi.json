@@ -1,0 +1,71 @@
+{
+  "id": "host-pi.didReceiveSettings.legacy-multi",
+  "kind": "behavior",
+  "version": "6.5",
+  "controller": "MultiAction",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Keypad",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": true,
+      "state": 0,
+      "stateCount": 2,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "host->pi",
+  "packet": {
+    "event": "didReceiveSettings",
+    "context": "context-fixture",
+    "action": "com.decklab.fixture.action",
+    "device": "device-fixture",
+    "payload": {
+      "controller": "Keypad",
+      "settings": {
+        "enabled": true
+      },
+      "isInMultiAction": true,
+      "state": 0
+    }
+  },
+  "operation": "build",
+  "expectedStatus": "emitted",
+  "expectedOutputs": [
+    {
+      "channel": "host->pi",
+      "packet": {
+        "event": "didReceiveSettings",
+        "context": "context-fixture",
+        "action": "com.decklab.fixture.action",
+        "device": "device-fixture",
+        "payload": {
+          "controller": "Keypad",
+          "settings": {
+            "enabled": true
+          },
+          "state": 0
+        }
+      }
+    }
+  ],
+  "expectedInstance": {},
+  "expectedGlobal": {
+    "theme": "dark"
+  },
+  "extra": {},
+  "api": "host-pi.didReceiveSettings"
+}
