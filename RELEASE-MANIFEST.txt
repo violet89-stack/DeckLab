@@ -1,5 +1,0 @@
-DeckLab 1.3.9-alpha.31
-
-The packaging command generates RELEASE-MANIFEST.json inside the release ZIP, with a SHA-256 hash for each included source file. The ZIP checksum is written alongside the archive in dist/.
-
-This is a preparation candidate; see GITHUB-PUBLISHING-CHECKLIST.md for remaining repository publication steps.
