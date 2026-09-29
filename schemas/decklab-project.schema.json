@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://decklab.local/schemas/decklab-project.schema.json",
+  "title": "DeckLab Project 1.0",
+  "type": "object",
+  "required": ["format", "version", "project", "profile", "qaHistory"],
+  "properties": {
+    "format": {"const": "DeckLabProject"},
+    "version": {"const": "1.0"},
+    "schemaVersion": {"const": "1.0"},
+    "appVersion": {"type": "string"},
+    "id": {"type": "string"},
+    "createdAt": {"type": "string"},
+    "modifiedAt": {"type": "string"},
+    "project": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {"type": "string"},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "plugin": {
+      "type": ["object", "null"],
+      "properties": {
+        "uuid": {"type": ["string", "null"]},
+        "name": {"type": ["string", "null"]},
+        "version": {"type": ["string", "null"]},
+        "sdkVersion": {},
+        "rootName": {"type": ["string", "null"]},
+        "manifest": {"type": "object"},
+        "assetsEmbedded": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "profile": {"$ref": "decklab-profile.schema.json"},
+    "qaHistory": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "at", "report"],
+        "properties": {
+          "id": {"type": "string"},
+          "at": {"type": "string"},
+          "plugin": {"type": "object"},
+          "report": {"$ref": "decklab-qa-report.schema.json"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "security": {"type": "object"}
+  },
+  "additionalProperties": true
+}

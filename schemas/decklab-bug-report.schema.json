@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://decklab.local/schemas/decklab-bug-report.schema.json",
+  "title": "DeckLab Bug Report Metadata",
+  "type": "object",
+  "required": ["format", "version", "appVersion", "build", "generatedAt", "workspace", "status", "privacy"],
+  "properties": {
+    "format": {"const": "DeckLabBugReport"},
+    "version": {"type": "string"},
+    "appVersion": {"type": "string"},
+    "build": {"type": "string"},
+    "generatedAt": {"type": "string"},
+    "workspace": {"type": ["string", "null"]},
+    "targetDevice": {"type": ["object", "null"]},
+    "plugin": {"type": ["object", "null"]},
+    "status": {"type": "object"},
+    "privacy": {"type": "string"}
+  },
+  "additionalProperties": true
+}

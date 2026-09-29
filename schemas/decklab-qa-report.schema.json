@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://decklab.local/schemas/decklab-qa-report.schema.json",
+  "title": "DeckLab QA Report 1.0",
+  "type": "object",
+  "required": ["format", "version", "generatedAt", "summary", "results"],
+  "properties": {
+    "format": {"const": "DeckLabQAReport"},
+    "version": {"type": "string"},
+    "schemaVersion": {"type": "string"},
+    "generatedAt": {"type": "string"},
+    "plugin": {"type": "object"},
+    "plan": {"type": "object"},
+    "summary": {
+      "type": "object",
+      "properties": {
+        "pass": {"type": "integer"},
+        "warn": {"type": "integer"},
+        "fail": {"type": "integer"},
+        "skip": {"type": "integer"}
+      },
+      "additionalProperties": true
+    },
+    "results": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["status", "check", "message"],
+        "properties": {
+          "status": {"enum": ["pass", "warn", "fail", "skip"]},
+          "mode": {"enum": ["STATIC", "LIVE"]},
+          "actionName": {"type": "string"},
+          "actionUuid": {"type": "string"},
+          "targetKey": {"type": "string"},
+          "targetName": {"type": "string"},
+          "check": {"type": "string"},
+          "message": {"type": "string"},
+          "evidence": {}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

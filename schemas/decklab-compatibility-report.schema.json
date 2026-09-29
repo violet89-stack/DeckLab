@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://decklab.local/schemas/decklab-compatibility-report.schema.json",
+  "title": "DeckLab Compatibility Report 1.0",
+  "type": "object",
+  "required": ["format", "version", "generatedAt", "profile", "targets"],
+  "properties": {
+    "format": {"const": "DeckLabCompatibilityReport"},
+    "version": {"type": "string"},
+    "schemaVersion": {"type": "string"},
+    "generatedAt": {"type": "string"},
+    "profile": {"type": "object"},
+    "targets": {"type": "object", "additionalProperties": {"type": "object"}}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://decklab.local/schemas/decklab-profile.schema.json",
+  "title": "DeckLab Profile 1.0",
+  "type": "object",
+  "required": [
+    "format",
+    "version",
+    "name",
+    "target",
+    "pages",
+    "placements"
+  ],
+  "properties": {
+    "format": {
+      "const": "DeckLabProfile"
+    },
+    "version": {
+      "type": "string"
+    },
+    "schemaVersion": {
+      "type": "string"
+    },
+    "deviceGeometryVersion": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "plugin": {
+      "type": "object"
+    },
+    "target": {
+      "type": "string"
+    },
+    "rows": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "cols": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "pages": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "globalSettings": {
+      "type": "object",
+      "deprecated": true,
+      "description": "Legacy input only. Current shareable exports omit this field; local autosaves migrate plugin settings to separate browser storage."
+    },
+    "placements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "controller",
+          "pageId"
+        ],
+        "properties": {
+          "kind": {
+            "enum": [
+              "action",
+              "folder",
+              "multi",
+              "multi-switch"
+            ]
+          },
+          "controller": {
+            "enum": [
+              "Keypad",
+              "Encoder",
+              "Neo"
+            ]
+          },
+          "pageId": {
+            "type": "string"
+          },
+          "column": {
+            "type": "number"
+          },
+          "row": {
+            "type": "number"
+          },
+          "actionUuid": {
+            "type": "string"
+          },
+          "settings": {
+            "type": "object"
+          },
+          "state": {
+            "type": "number"
+          },
+          "sequences": {
+            "type": "object"
+          },
+          "previewLayout": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "description": "User-designed feedback layout for DeckLab preview."
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
