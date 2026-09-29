@@ -1,0 +1,59 @@
+{
+  "id": "plugin-host.sendToPropertyInspector.Encoder",
+  "kind": "behavior",
+  "version": "7.6",
+  "controller": "Encoder",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Encoder",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": false,
+      "state": 0,
+      "stateCount": 1,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "plugin->host",
+  "packet": {
+    "event": "sendToPropertyInspector",
+    "context": "context-fixture",
+    "action": "com.decklab.fixture.action",
+    "payload": {
+      "text": "hello"
+    }
+  },
+  "operation": "dispatch",
+  "expectedStatus": "handled",
+  "expectedOutputs": [
+    {
+      "channel": "host->pi",
+      "packet": {
+        "event": "sendToPropertyInspector",
+        "context": "context-fixture",
+        "action": "com.decklab.fixture.action",
+        "payload": {
+          "text": "hello"
+        }
+      }
+    }
+  ],
+  "expectedInstance": {},
+  "expectedGlobal": {
+    "theme": "dark"
+  },
+  "api": "plugin-host.sendToPropertyInspector"
+}

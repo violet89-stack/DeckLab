@@ -1,0 +1,48 @@
+{
+  "id": "plugin-host.setImage.wrong-controller",
+  "kind": "rejection",
+  "version": "7.6",
+  "controller": "Keypad",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Encoder",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": false,
+      "state": 0,
+      "stateCount": 2,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "plugin->host",
+  "packet": {
+    "event": "setImage",
+    "context": "context-fixture",
+    "payload": {
+      "image": "data:image/png;base64,iVBORw0KGgo=",
+      "state": 1,
+      "target": 0
+    }
+  },
+  "operation": "dispatch",
+  "expectedStatus": "rejected",
+  "expectedOutputs": [],
+  "expectedInstance": {},
+  "expectedGlobal": {
+    "theme": "dark"
+  },
+  "api": "plugin-host.setImage"
+}

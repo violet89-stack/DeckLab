@@ -1,0 +1,51 @@
+{
+  "id": "plugin-host.openUrl.None",
+  "kind": "schema",
+  "version": "7.6",
+  "controller": "None",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Keypad",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": false,
+      "state": 0,
+      "stateCount": 2,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "plugin->host",
+  "packet": {
+    "event": "openUrl",
+    "payload": {
+      "url": "https://example.com/"
+    }
+  },
+  "operation": "dispatch",
+  "expectedStatus": "simulated",
+  "expectedOutputs": [],
+  "expectedInstance": {},
+  "expectedGlobal": {
+    "theme": "dark"
+  },
+  "expectedLog": {
+    "event": "openUrl",
+    "payload": {
+      "url": "https://example.com/"
+    }
+  },
+  "api": "plugin-host.openUrl"
+}

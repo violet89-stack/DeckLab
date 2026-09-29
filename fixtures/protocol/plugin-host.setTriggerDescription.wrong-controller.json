@@ -1,0 +1,52 @@
+{
+  "id": "plugin-host.setTriggerDescription.wrong-controller",
+  "kind": "rejection",
+  "version": "7.6",
+  "controller": "Encoder",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Keypad",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": false,
+      "state": 0,
+      "stateCount": 1,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "plugin->host",
+  "packet": {
+    "event": "setTriggerDescription",
+    "context": "context-fixture",
+    "payload": {
+      "push": "Mute",
+      "rotate": "Volume"
+    }
+  },
+  "operation": "dispatch",
+  "expectedStatus": "rejected",
+  "expectedOutputs": [],
+  "expectedInstance": {
+    "triggerDescription": {
+      "push": "Mute",
+      "rotate": "Volume"
+    }
+  },
+  "expectedGlobal": {
+    "theme": "dark"
+  },
+  "api": "plugin-host.setTriggerDescription"
+}

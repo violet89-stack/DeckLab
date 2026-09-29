@@ -1,0 +1,46 @@
+{
+  "id": "plugin-host.setFeedbackLayout.Neo",
+  "kind": "schema",
+  "version": "7.6",
+  "controller": "Neo",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Neo",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": false,
+      "state": 0,
+      "stateCount": 1,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "plugin->host",
+  "packet": {
+    "event": "setFeedbackLayout",
+    "context": "context-fixture",
+    "payload": {
+      "layout": "$B1"
+    }
+  },
+  "operation": "dispatch",
+  "expectedStatus": "adapter",
+  "expectedOutputs": [],
+  "expectedInstance": {},
+  "expectedGlobal": {
+    "theme": "dark"
+  },
+  "api": "plugin-host.setFeedbackLayout"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "plugin-host.setFeedback.invalid",
+  "kind": "rejection",
+  "version": "7.6",
+  "controller": "Neo",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Neo",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": false,
+      "state": 0,
+      "stateCount": 1,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "plugin->host",
+  "packet": {
+    "event": "setFeedback"
+  },
+  "operation": "dispatch",
+  "expectedStatus": "rejected",
+  "expectedOutputs": [],
+  "expectedGlobal": {
+    "theme": "dark"
+  },
+  "api": "plugin-host.setFeedback"
+}

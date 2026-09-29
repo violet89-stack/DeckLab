@@ -1,0 +1,44 @@
+{
+  "id": "plugin-host.getResources.neo-before-7.6",
+  "kind": "rejection",
+  "version": "7.1",
+  "controller": "Neo",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Neo",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": false,
+      "state": 0,
+      "stateCount": 1,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "plugin->host",
+  "packet": {
+    "event": "getResources",
+    "context": "context-fixture",
+    "id": "request-42"
+  },
+  "operation": "dispatch",
+  "expectedStatus": "rejected",
+  "expectedOutputs": [],
+  "expectedInstance": {},
+  "expectedGlobal": {
+    "theme": "dark"
+  },
+  "api": "plugin-host.getResources"
+}

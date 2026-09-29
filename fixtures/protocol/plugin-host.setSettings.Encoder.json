@@ -1,0 +1,71 @@
+{
+  "id": "plugin-host.setSettings.Encoder",
+  "kind": "behavior",
+  "version": "7.6",
+  "controller": "Encoder",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Encoder",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": false,
+      "state": 0,
+      "stateCount": 1,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "plugin->host",
+  "packet": {
+    "event": "setSettings",
+    "context": "context-fixture",
+    "payload": {
+      "value": 42
+    }
+  },
+  "operation": "dispatch",
+  "expectedStatus": "handled",
+  "expectedOutputs": [
+    {
+      "channel": "host->pi",
+      "packet": {
+        "event": "didReceiveSettings",
+        "action": "com.decklab.fixture.action",
+        "context": "context-fixture",
+        "device": "device-fixture",
+        "payload": {
+          "controller": "Encoder",
+          "settings": {
+            "value": 42
+          },
+          "coordinates": {
+            "column": 1,
+            "row": 0
+          },
+          "isInMultiAction": false
+        }
+      }
+    }
+  ],
+  "expectedInstance": {
+    "settings": {
+      "value": 42
+    }
+  },
+  "expectedGlobal": {
+    "theme": "dark"
+  },
+  "api": "plugin-host.setSettings"
+}

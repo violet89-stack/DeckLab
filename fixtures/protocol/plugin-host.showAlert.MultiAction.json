@@ -1,0 +1,43 @@
+{
+  "id": "plugin-host.showAlert.MultiAction",
+  "kind": "schema",
+  "version": "7.6",
+  "controller": "MultiAction",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Keypad",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": true,
+      "state": 0,
+      "stateCount": 2,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "plugin->host",
+  "packet": {
+    "event": "showAlert",
+    "context": "context-fixture"
+  },
+  "operation": "dispatch",
+  "expectedStatus": "adapter",
+  "expectedOutputs": [],
+  "expectedInstance": {},
+  "expectedGlobal": {
+    "theme": "dark"
+  },
+  "api": "plugin-host.showAlert"
+}

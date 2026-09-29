@@ -1,0 +1,44 @@
+{
+  "id": "plugin-host.registerPlugin.None",
+  "kind": "behavior",
+  "version": "7.6",
+  "controller": "None",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Keypad",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": false,
+      "state": 0,
+      "stateCount": 2,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "plugin->host",
+  "packet": {
+    "event": "registerPlugin",
+    "uuid": "registration-fixture"
+  },
+  "operation": "dispatch",
+  "expectedStatus": "handled",
+  "expectedOutputs": [],
+  "expectedInstance": {},
+  "expectedGlobal": {
+    "theme": "dark"
+  },
+  "expectedRegistration": "registration-fixture",
+  "api": "plugin-host.registerPlugin"
+}
