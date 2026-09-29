@@ -1,0 +1,1 @@
+PASS artwork layers: rendered transparency, both picker orders, separate removal, Undo/Redo, legacy migration, A/B state isolation, library roles, creator, portable dual attribution, key/Encoder/Neo and full/split/segment LCD persistence.
