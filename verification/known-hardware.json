@@ -1,0 +1,96 @@
+{
+  "format": "DeckLabHardwareVerification",
+  "version": "1.0",
+  "updated": "2026-09-28",
+  "meaning": {
+    "spec-model": "The DeckLab model is based on published device/SDK information. This is not a claim that physical hardware has been compared.",
+    "community-hardware-verified": "Reserved for a future status supported by documented physical-device comparison evidence.",
+    "separate-host": "The target does not use the normal Stream Deck app host model in DeckLab.",
+    "spec-calibrated-preview": "Chassis proportions are anchored to published dimensions; key-cap physical size remains visually calibrated and is not yet physically measured.",
+    "reference-image-calibrated-preview": "Hardware type and control arrangement are based on official/spec information and product reference imagery; exact shell geometry remains visually calibrated until physical-device comparison.",
+    "official-reference-calibrated-preview": "Control placement is calibrated from official Elgato product renders/artwork guidance; source images are not redistributed. Physical-device comparison is still pending."
+  },
+  "devices": {
+    "standard": {
+      "status": "spec-model",
+      "communityHardwareVerified": false,
+      "physicalPreview": "official-reference-calibrated-preview",
+      "officialReferenceCalibrated": true
+    },
+    "scissor": {
+      "status": "spec-model",
+      "communityHardwareVerified": false,
+      "physicalPreview": "spec-calibrated-preview"
+    },
+    "mini": {
+      "status": "spec-model",
+      "communityHardwareVerified": false,
+      "physicalPreview": "official-reference-calibrated-preview",
+      "officialReferenceCalibrated": true
+    },
+    "xl": {
+      "status": "spec-model",
+      "communityHardwareVerified": false,
+      "physicalPreview": "official-reference-calibrated-preview",
+      "officialReferenceCalibrated": true
+    },
+    "plus": {
+      "status": "spec-model",
+      "communityHardwareVerified": false,
+      "physicalPreview": "official-reference-calibrated-preview",
+      "officialReferenceCalibrated": true
+    },
+    "neo": {
+      "status": "spec-model",
+      "communityHardwareVerified": false,
+      "physicalPreview": "official-reference-calibrated-preview",
+      "officialReferenceCalibrated": true
+    },
+    "galleon": {
+      "status": "spec-model",
+      "communityHardwareVerified": false,
+      "experimental": true,
+      "physicalPreview": "official-reference-calibrated-preview",
+      "officialReferenceCalibrated": true
+    },
+    "plusxl": {
+      "status": "spec-model",
+      "communityHardwareVerified": false,
+      "experimental": true,
+      "physicalPreview": "official-reference-calibrated-preview",
+      "officialReferenceCalibrated": true
+    },
+    "mobile": {
+      "status": "spec-model",
+      "communityHardwareVerified": false
+    },
+    "virtual": {
+      "status": "spec-model",
+      "communityHardwareVerified": false
+    },
+    "scimitar": {
+      "status": "spec-model",
+      "communityHardwareVerified": false,
+      "experimental": true,
+      "physicalPreview": "reference-image-calibrated-preview"
+    },
+    "xeneon": {
+      "status": "spec-model",
+      "communityHardwareVerified": false,
+      "experimental": true
+    },
+    "pedal": {
+      "status": "spec-model",
+      "communityHardwareVerified": false,
+      "physicalPreview": "reference-image-calibrated-preview"
+    },
+    "studio": {
+      "status": "separate-host",
+      "communityHardwareVerified": false,
+      "experimental": true,
+      "physicalPreview": "official-reference-calibrated-preview",
+      "geometry": "19-inch 1U rackmount \u00b7 2x16 LCD keys \u00b7 2 end encoders",
+      "officialReferenceCalibrated": true
+    }
+  }
+}
