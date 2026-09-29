@@ -1,0 +1,51 @@
+{
+  "id": "pi-host.setResources.neo-before-7.6",
+  "kind": "rejection",
+  "version": "7.1",
+  "controller": "Neo",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Neo",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": false,
+      "state": 0,
+      "stateCount": 1,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "pi->host",
+  "packet": {
+    "event": "setResources",
+    "context": "context-fixture",
+    "action": "com.decklab.fixture.action",
+    "payload": {
+      "image": "example.png"
+    }
+  },
+  "operation": "dispatch",
+  "expectedStatus": "rejected",
+  "expectedOutputs": [],
+  "expectedInstance": {
+    "resources": {
+      "image": "example.png"
+    }
+  },
+  "expectedGlobal": {
+    "theme": "dark"
+  },
+  "api": "pi-host.setResources"
+}

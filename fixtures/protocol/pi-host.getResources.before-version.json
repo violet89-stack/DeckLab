@@ -1,0 +1,41 @@
+{
+  "id": "pi-host.getResources.before-version",
+  "kind": "rejection",
+  "version": "6.0",
+  "controller": "MultiAction",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Keypad",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": true,
+      "state": 0,
+      "stateCount": 2,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "pi->host",
+  "packet": {
+    "event": "getResources",
+    "context": "context-fixture",
+    "action": "com.decklab.fixture.action",
+    "id": "request-42"
+  },
+  "operation": "dispatch",
+  "expectedStatus": "rejected",
+  "expectedOutputs": [],
+  "api": "pi-host.getResources"
+}

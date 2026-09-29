@@ -1,0 +1,80 @@
+{
+  "id": "host-plugin.titleParametersDidChange.neo-before-7.6",
+  "kind": "rejection",
+  "version": "7.1",
+  "controller": "Neo",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Neo",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": false,
+      "state": 0,
+      "stateCount": 1,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "host->plugin",
+  "packet": {
+    "event": "titleParametersDidChange",
+    "context": "context-fixture",
+    "action": "com.decklab.fixture.action",
+    "device": "device-fixture",
+    "payload": {
+      "controller": "Neo",
+      "settings": {
+        "enabled": true
+      },
+      "coordinates": {
+        "column": 1,
+        "row": 0
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      },
+      "title": "Name",
+      "titleParameters": {
+        "fontFamily": "Arial",
+        "fontSize": 12,
+        "fontStyle": "Regular",
+        "fontUnderline": false,
+        "showTitle": true,
+        "titleAlignment": "bottom",
+        "titleColor": "#ffffff"
+      }
+    }
+  },
+  "operation": "host",
+  "expectedStatus": "rejected",
+  "expectedOutputs": [],
+  "expectedInstance": {},
+  "expectedGlobal": {
+    "theme": "dark"
+  },
+  "extra": {
+    "title": "Name",
+    "titleParameters": {
+      "fontFamily": "Arial",
+      "fontSize": 12,
+      "fontStyle": "Regular",
+      "fontUnderline": false,
+      "showTitle": true,
+      "titleAlignment": "bottom",
+      "titleColor": "#ffffff"
+    }
+  },
+  "api": "host-plugin.titleParametersDidChange"
+}

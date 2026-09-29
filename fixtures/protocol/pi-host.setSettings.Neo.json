@@ -1,0 +1,75 @@
+{
+  "id": "pi-host.setSettings.Neo",
+  "kind": "behavior",
+  "version": "7.6",
+  "controller": "Neo",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Neo",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": false,
+      "state": 0,
+      "stateCount": 1,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "pi->host",
+  "packet": {
+    "event": "setSettings",
+    "context": "context-fixture",
+    "action": "com.decklab.fixture.action",
+    "payload": {
+      "value": 42
+    }
+  },
+  "operation": "dispatch",
+  "expectedStatus": "handled",
+  "expectedOutputs": [
+    {
+      "channel": "host->plugin",
+      "packet": {
+        "event": "didReceiveSettings",
+        "action": "com.decklab.fixture.action",
+        "context": "context-fixture",
+        "device": "device-fixture",
+        "payload": {
+          "controller": "Neo",
+          "settings": {
+            "value": 42
+          },
+          "coordinates": {
+            "column": 1,
+            "row": 0
+          },
+          "isInMultiAction": false,
+          "resources": {
+            "sample": "fixture.txt"
+          }
+        }
+      }
+    }
+  ],
+  "expectedInstance": {
+    "settings": {
+      "value": 42
+    }
+  },
+  "expectedGlobal": {
+    "theme": "dark"
+  },
+  "api": "pi-host.setSettings"
+}

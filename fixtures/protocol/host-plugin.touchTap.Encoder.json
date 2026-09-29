@@ -1,0 +1,98 @@
+{
+  "id": "host-plugin.touchTap.Encoder",
+  "kind": "behavior",
+  "version": "7.6",
+  "controller": "Encoder",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Encoder",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": false,
+      "state": 0,
+      "stateCount": 1,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "host->plugin",
+  "packet": {
+    "event": "touchTap",
+    "context": "context-fixture",
+    "action": "com.decklab.fixture.action",
+    "device": "device-fixture",
+    "payload": {
+      "controller": "Encoder",
+      "settings": {
+        "enabled": true
+      },
+      "coordinates": {
+        "column": 1,
+        "row": 0
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      },
+      "tapPos": [
+        75,
+        20
+      ],
+      "hold": true
+    }
+  },
+  "operation": "build",
+  "expectedStatus": "emitted",
+  "expectedOutputs": [
+    {
+      "channel": "host->plugin",
+      "packet": {
+        "event": "touchTap",
+        "context": "context-fixture",
+        "action": "com.decklab.fixture.action",
+        "device": "device-fixture",
+        "payload": {
+          "controller": "Encoder",
+          "settings": {
+            "enabled": true
+          },
+          "coordinates": {
+            "column": 1,
+            "row": 0
+          },
+          "resources": {
+            "sample": "fixture.txt"
+          },
+          "tapPos": [
+            75,
+            20
+          ],
+          "hold": true
+        }
+      }
+    }
+  ],
+  "expectedInstance": {},
+  "expectedGlobal": {
+    "theme": "dark"
+  },
+  "extra": {
+    "tapPos": [
+      75,
+      20
+    ],
+    "hold": true
+  },
+  "api": "host-plugin.touchTap"
+}

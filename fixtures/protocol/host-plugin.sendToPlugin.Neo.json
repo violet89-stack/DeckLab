@@ -1,0 +1,86 @@
+{
+  "id": "host-plugin.sendToPlugin.Neo",
+  "kind": "behavior",
+  "version": "7.6",
+  "controller": "Neo",
+  "instances": [
+    {
+      "context": "context-fixture",
+      "actionUuid": "com.decklab.fixture.action",
+      "device": "device-fixture",
+      "controller": "Neo",
+      "column": 1,
+      "row": 0,
+      "isInMultiAction": false,
+      "state": 0,
+      "stateCount": 1,
+      "userDesiredState": 1,
+      "settings": {
+        "enabled": true
+      },
+      "resources": {
+        "sample": "fixture.txt"
+      }
+    }
+  ],
+  "globalSettings": {
+    "theme": "dark"
+  },
+  "piContext": "context-fixture",
+  "channel": "host->plugin",
+  "packet": {
+    "event": "sendToPlugin",
+    "context": "context-fixture",
+    "action": "com.decklab.fixture.action",
+    "payload": {
+      "controller": "Neo",
+      "settings": {
+        "enabled": true
+      },
+      "coordinates": {
+        "column": 1,
+        "row": 0
+      },
+      "isInMultiAction": false,
+      "resources": {
+        "sample": "fixture.txt"
+      },
+      "text": "hello"
+    }
+  },
+  "operation": "build",
+  "expectedStatus": "emitted",
+  "expectedOutputs": [
+    {
+      "channel": "host->plugin",
+      "packet": {
+        "event": "sendToPlugin",
+        "context": "context-fixture",
+        "action": "com.decklab.fixture.action",
+        "payload": {
+          "controller": "Neo",
+          "settings": {
+            "enabled": true
+          },
+          "coordinates": {
+            "column": 1,
+            "row": 0
+          },
+          "isInMultiAction": false,
+          "resources": {
+            "sample": "fixture.txt"
+          },
+          "text": "hello"
+        }
+      }
+    }
+  ],
+  "expectedInstance": {},
+  "expectedGlobal": {
+    "theme": "dark"
+  },
+  "extra": {
+    "text": "hello"
+  },
+  "api": "host-plugin.sendToPlugin"
+}
