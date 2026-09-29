@@ -1,6 +1,6 @@
 # DeckLab — Community Alpha
 
-**1.3.10-alpha.32 · community alpha**
+**1.3.11-alpha.33 · community alpha**
 
 DeckLab is an independent local studio for building Stream Deck profiles, previewing artwork and testing documented plugin behaviour on virtual device models. It is not affiliated with, endorsed by, or supported by Elgato or CORSAIR.
 
@@ -12,7 +12,7 @@ You need Python 3.10 or newer and a recent Chrome or Edge browser. Normal use ne
 2. Open that folder in File Explorer. Type `powershell` in its address bar and press Enter.
 3. Run `py -3 decklab_host.py` (or `python decklab_host.py`).
 4. Open **http://127.0.0.1:8975** if the browser does not open automatically.
-5. Confirm Help shows **1.3.10**. Load the demo plugin and build the demo profile.
+5. Confirm Help shows **1.3.11**. Load the demo plugin and build the demo profile.
 
 On macOS/Linux, run `python3 decklab_host.py` in a terminal. Use the same browser and localhost address/port to retain autosaved data. Export a project before switching versions; keeping an old companion running can serve the old build.
 
@@ -33,7 +33,7 @@ The + and + XL provide full-strip artwork and four/six segments respectively. GA
 
 This is a specification-based simulator, not a hardware-certified emulator. Some documented APIs remain partial or unsupported. The protocol inventory contains 55 directional entries and 256 fixtures; passing rejection tests does not imply support. No API currently has a claim of complete coverage or physical hardware validation. See [protocol coverage](PROTOCOL-COVERAGE.md) and [hardware validation](HARDWARE-VALIDATION.md).
 
-The current release separates background templates from foreground images/icons and removes obsolete internal documentation. MPL-2.0 licensing, built-in colour templates and 1,241 Elgato icons remain included. Previous connection hardening, portable tests and Windows/Linux CI configuration remain in place. See [release notes](RELEASE-NOTES-1.3.10-alpha.32.md) and [testing instructions](TESTING.md). Automated browser checks do not establish Windows GPU behaviour, physical touch timing or complete compatibility with real plugins.
+The current release adds an offline Built-in samples artwork source, starting with the animated Neo Dino Runner. Background templates and foreground images/icons remain independent. MPL-2.0 licensing, built-in colour templates and 1,241 Elgato icons remain included. Previous connection hardening, portable tests and Windows/Linux CI configuration remain in place. See [release notes](RELEASE-NOTES-1.3.11-alpha.33.md) and [testing instructions](TESTING.md). Automated browser checks do not establish Windows GPU behaviour, physical touch timing or complete compatibility with real plugins.
 
 ## Report a problem
 
@@ -53,7 +53,7 @@ DeckLab does not launch imported plugin executables. Only run code you trust; a 
 
 ## Developers and publication
 
-Run `npm ci --ignore-scripts`, `npx playwright install chromium`, then `npm test`. See [TESTING.md](TESTING.md) for prerequisites and test groups. All 23 suites passed in the local Linux browser environment, including the independent artwork-layer regressions. The [GitHub Actions workflow](https://github.com/violet89-stack/DeckLab/actions) tests Windows and Linux; consult its actual run results separately from the recorded local tests.
+Run `npm ci --ignore-scripts`, `npx playwright install chromium`, then `npm test`. See [TESTING.md](TESTING.md) for prerequisites and test groups. All 24 suites passed in the local Linux browser environment. Evidence is recorded in `verification/1.3.11/`. Windows CI has not yet run for this local preview build. The [GitHub Actions workflow](https://github.com/violet89-stack/DeckLab/actions) tests Windows and Linux; consult its actual run results separately from the recorded local tests.
 
 DeckLab is licensed under MPL-2.0. The product artwork and colour templates are separately licensed CC BY 4.0, with attribution to Elgato and Will Johnson. Elgato Icons are separately licensed MIT, copyright Corsair Memory Inc. The public repository is [violet89-stack/DeckLab](https://github.com/violet89-stack/DeckLab). See [publishing checklist](GITHUB-PUBLISHING-CHECKLIST.md), [licence status](LICENSE-NOTICE.md), [third-party notices](THIRD-PARTY-NOTICES.md) and [contributing](CONTRIBUTING.md).
 
@@ -66,3 +66,7 @@ In Build, choose **Colour templates** beside the selected action, in My artwork,
 Choose an action in **Build → Image / icon → Choose image / icon**, then select **Elgato icons** in Artwork source. Search 1,241 local icons, filter regular/filled variants, recolour monochrome icons and click to apply. Dock the library to drag icons onto keys. The **+** button saves a rendered icon to My artwork, where favourites and recent items remain available. The icon sits above the selected background template. Titles and action assignments are preserved. The MIT licence and attribution travel with saved artwork and profile exports.
 
 For detailed artwork/profile workflows see [creator tools](CREATOR-WORKFLOWS.md); for renderer architecture see [device rendering](UNIFIED-DEVICE-SURFACE.md). Older release notes are historical records, not current instructions.
+
+## Built-in sample artwork
+
+Open **Build → Icon library → Artwork source → Built-in samples**. Choose **Dock beside deck** and drag **Neo Dino Runner** onto the Neo Infobar. If an action is already selected, you can instead click the sample to apply it. The 232 × 50 GIF previews live, works offline, and travels with saved profiles. **Dock beside deck** lets you drag it onto an empty Neo Infobar; DeckLab creates an Artwork only action automatically. The **+** saves an optional copy in My artwork for favourites. For a clear full-screen preview, hide the title. No extra plugin or upload is needed.

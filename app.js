@@ -1662,7 +1662,7 @@ function hostWillAppearEvent() {
 function hostInfoObject() {
   const d=DEVICES[hostState.target] || DEVICES.standard;
   return {
-    application:{font:'Arial',language:'en',platform:/mac/i.test(navigator.platform||'')?'mac':'windows',platformVersion:navigator.platform || 'DeckLab',version:'DeckLab 1.3.10-alpha.32'},
+    application:{font:'Arial',language:'en',platform:/mac/i.test(navigator.platform||'')?'mac':'windows',platformVersion:navigator.platform || 'DeckLab',version:'DeckLab 1.3.11-alpha.33'},
     plugin:{uuid:pluginState.manifest?.UUID || 'decklab.plugin',version:pluginState.manifest?.Version || '0.0.0'},
     devices:[{id:hostState.deviceId,name:d.name,type:d.type,size:{columns:d.cols,rows:d.rows}}],
     colors:{buttonPressedBackgroundColor:'#30323d',buttonPressedBorderColor:'#64666c',buttonPressedTextColor:'#ffffff',disabledColor:'#64666c',highlightColor:'#8fe9ff',mouseDownColor:'#30323d'},
@@ -2512,7 +2512,7 @@ function profilePayload(inst,extra={}){
 function profileWillAppear(inst){return {action:inst.actionUuid,context:inst.context,device:profileState.deviceId,event:'willAppear',payload:profilePayload(inst)};}
 function profileWillDisappear(inst){return {action:inst.actionUuid,context:inst.context,device:profileState.deviceId,event:'willDisappear',payload:profilePayload(inst)};}
 function profileDeviceInfo(){const d=profileDevice();return {name:d.name,type:d.type,size:{columns:d.cols,rows:d.rows}};}
-function profileInfoObject(){const d=profileDevice();return {application:{font:'Arial',language:'en',platform:/mac/i.test(navigator.platform||'')?'mac':'windows',platformVersion:navigator.platform||'DeckLab',version:'DeckLab 1.3.10-alpha.32'},plugin:{uuid:pluginState.manifest?.UUID||'decklab.plugin',version:pluginState.manifest?.Version||'0.0.0'},devices:[{id:profileState.deviceId,name:d.name,type:d.type,size:{columns:d.cols,rows:d.rows}}],colors:{buttonPressedBackgroundColor:'#30323d',buttonPressedBorderColor:'#64666c',buttonPressedTextColor:'#ffffff',disabledColor:'#64666c',highlightColor:'#8fe9ff',mouseDownColor:'#30323d'},devicePixelRatio:window.devicePixelRatio||1};}
+function profileInfoObject(){const d=profileDevice();return {application:{font:'Arial',language:'en',platform:/mac/i.test(navigator.platform||'')?'mac':'windows',platformVersion:navigator.platform||'DeckLab',version:'DeckLab 1.3.11-alpha.33'},plugin:{uuid:pluginState.manifest?.UUID||'decklab.plugin',version:pluginState.manifest?.Version||'0.0.0'},devices:[{id:profileState.deviceId,name:d.name,type:d.type,size:{columns:d.cols,rows:d.rows}}],colors:{buttonPressedBackgroundColor:'#30323d',buttonPressedBorderColor:'#64666c',buttonPressedTextColor:'#ffffff',disabledColor:'#64666c',highlightColor:'#8fe9ff',mouseDownColor:'#30323d'},devicePixelRatio:window.devicePixelRatio||1};}
 function profileActionInfoObject(inst){return {action:inst.actionUuid,context:inst.context,device:profileState.deviceId,payload:profilePayload(inst)};}
 function profileSendDeviceConnect(){if(profileState.connected)profileOutbound('deviceDidConnect',{device:profileState.deviceId,deviceInfo:profileDeviceInfo()});}
 function profileSendVisibleAppear(reason='profile visible'){if(!profileState.connected)return;for(const inst of profileVisibleRuntimeInstances().filter(i=>!profileIsLocalAction(i))){const msg=profileWillAppear(inst);logProfile('willAppear',{reason,...deepClone(msg)});logHost('host→plugin','willAppear',msg);}}

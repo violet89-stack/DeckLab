@@ -1,6 +1,6 @@
 {
   "name": "decklab",
-  "version": "1.3.10-alpha.32",
+  "version": "1.3.11-alpha.33",
   "private": true,
   "description": "Local Stream Deck profile simulator and plugin QA studio \u2014 community alpha",
   "license": "MPL-2.0",

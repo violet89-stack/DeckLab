@@ -5,7 +5,7 @@
    status feedback and inline drag compatibility guidance. */
 (function(){
   'use strict';
-  const UX_VERSION='1.3.10-alpha.32';
+  const UX_VERSION='1.3.11-alpha.33';
   const PREF_KEY='decklab.experience.v112';
   const ZOOM_KEY='decklab.deviceZoom.v112';
   let experience='beginner';
@@ -223,8 +223,8 @@
   function boot(){
     try{experience=localStorage.getItem(PREF_KEY)||'beginner';zoom=parseFloat(localStorage.getItem(ZOOM_KEY)||'1')||1;}catch(_){ }
     setExperience(experience,{announce:false});setZoom(zoom);
-    document.title='DeckLab 1.3.10 Community Alpha — Interactive Stream Deck Simulator & Plugin QA Studio';
-    $$('.eyebrow').forEach(e=>{if(e.textContent.includes('1.1.'))e.textContent='INTERACTION & GUIDANCE · DEVICE STUDIO · STREAM DECK SIMULATOR · 1.3.10 COMMUNITY ALPHA';});
+    document.title='DeckLab 1.3.11 Community Alpha — Interactive Stream Deck Simulator & Plugin QA Studio';
+    $$('.eyebrow').forEach(e=>{if(e.textContent.includes('1.1.'))e.textContent='INTERACTION & GUIDANCE · DEVICE STUDIO · STREAM DECK SIMULATOR · 1.3.11 COMMUNITY ALPHA';});
     wire();decorateTips();refreshAll();
     refreshObserver=new MutationObserver(()=>{clearTimeout(refreshObserver._t);refreshObserver._t=setTimeout(refreshAll,35);});refreshObserver.observe(document.body,{childList:true,subtree:true});
     setInterval(refreshAll,700);

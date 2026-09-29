@@ -1412,3 +1412,8 @@ button:focus-visible,.builder-action-card:focus-visible,summary:focus-visible{ou
 .profile-action-face>.artwork-foreground,.display-art-layer>.artwork-foreground{z-index:1}
 
 .lcd-demo :is(.lcd-demo-label,.lcd-demo-value,.lcd-demo-detail,.lcd-demo-track){position:relative;z-index:2}
+
+/* Built-in sample cards preserve wide LCD previews and pixel edges. */
+.builtin-artwork-card{grid-column:span 2}.builtin-artwork-card .artwork-use{width:100%}.builtin-artwork-card .artwork-use img{width:100%;height:auto;aspect-ratio:232/50;object-fit:contain;image-rendering:pixelated;background:#080c11}.builtin-artwork-card .artwork-use small{display:block;font-size:11px;font-weight:400;color:var(--muted);margin-top:4px}
+
+#artworkSource{min-width:176px}

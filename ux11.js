@@ -5,7 +5,7 @@
 (function(){
   'use strict';
 
-  const UX_VERSION='1.3.10-alpha.32';
+  const UX_VERSION='1.3.11-alpha.33';
   const CHOSEN_KEY='decklab.studio.deviceChosen.v11';
   const INSPECT_KEY='decklab.studio.inspectTool.v11';
   const PRIMARY=['mini','standard','xl','neo','plus','plusxl','studio','galleon'];
@@ -216,8 +216,8 @@
   }
 
   function updateVersionText(){
-    document.title='DeckLab 1.3.10 Community Alpha — Interactive Stream Deck Simulator & Plugin QA Studio';
-    document.querySelectorAll('.eyebrow').forEach(e=>{if(e.textContent.includes('1.'))e.textContent='INTERACTION & GUIDANCE · DEVICE STUDIO · STREAM DECK SIMULATOR · 1.3.10 COMMUNITY ALPHA';});
+    document.title='DeckLab 1.3.11 Community Alpha — Interactive Stream Deck Simulator & Plugin QA Studio';
+    document.querySelectorAll('.eyebrow').forEach(e=>{if(e.textContent.includes('1.'))e.textContent='INTERACTION & GUIDANCE · DEVICE STUDIO · STREAM DECK SIMULATOR · 1.3.11 COMMUNITY ALPHA';});
   }
 
   function boot(){

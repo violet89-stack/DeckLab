@@ -22,9 +22,9 @@ On Linux, `npx playwright install --with-deps chromium` can also install require
 - `npm run test:core`: model, import, catalogue, protocol and Python companion checks without browser automation.
 - `npm run test:browser`: browser interaction suites, including the actual companion bridge.
 - `npm run test:security`: raw HTTP/WebSocket boundary checks plus the browser/native-plugin smoke test.
-- `npm test`: all 23 suites, sequentially, with a failure exit status if any fail.
+- `npm test`: all 24 suites, sequentially, with a failure exit status if any fail.
 
-Logs, screenshots and `release-test-results.json` go into `test-results/` (gitignored), or `DECKLAB_TEST_ARTIFACTS` if explicitly set. Each run records build, platform, Node version and per-suite exit codes. A group run is only evidence for that group. Current release evidence is under `verification/1.3.10/`; older versioned evidence is historical.
+Logs, screenshots and `release-test-results.json` go into `test-results/` (gitignored), or `DECKLAB_TEST_ARTIFACTS` if explicitly set. Each run records build, platform, Node version and per-suite exit codes. A group run is only evidence for that group. Current release evidence is under `verification/1.3.11/`; older versioned evidence is historical.
 
 The contract fixtures can be regenerated using `node scripts/build-sdk-data.cjs`. `node tests-protocol.cjs` verifies the generated data matches the canonical contract and individual fixtures. Do not increase coverage just by accepting a message name.
 
