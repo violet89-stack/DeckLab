@@ -1,0 +1,99 @@
+{
+  "build": "1.3.9-alpha.31",
+  "date": "2026-09-29T17:31:13.676Z",
+  "platform": "linux",
+  "node": "v24.19.0",
+  "results": [
+    {
+      "test": "tests-alignment-browser.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-colour-templates.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-companion-security.py",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-companion-smoke.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-creator-workflows.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-device-surface.js",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-dial-display-repair.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-display-artwork.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-display-controls.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-documentation-audit.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-elgato-icons.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-encoder-review.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-galleon-independent.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-live-demo.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-native-profile.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-plugin-catalogue.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-protocol-browser.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-protocol.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-refinement-browser.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-repaired-release.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-studio-browser.cjs",
+      "exitCode": 0
+    },
+    {
+      "test": "tests-unified-browser.cjs",
+      "exitCode": 0
+    }
+  ],
+  "passed": 22,
+  "total": 22,
+  "hardwareValidated": false
+}

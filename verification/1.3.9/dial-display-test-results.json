@@ -1,0 +1,29 @@
+{
+  "build": "1.3.9-alpha.31",
+  "date": "2026-09-29T17:30:18.594Z",
+  "checked": [
+    "plus slot 1: select, replace, rotate, press, wheel, feedback, occupied drop",
+    "plus slot 2: select, replace, rotate, press, wheel, feedback, occupied drop",
+    "plus slot 3: select, replace, rotate, press, wheel, feedback, occupied drop",
+    "plus slot 4: select, replace, rotate, press, wheel, feedback, occupied drop",
+    "plusxl slot 1: select, replace, rotate, press, wheel, feedback, occupied drop",
+    "plusxl slot 2: select, replace, rotate, press, wheel, feedback, occupied drop",
+    "plusxl slot 3: select, replace, rotate, press, wheel, feedback, occupied drop",
+    "plusxl slot 4: select, replace, rotate, press, wheel, feedback, occupied drop",
+    "plusxl slot 5: select, replace, rotate, press, wheel, feedback, occupied drop",
+    "plusxl slot 6: select, replace, rotate, press, wheel, feedback, occupied drop",
+    "galleon slot 1: select, replace, rotate, press, wheel, feedback, occupied drop",
+    "galleon slot 2: select, replace, rotate, press, wheel, feedback, occupied drop",
+    "galleon slot 3: select, replace, rotate, press, wheel, feedback, occupied drop",
+    "galleon slot 4: select, replace, rotate, press, wheel, feedback, occupied drop",
+    "studio slot 1: select, replace, rotate, press, wheel, feedback, occupied drop",
+    "studio slot 2: select, replace, rotate, press, wheel, feedback, occupied drop",
+    "GALLEON: every live region, keyboard selection, independent dial sets, long hold and pointer drag; no touchTap",
+    "Full-screen composition preserved while changing dial 4; legacy segment source cannot retarget it",
+    "plus black: inset active screen, segments, full/split modes, two zooms",
+    "plus white: inset active screen, segments, full/split modes, two zooms",
+    "plusxl black: inset active screen, segments, full/split modes, two zooms"
+  ],
+  "pageErrors": [],
+  "hardwareValidated": false
+}

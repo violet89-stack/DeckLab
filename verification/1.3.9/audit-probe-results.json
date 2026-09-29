@@ -1,0 +1,55 @@
+{
+  "date": "2026-09-29T17:30:24.821Z",
+  "build": "1.3.9-alpha.31",
+  "scope": "Browser adapter audit probes; synthetic data; no physical hardware",
+  "results": [
+    {
+      "id": "layout-request",
+      "expected": "audit-alternate",
+      "observed": "audit-alternate",
+      "status": "pass"
+    },
+    {
+      "id": "inactive-state-title",
+      "expected": "state zero",
+      "observed": "state zero",
+      "status": "pass"
+    },
+    {
+      "id": "global-export-policy",
+      "expected": "Global settings excluded from ordinary profile export",
+      "observed": false,
+      "status": "pass"
+    },
+    {
+      "id": "hidden-catalogue-action",
+      "expected": false,
+      "observed": false,
+      "status": "pass"
+    },
+    {
+      "id": "pi-hover-colour",
+      "expected": "string",
+      "observed": "string",
+      "status": "pass"
+    },
+    {
+      "id": "wake-lifecycle",
+      "expected": "Visible action willAppear plus systemDidWakeUp",
+      "observed": [
+        "willAppear",
+        "willAppear",
+        "willAppear",
+        "willAppear",
+        "willAppear",
+        "willAppear",
+        "willAppear",
+        "willAppear",
+        "willAppear",
+        "systemDidWakeUp"
+      ],
+      "status": "pass"
+    }
+  ],
+  "pageErrors": []
+}
