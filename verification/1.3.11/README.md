@@ -6,4 +6,4 @@ The new browser checks exercise sample discovery/search, an animated GIF thumbna
 
 The [picker](builtin-dino-library.png) and [Neo preview](builtin-dino-neo.png) screenshots were reviewed. Release consistency and GIF dimensions/hash are checked by the release gate. The generator reproduces the bundled GIF.
 
-Windows CI has not run for this local preview build. Existing Windows/Linux results on the previous GitHub release do not establish results for this change. Physical Neo playback remains unvalidated.
+These files record the local Linux run. See the published release notes and the [GitHub Actions run for the exact commit](https://github.com/violet89-stack/DeckLab/actions) for subsequent Windows/Linux CI evidence. Results on a previous release do not establish results for this change. Physical Neo playback remains unvalidated.
