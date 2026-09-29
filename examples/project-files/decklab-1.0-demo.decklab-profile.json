@@ -1,0 +1,126 @@
+{
+  "$schema": "https://decklab.local/schemas/decklab-profile.schema.json",
+  "format": "DeckLabProfile",
+  "version": "1.0",
+  "schemaVersion": "1.0",
+  "name": "DeckLab Profile",
+  "plugin": {
+    "uuid": "com.decklab.hostdemo",
+    "name": "DeckLab Host Demo"
+  },
+  "target": "plus",
+  "rows": null,
+  "cols": null,
+  "pages": [
+    {
+      "id": "page-1",
+      "name": "Page 1",
+      "parentPageId": null,
+      "folderId": null
+    }
+  ],
+  "globalSettings": {},
+  "placements": [
+    {
+      "kind": "action",
+      "actionUuid": "com.decklab.hostdemo.toggle",
+      "controller": "Keypad",
+      "column": 0,
+      "row": 0,
+      "pageId": "page-1",
+      "settings": {},
+      "state": 0
+    },
+    {
+      "kind": "action",
+      "actionUuid": "com.decklab.hostdemo.animated",
+      "controller": "Keypad",
+      "column": 1,
+      "row": 0,
+      "pageId": "page-1",
+      "settings": {},
+      "state": 0
+    },
+    {
+      "kind": "action",
+      "actionUuid": "com.decklab.hostdemo.toggle",
+      "controller": "Keypad",
+      "column": 2,
+      "row": 0,
+      "pageId": "page-1",
+      "settings": {},
+      "state": 0
+    },
+    {
+      "kind": "multi",
+      "id": "multi-1",
+      "title": "Go Live",
+      "state": 0,
+      "controller": "Keypad",
+      "column": 3,
+      "row": 0,
+      "pageId": "page-1",
+      "sequences": {
+        "A": [
+          {
+            "kind": "action",
+            "actionUuid": "com.decklab.hostdemo.toggle",
+            "settings": {},
+            "state": 0
+          },
+          {
+            "kind": "wait",
+            "duration": 500
+          },
+          {
+            "kind": "action",
+            "actionUuid": "com.decklab.hostdemo.animated",
+            "settings": {},
+            "state": 0
+          }
+        ],
+        "B": []
+      }
+    },
+    {
+      "kind": "action",
+      "actionUuid": "com.decklab.hostdemo.cpu",
+      "controller": "Encoder",
+      "column": 0,
+      "row": 0,
+      "pageId": "page-1",
+      "settings": {},
+      "state": 0
+    },
+    {
+      "kind": "action",
+      "actionUuid": "com.decklab.hostdemo.cpu",
+      "controller": "Encoder",
+      "column": 1,
+      "row": 0,
+      "pageId": "page-1",
+      "settings": {},
+      "state": 0
+    },
+    {
+      "kind": "action",
+      "actionUuid": "com.decklab.hostdemo.cpu",
+      "controller": "Encoder",
+      "column": 2,
+      "row": 0,
+      "pageId": "page-1",
+      "settings": {},
+      "state": 0
+    },
+    {
+      "kind": "action",
+      "actionUuid": "com.decklab.hostdemo.cpu",
+      "controller": "Encoder",
+      "column": 3,
+      "row": 0,
+      "pageId": "page-1",
+      "settings": {},
+      "state": 0
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://decklab.local/schemas/decklab-qa-report.schema.json",
+  "format": "DeckLabQAReport",
+  "version": "1.0",
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-27T17:56:31.586Z",
+  "plugin": {
+    "name": "DeckLab Host Demo",
+    "uuid": "com.decklab.hostdemo",
+    "version": "1.0.0",
+    "sdkVersion": 3
+  },
+  "plan": {
+    "scope": "selected",
+    "actions": [
+      "com.decklab.hostdemo.toggle"
+    ],
+    "targets": [
+      "standard",
+      "scissor",
+      "mini",
+      "xl",
+      "neo",
+      "plus",
+      "plusxl",
+      "mobile",
+      "virtual",
+      "scimitar",
+      "xeneon",
+      "galleon",
+      "pedal",
+      "studio"
+    ],
+    "livePluginConnected": false
+  },
+  "summary": {
+    "pass": 0,
+    "warn": 0,
+    "fail": 1,
+    "skip": 0
+  },
+  "results": [
+    {
+      "id": "qa-2",
+      "status": "fail",
+      "mode": "STATIC",
+      "actionName": "com.decklab.hostdemo",
+      "actionUuid": "com.decklab.hostdemo",
+      "targetKey": "package",
+      "targetName": "Package",
+      "check": "Manifest & package",
+      "message": "1 package error found.",
+      "evidence": {
+        "issues": [
+          {
+            "severity": "error",
+            "message": "Manifest is missing required field Name."
+          }
+        ],
+        "files": 7,
+        "layouts": 2
+      },
+      "at": "2026-09-27T17:56:30.264Z"
+    }
+  ]
+}

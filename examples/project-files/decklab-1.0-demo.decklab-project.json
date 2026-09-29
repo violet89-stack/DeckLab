@@ -1,0 +1,375 @@
+{
+  "$schema": "https://decklab.local/schemas/decklab-project.schema.json",
+  "format": "DeckLabProject",
+  "version": "1.0",
+  "schemaVersion": "1.0",
+  "appVersion": "1.0",
+  "id": "project-1790531787412",
+  "createdAt": "2026-09-27T17:56:27.412Z",
+  "modifiedAt": "2026-09-27T17:56:31.520Z",
+  "project": {
+    "name": "DeckLab 1.0 Demo Project",
+    "notes": "Release verification project"
+  },
+  "plugin": {
+    "uuid": "com.decklab.hostdemo",
+    "name": "DeckLab Host Demo",
+    "version": "1.0.0",
+    "sdkVersion": 3,
+    "rootName": "com.decklab.hostdemo.sdPlugin",
+    "manifest": {
+      "SDKVersion": 3,
+      "Author": "DeckLab",
+      "Name": "DeckLab Host Demo",
+      "UUID": "com.decklab.hostdemo",
+      "Version": "1.0.0",
+      "Software": {
+        "MinimumVersion": "7.6"
+      },
+      "Icon": "images/plugin.svg",
+      "Actions": [
+        {
+          "Name": "Host Toggle",
+          "UUID": "com.decklab.hostdemo.toggle",
+          "Icon": "images/action.svg",
+          "PropertyInspectorPath": "pi/index.html",
+          "Controllers": [
+            "Keypad"
+          ],
+          "States": [
+            {
+              "Image": "images/action.svg",
+              "Title": "READY"
+            },
+            {
+              "Image": "images/action.svg",
+              "Title": "ACTIVE"
+            }
+          ]
+        },
+        {
+          "Name": "Animated Manifest Key",
+          "UUID": "com.decklab.hostdemo.animated",
+          "Icon": "images/action.svg",
+          "PropertyInspectorPath": "pi/index.html",
+          "Controllers": [
+            "Keypad"
+          ],
+          "States": [
+            {
+              "Image": "images/animated.gif",
+              "Title": "GIF"
+            }
+          ]
+        },
+        {
+          "Name": "CPU Dial",
+          "UUID": "com.decklab.hostdemo.cpu",
+          "Icon": "images/action.svg",
+          "PropertyInspectorPath": "pi/index.html",
+          "Controllers": [
+            "Encoder"
+          ],
+          "Encoder": {
+            "layout": "layouts/encoder.json"
+          }
+        },
+        {
+          "Name": "Neo Status",
+          "UUID": "com.decklab.hostdemo.neo",
+          "Icon": "images/action.svg",
+          "PropertyInspectorPath": "pi/index.html",
+          "Controllers": [
+            "Neo"
+          ]
+        }
+      ]
+    },
+    "assetsEmbedded": false
+  },
+  "profile": {
+    "$schema": "https://decklab.local/schemas/decklab-profile.schema.json",
+    "format": "DeckLabProfile",
+    "version": "1.0",
+    "schemaVersion": "1.0",
+    "name": "DeckLab Profile",
+    "plugin": {
+      "uuid": "com.decklab.hostdemo",
+      "name": "DeckLab Host Demo"
+    },
+    "target": "plus",
+    "rows": null,
+    "cols": null,
+    "pages": [
+      {
+        "id": "page-1",
+        "name": "Page 1",
+        "parentPageId": null,
+        "folderId": null
+      }
+    ],
+    "globalSettings": {},
+    "placements": [
+      {
+        "kind": "action",
+        "actionUuid": "com.decklab.hostdemo.toggle",
+        "controller": "Keypad",
+        "column": 0,
+        "row": 0,
+        "pageId": "page-1",
+        "settings": {},
+        "state": 0
+      },
+      {
+        "kind": "action",
+        "actionUuid": "com.decklab.hostdemo.animated",
+        "controller": "Keypad",
+        "column": 1,
+        "row": 0,
+        "pageId": "page-1",
+        "settings": {},
+        "state": 0
+      },
+      {
+        "kind": "action",
+        "actionUuid": "com.decklab.hostdemo.toggle",
+        "controller": "Keypad",
+        "column": 2,
+        "row": 0,
+        "pageId": "page-1",
+        "settings": {},
+        "state": 0
+      },
+      {
+        "kind": "multi",
+        "id": "multi-1",
+        "title": "Go Live",
+        "state": 0,
+        "controller": "Keypad",
+        "column": 3,
+        "row": 0,
+        "pageId": "page-1",
+        "sequences": {
+          "A": [
+            {
+              "kind": "action",
+              "actionUuid": "com.decklab.hostdemo.toggle",
+              "settings": {},
+              "state": 0
+            },
+            {
+              "kind": "wait",
+              "duration": 500
+            },
+            {
+              "kind": "action",
+              "actionUuid": "com.decklab.hostdemo.animated",
+              "settings": {},
+              "state": 0
+            }
+          ],
+          "B": []
+        }
+      },
+      {
+        "kind": "action",
+        "actionUuid": "com.decklab.hostdemo.cpu",
+        "controller": "Encoder",
+        "column": 0,
+        "row": 0,
+        "pageId": "page-1",
+        "settings": {},
+        "state": 0
+      },
+      {
+        "kind": "action",
+        "actionUuid": "com.decklab.hostdemo.cpu",
+        "controller": "Encoder",
+        "column": 1,
+        "row": 0,
+        "pageId": "page-1",
+        "settings": {},
+        "state": 0
+      },
+      {
+        "kind": "action",
+        "actionUuid": "com.decklab.hostdemo.cpu",
+        "controller": "Encoder",
+        "column": 2,
+        "row": 0,
+        "pageId": "page-1",
+        "settings": {},
+        "state": 0
+      },
+      {
+        "kind": "action",
+        "actionUuid": "com.decklab.hostdemo.cpu",
+        "controller": "Encoder",
+        "column": 3,
+        "row": 0,
+        "pageId": "page-1",
+        "settings": {},
+        "state": 0
+      }
+    ]
+  },
+  "qaHistory": [
+    {
+      "id": "qa-run-1790531790214-2u4gz",
+      "at": "2026-09-27T17:56:30.214Z",
+      "plugin": {
+        "name": "DeckLab Host Demo",
+        "uuid": "com.decklab.hostdemo",
+        "version": "1.0.0",
+        "sdkVersion": 3
+      },
+      "report": {
+        "$schema": "https://decklab.local/schemas/decklab-qa-report.schema.json",
+        "format": "DeckLabQAReport",
+        "version": "1.0",
+        "schemaVersion": "1.0",
+        "generatedAt": "2026-09-27T17:56:30.213Z",
+        "plugin": {
+          "name": "DeckLab Host Demo",
+          "uuid": "com.decklab.hostdemo",
+          "version": "1.0.0",
+          "sdkVersion": 3
+        },
+        "plan": {
+          "scope": "selected",
+          "actions": [
+            "com.decklab.hostdemo.toggle"
+          ],
+          "targets": [
+            "standard",
+            "scissor",
+            "mini",
+            "xl",
+            "neo",
+            "plus",
+            "plusxl",
+            "mobile",
+            "virtual",
+            "scimitar",
+            "xeneon",
+            "galleon",
+            "pedal",
+            "studio"
+          ],
+          "livePluginConnected": false
+        },
+        "summary": {
+          "pass": 1,
+          "warn": 0,
+          "fail": 0,
+          "skip": 0
+        },
+        "results": [
+          {
+            "id": "qa-1",
+            "status": "pass",
+            "mode": "STATIC",
+            "actionName": "DeckLab Host Demo",
+            "actionUuid": "com.decklab.hostdemo",
+            "targetKey": "package",
+            "targetName": "Package",
+            "check": "Manifest & package",
+            "message": "Manifest and package structure passed DeckLab checks.",
+            "evidence": {
+              "issues": [
+                {
+                  "severity": "ok",
+                  "message": "No obvious manifest/resource issues found by DeckLab\u2019s local package checks."
+                }
+              ],
+              "files": 7,
+              "layouts": 2
+            },
+            "at": "2026-09-27T17:56:29.655Z"
+          }
+        ]
+      }
+    },
+    {
+      "id": "qa-run-1790531790913-vd4a4",
+      "at": "2026-09-27T17:56:30.913Z",
+      "plugin": {
+        "name": null,
+        "uuid": "com.decklab.hostdemo",
+        "version": "1.0.0",
+        "sdkVersion": 3
+      },
+      "report": {
+        "$schema": "https://decklab.local/schemas/decklab-qa-report.schema.json",
+        "format": "DeckLabQAReport",
+        "version": "1.0",
+        "schemaVersion": "1.0",
+        "generatedAt": "2026-09-27T17:56:30.913Z",
+        "plugin": {
+          "name": null,
+          "uuid": "com.decklab.hostdemo",
+          "version": "1.0.0",
+          "sdkVersion": 3
+        },
+        "plan": {
+          "scope": "selected",
+          "actions": [
+            "com.decklab.hostdemo.toggle"
+          ],
+          "targets": [
+            "standard",
+            "scissor",
+            "mini",
+            "xl",
+            "neo",
+            "plus",
+            "plusxl",
+            "mobile",
+            "virtual",
+            "scimitar",
+            "xeneon",
+            "galleon",
+            "pedal",
+            "studio"
+          ],
+          "livePluginConnected": false
+        },
+        "summary": {
+          "pass": 0,
+          "warn": 0,
+          "fail": 1,
+          "skip": 0
+        },
+        "results": [
+          {
+            "id": "qa-2",
+            "status": "fail",
+            "mode": "STATIC",
+            "actionName": "com.decklab.hostdemo",
+            "actionUuid": "com.decklab.hostdemo",
+            "targetKey": "package",
+            "targetName": "Package",
+            "check": "Manifest & package",
+            "message": "1 package error found.",
+            "evidence": {
+              "issues": [
+                {
+                  "severity": "error",
+                  "message": "Manifest is missing required field Name."
+                }
+              ],
+              "files": 7,
+              "layouts": 2
+            },
+            "at": "2026-09-27T17:56:30.264Z"
+          }
+        ]
+      }
+    }
+  ],
+  "security": {
+    "automaticProcessLaunch": false,
+    "bridge": "127.0.0.1:8975",
+    "externalPluginsRequireManualLaunch": true
+  }
+}
