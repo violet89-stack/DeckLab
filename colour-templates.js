@@ -1,0 +1,45 @@
+// SPDX-License-Identifier: MPL-2.0
+/* Elgato template sheets remain unchanged. Crop/composite only the selected artwork. */
+(function(){
+ const $=id=>document.getElementById(id),cache=new Map();let catalogue,loading,target,revision=0,output=null;
+ const rows=['Four panels','1 + 1 + 2','2 + 1 + 1','1 + 2 + 1','1 + 3','3 + 1','Two panels','One panel'];
+ function load(){return loading||=(fetch('assets/elgato-colour-templates/index.json').then(r=>{if(!r.ok)throw Error('Template catalogue unavailable.');return r.json()}).then(data=>catalogue=data).catch(e=>{loading=null;throw e}));}
+ async function sheet(entry){if(!cache.has(entry.id)){const p=new Promise((ok,no)=>{const im=new Image();im.onload=()=>ok(im);im.onerror=()=>no(Error('Template image unavailable.'));im.src=entry.path;});cache.set(entry.id,p);p.catch(()=>cache.delete(entry.id));}return cache.get(entry.id);}
+ function context(kind){const device=profileState.target,page=profilePage();if(kind==='display'){
+  const part=$('displayPart').value,spec=DeckLabDisplayArtwork.spec();if(!spec)return null;
+  let cols=device==='galleon'?2:spec.count,rows=device==='galleon'?2:1,w=cols*200,h=rows*100;
+  if(part.startsWith('segment-')){cols=rows=1;w=200;h=100;}
+  else if(part.startsWith('vertical-')){cols/=2;w/=2;}
+  else if(part.startsWith('horizontal-')){rows=Math.max(1,rows/2);h/=2;}
+  return {kind,device,page,part,w,h,cols,rows,label:$('displayPart').selectedOptions[0].textContent};
+ }
+ const p=selectedProfilePlacement(),controller=p?.controller||'Keypad',w=controller==='Neo'?232:controller==='Encoder'?200:144,h=controller==='Neo'?50:controller==='Encoder'?100:144;
+ return {kind,device,page,p,w,h,cols:1,rows:1,key:controller==='Keypad',label:p?(profileActionFor(p)?.Name||controller):'Artwork library'};
+ }
+ function valid(t){return !!t&&!window.decklabLivePreview&&t.device===profileState.target&&t.page===profilePage()&&(t.kind==='display'?t.part===$('displayPart').value:!!t.p&&profileState.placements.includes(t.p)&&selectedProfilePlacement()===t.p);}
+ function selection(){return {id:$('templateColour').value,tone:Number($('templateTone').value),layout:$('templateLayout').value};}
+ async function compose(id,tone,layout,surface){await load();const entry=catalogue.entries.find(e=>e.id===id);if(!entry)throw Error('Unknown template.');if(!Number.isInteger(tone)||tone<0||tone>=entry.tones.length)throw Error('Unknown tone.');
+  const {w,h}=surface;if(!Number.isInteger(w)||!Number.isInteger(h)||w<1||h<1||w>2400||h>800)throw Error('Unsupported artwork size.');
+  const im=await sheet(entry),c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d'),g=catalogue.geometry,offset=tone*g.columnWidth;
+  const crop=(rect,dx,dy,dw,dh)=>x.drawImage(im,rect[0]+offset,rect[1],rect[2],rect[3],dx,dy,dw,dh);
+  if(surface.key)crop(g.key,0,0,w,h);
+  else if(layout==='auto'){const cols=surface.cols||1,rs=surface.rows||1;for(let row=0;row<rs;row++)for(let col=0;col<cols;col++)crop(g.segment,col*w/cols,row*h/rs,w/cols,h/rs);}
+  else{const row=Number(layout);if(!Number.isInteger(row)||row<0||row>7)throw Error('Unknown panel layout.');crop(g.strips[row],0,0,w,h);}
+  return {data:c.toDataURL('image/png'),width:w,height:h,name:entry.style+' · '+entry.colour+' · '+entry.tones[tone],sourcePath:entry.path,recipe:{id,tone,layout,source:catalogue.source,author:catalogue.creator,license:catalogue.license,licenseUrl:catalogue.licenseUrl,changes:'Cropped, resized or tiled for the selected surface'}};
+ }
+ async function preview(){const stamp=++revision;output=null;$('templateApply').disabled=true;$('templateSave').disabled=true;$('templateStatus').textContent='Loading preview…';try{
+  const s=selection(),result=await compose(s.id,s.tone,s.layout,target);if(stamp!==revision)return;output=result;$('templatePreview').src=result.data;$('templatePreview').style.aspectRatio=result.width+'/'+result.height;$('templateSize').textContent=result.width+' × '+result.height+' px · '+target.label;$('templateStatus').textContent='';$('templateApply').disabled=!valid(target);$('templateSave').disabled=false;
+ }catch(e){if(stamp===revision)$('templateStatus').textContent=e.message;}}
+ function tones(){const entry=catalogue.entries.find(e=>e.id===$('templateColour').value),prev=$('templateTone').selectedIndex;$('templateTone').replaceChildren(...entry.tones.map((name,i)=>new Option(name,String(i))));$('templateTone').selectedIndex=Math.min(Math.max(prev,0),entry.tones.length-1);$('templateTone').disabled=entry.tones.length===1;preview();}
+ function colours(){const old=catalogue.entries.find(e=>e.id===$('templateColour').value)?.colour,entries=catalogue.entries.filter(e=>e.style===$('templateStyle').value);$('templateColour').replaceChildren(...entries.map(e=>new Option(e.colour,e.id)));const match=entries.find(e=>e.colour===old)||entries.find(e=>e.colour==='Cyan')||entries[0];$('templateColour').value=match.id;tones();}
+ async function open(kind='action'){if(window.decklabLivePreview)return;target=context(kind);if(!target)return;if($('artworkDialog').open)$('artworkDialog').close();$('templateDialog').showModal();$('templateStatus').textContent='Loading templates…';$('templateApply').disabled=$('templateSave').disabled=true;
+  try{await load();$('templateLayout').disabled=!!target.key;$('templateLayout').value='auto';colours();}catch(e){$('templateStatus').textContent=e.message;}}
+ function close(){revision++;output=null;target=null;$('templateDialog').close();}
+ function boot(){const dialog=document.createElement('dialog');dialog.id='templateDialog';dialog.setAttribute('aria-labelledby','templateHeading');dialog.innerHTML='<div class="artwork-heading"><div><h2 id="templateHeading">Colour templates</h2><p>Elgato artwork for keys and LCD surfaces.</p></div><button id="templateClose" type="button" aria-label="Close colour templates">×</button></div><div class="template-options"><label>Finish<select id="templateStyle"><option>Flat</option><option>Glass</option><option>Gradient</option><option>Stroke</option></select></label><label>Colour<select id="templateColour"></select></label><label>Tone<select id="templateTone"></select></label><label>Panels<select id="templateLayout"><option value="auto">Match selected surface</option></select></label></div><div class="template-stage"><img id="templatePreview" alt="Selected colour template preview"></div><p id="templateSize" class="hint"></p><div class="creator-actions"><button id="templateApply" class="primary" type="button">Apply artwork</button><button id="templateSave" class="secondary" type="button">Save to My artwork</button></div><p id="templateStatus" role="status" class="hint"></p><p class="hint">Changes artwork only; action assignments and titles are preserved.</p><p class="template-credit">Elgato and Will Johnson · <a href="https://www.figma.com/community/file/1315040482142393672/stream-deck-templates" target="_blank" rel="noopener">Stream Deck templates</a> · <a href="THIRD-PARTY-NOTICES.md" target="_blank" rel="noopener">Artwork notice</a></p>';document.body.append(dialog);rows.forEach((name,i)=>$('templateLayout').add(new Option(name,String(i))));
+  for(const [id,parent,before,kind] of [['openColourTemplates',$('placementVisuals'),$('openAssetCreator'),'action'],['artworkTemplates',$('artworkDialog').querySelector('.artwork-tools'),null,'action'],['displayTemplates',$('displayArtworkEditor'),$('displayImageInput').closest('label'),'display']]){const b=document.createElement('button');b.id=id;b.type='button';b.className='secondary';b.textContent='Colour templates';b.title='Choose a finish and colour for this artwork surface';b.onclick=()=>open(kind);parent.insertBefore(b,before);}
+  $('templateClose').onclick=close;dialog.addEventListener('cancel',()=>{revision++;target=null;output=null;});$('templateStyle').onchange=colours;$('templateColour').onchange=tones;$('templateTone').onchange=preview;$('templateLayout').onchange=preview;
+  $('templateApply').onclick=()=>{if(!output||!valid(target)){$('templateStatus').textContent='Selection changed. Close this picker and choose the target again.';return;}if(target.kind==='display')DeckLabDisplayArtwork.edit({image:output.data,template:output.recipe,artworkCredit:null});else DeckLabVisuals.commit(target.p,{image:output.data,template:output.recipe,artworkCredit:null});close();};
+  $('templateSave').onclick=async()=>{const item=output;if(!item)return;const button=$('templateSave');button.disabled=true;try{await DeckLabArtwork.add(item.name,item.data,{pack:'Elgato colour templates',author:catalogue.creator,license:catalogue.license+' · '+catalogue.licenseUrl+' · '+catalogue.source,sourcePath:item.sourcePath,tags:['template',...item.name.toLowerCase().split(' · ')]});$('templateStatus').textContent='Saved to My artwork.';}catch(e){$('templateStatus').textContent=e.message;}finally{button.disabled=!output;}};
+ }
+ window.DeckLabTemplates={load,compose,open};document.addEventListener('DOMContentLoaded',()=>setTimeout(boot,470));
+})();

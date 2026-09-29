@@ -1,0 +1,1113 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: MPL-2.0 -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#080a0f" />
+  <title>DeckLab 1.3.9 Community Alpha — Interactive Stream Deck Simulator & Plugin QA Studio</title>
+  <link rel="stylesheet" href="styles.css?build=1.3.9-alpha.31" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="eyebrow">INTERACTION & GUIDANCE · DEVICE STUDIO · STREAM DECK SIMULATOR · 1.3.9 COMMUNITY ALPHA</div>
+        <h1>DeckLab</h1>
+      </div>
+
+      <nav class="primary-nav" aria-label="DeckLab sections">
+        <button id="openPluginsWorkspace" class="secondary" type="button">Plugins</button>
+        <button class="shell-tab active" data-shell="project" type="button">Project</button>
+        <button class="shell-tab" data-shell="studio" type="button">Device Studio</button>
+        <button class="shell-tab" data-shell="reports" type="button">Reports</button>
+        <button class="shell-tab" data-shell="help" type="button">Help</button>
+      </nav>
+
+
+      <div class="legacy-mode-tabs hidden" aria-hidden="true">
+        <button class="mode-tab" data-mode="project" tabindex="-1"></button>
+        <button class="mode-tab" data-mode="device" tabindex="-1"></button>
+        <button class="mode-tab" data-mode="layout" tabindex="-1"></button>
+        <button class="mode-tab" data-mode="plugin" tabindex="-1"></button>
+        <button class="mode-tab" data-mode="host" tabindex="-1"></button>
+        <button class="mode-tab" data-mode="profile" tabindex="-1"></button>
+        <button class="mode-tab" data-mode="test" tabindex="-1"></button>
+      </div>
+
+      <div class="toolbar hidden studio-master-toolbar" id="studioMasterToolbar">
+        <div class="studio-mode-switch studio-mode-switch-main" aria-label="Device Studio activity">
+          <button class="studio-shell-mode" data-studio-mode="build" type="button" data-dl-tip="Arrange actions and edit their settings">Build</button>
+          <button class="studio-shell-mode active" data-studio-mode="preview" type="button" data-dl-tip="Run the current profile with editing controls hidden">Live Preview</button>
+          <button class="studio-shell-mode" data-studio-mode="test" type="button">Test</button>
+          <button class="studio-shell-mode" data-studio-mode="inspect" type="button">Inspect</button>
+        </div>
+        <button id="studioChooseDeviceBtn" class="device-choice-button" type="button"><span class="device-choice-kicker">DEVICE</span><strong id="studioDeviceLabel">Stream Deck / MK.2</strong><span>⌄</span></button>
+        <label id="studioAppearanceWrap" class="studio-appearance-control">Colour
+          <select id="studioAppearanceSelect"></select>
+        </label>
+        <label id="inspectToolWrap" class="studio-inspect-tool hidden">Inspect
+          <select id="studioInspectTool"><option value="plugin">Plugin package</option><option value="host">Runtime / protocol</option></select>
+        </label>
+        <div class="studio-zoom-control" aria-label="Device zoom">
+          <button id="studioZoomOutBtn" class="secondary compact-icon" type="button" data-dl-tip="Zoom device out · Ctrl -" aria-label="Zoom out">−</button>
+          <button id="studioFitBtn" class="secondary studio-zoom-label" type="button" data-dl-tip="Fit the selected device to the workspace · Ctrl 0"><span id="studioZoomLabel">100%</span> · Fit</button>
+          <button id="studioZoomInBtn" class="secondary compact-icon" type="button" data-dl-tip="Zoom device in · Ctrl +" aria-label="Zoom in">+</button>
+        </div>
+        <button id="studioModeHelpBtn" class="secondary compact-icon" type="button" data-dl-tip="What can I do in this mode?" aria-label="Show contextual help">?</button>
+        <span id="studioContextHint" class="toolbar-note">Click the device to interact</span>
+      </div>
+
+      <div class="toolbar" id="projectToolbar">
+        <button id="openTourBtn" class="secondary" type="button">Quick tour</button>
+        <span id="projectSaveStatusTop" class="toolbar-note">Project autosave ready</span>
+      </div>
+
+      <div class="toolbar hidden" id="deviceToolbar">
+        <div class="studio-mode-switch" aria-label="Device Studio mode"><button class="studio-mode-button active" type="button">Preview</button><button id="deviceStudioBuildBtn" class="studio-mode-button" type="button">Build profile</button></div>
+        <label>Device
+          <select id="deviceSelect"></select>
+        </label>
+        <div id="customGridControls" class="grid-controls hidden">
+          <label>Rows <input id="gridRowsInput" type="number" min="1" max="8" value="5" /></label>
+          <label>Cols <input id="gridColsInput" type="number" min="1" max="8" value="3" /></label>
+        </div>
+        <button id="resetBtn" class="secondary">Reset demo</button>
+      </div>
+
+      <div class="toolbar hidden" id="layoutToolbar">
+        <button id="previewLayoutBtn" class="primary">Preview on device</button>
+        <button id="exportLayoutBtn" class="secondary">Export layout</button>
+      </div>
+
+      <div class="toolbar hidden" id="pluginToolbar">
+        <span class="toolbar-note">Static package inspection · plugin application code is not executed</span>
+      </div>
+
+      <div class="toolbar hidden" id="hostToolbar">
+        <span id="hostToolbarStatus" class="toolbar-note">Load a plugin/action in Plugin Lab to begin</span>
+      </div>
+
+      <div class="toolbar hidden" id="profileToolbar">
+        <div class="studio-mode-switch" aria-label="Device Studio mode"><button id="deviceStudioPreviewBtn" class="studio-mode-button" type="button">Preview</button><button class="studio-mode-button active" type="button">Build profile</button></div>
+        <span id="profileToolbarStatus" class="toolbar-note">Multi-instance device profile · load a plugin in Plugin Lab</span>
+      </div>
+
+      <div class="toolbar hidden" id="testToolbar">
+        <span id="testToolbarStatus" class="toolbar-note">Automated package + SDK protocol QA · static tests work without executing plugin code</span>
+      </div>
+    </header>
+
+    <section id="projectMode" class="mode-view">
+      <main class="project-workspace">
+        <section class="project-hero">
+          <div>
+            <div class="tiny-label">DECKLAB 1.3.9 COMMUNITY ALPHA</div>
+            <h2>Design, preview and test from one device workspace</h2>
+            <p>Choose a device, then preview, build, test and inspect without bouncing between separate tools. Projects quietly keep your profile, plugin snapshot and QA history together.</p>
+          </div>
+          <div class="project-hero-actions">
+            <button id="projectNewBtn" class="secondary" type="button">New project</button>
+            <button id="projectExportBtn" class="primary" type="button">Save project file</button>
+            <label class="file-button compact-file project-import-button">Open project<input id="projectImportInput" type="file" accept="application/json,.json,.decklab-project.json" /></label>
+          </div>
+        </section>
+
+        <section class="project-grid">
+          <article class="runtime-card project-card project-identity-card">
+            <div class="runtime-card-heading">
+              <div><div class="tiny-label">PROJECT</div><h3 id="projectDashboardTitle">Untitled DeckLab Project</h3></div>
+              <span id="projectAutosaveBadge" class="live-status online">autosaved</span>
+            </div>
+            <label>Project name<input id="projectNameInput" maxlength="64" value="Untitled DeckLab Project" /></label>
+            <label>Notes<textarea id="projectNotesInput" rows="5" placeholder="What are you testing or designing?"></textarea></label>
+            <div class="project-meta-list">
+              <div><span>Last saved</span><strong id="projectLastSaved">—</strong></div>
+              <div><span>Project format</span><strong>DeckLabProject 1.0</strong></div>
+              <div><span>Security</span><strong>Safe external-plugin bridge</strong></div>
+            </div>
+          </article>
+
+          <article class="runtime-card project-card">
+            <div class="runtime-card-heading">
+              <div><div class="tiny-label">PLUGIN</div><h3 id="projectPluginName">No plugin loaded</h3></div>
+              <span id="projectPluginState" class="compat-pill partial">EMPTY</span>
+            </div>
+            <div id="projectPluginMeta" class="project-plugin-meta">Import a plugin from Device Studio → Inspect, or use the built-in demo.</div>
+            <div id="projectRelinkNotice" class="project-relink-notice hidden">This project contains a manifest snapshot, but local plugin assets are not loaded. Re-import the plugin folder in Plugin Lab to restore icons, layouts and Property Inspectors.</div>
+            <div class="project-card-actions">
+              <button id="projectOpenPluginBtn" class="secondary" type="button">Inspect plugin</button>
+              <button id="projectLoadDemoBtn" class="secondary" type="button">Load demo plugin</button>
+            </div>
+          </article>
+
+          <article class="runtime-card project-card">
+            <div class="runtime-card-heading">
+              <div><div class="tiny-label">PROFILE</div><h3 id="projectProfileName">DeckLab Profile</h3></div>
+              <span id="projectProfileTarget" class="compat-pill partial">—</span>
+            </div>
+            <div class="project-stat-grid">
+              <div><span>Placements</span><strong id="projectPlacementCount">0</strong></div>
+              <div><span>Pages</span><strong id="projectPageCount">1</strong></div>
+              <div><span>Contexts</span><strong id="projectContextCount">0</strong></div>
+            </div>
+            <div class="project-card-actions">
+              <button id="projectOpenProfileBtn" class="primary" type="button">Open Device Studio · Build</button>
+              <button id="projectBuildDemoBtn" class="secondary" type="button">Build demo profile</button>
+            </div>
+          </article>
+
+          <article class="runtime-card project-card">
+            <div class="runtime-card-heading">
+              <div><div class="tiny-label">QA</div><h3>Regression history</h3></div>
+              <span id="projectQaCountBadge" class="compat-pill partial">0 RUNS</span>
+            </div>
+            <div id="projectQaSummary" class="project-qa-summary">No QA runs have been recorded for this project yet.</div>
+            <div class="project-card-actions">
+              <button id="projectOpenQaBtn" class="secondary" type="button">Open Test Suite</button>
+              <button id="projectCompareLatestBtn" class="secondary" type="button">Compare latest runs</button>
+            </div>
+          </article>
+
+          <article class="runtime-card project-card project-schema-card">
+            <div class="runtime-card-heading">
+              <div><div class="tiny-label">FORMATS</div><h3>Portable, versioned files</h3></div>
+              <span class="compat-pill yes">1.0</span>
+            </div>
+            <p class="hint">DeckLab’s 1.0 data formats ship JSON Schemas for project, profile, compatibility and QA report files. The schemas live in the <code>schemas</code> folder and are intended to keep future releases backwards-readable.</p>
+            <div class="project-schema-list">
+              <code>DeckLabProject</code><code>DeckLabProfile</code><code>DeckLabCompatibilityReport</code><code>DeckLabQAReport</code>
+            </div>
+          </article>
+
+          <article class="runtime-card project-card project-start-card">
+            <div class="runtime-card-heading">
+              <div><div class="tiny-label">START HERE</div><h3>Suggested workflow</h3></div>
+            </div>
+            <ol class="project-workflow">
+              <li>Choose a device and stay in <strong>Device Studio</strong>.</li>
+              <li>Use <strong>Build</strong> to drag actions directly onto that device.</li>
+              <li>Switch devices or use <strong>Compare devices</strong> to inspect adaptation.</li>
+              <li>Use <strong>Test</strong> without leaving the selected-device workflow.</li>
+              <li>Return here to save the project and compare QA runs.</li>
+            </ol>
+          </article>
+        </section>
+      </main>
+    </section>
+
+    <section id="reportsMode" class="mode-view hidden shell-aux-view">
+      <main class="simple-shell-workspace">
+        <section class="shell-page-heading"><div><div class="tiny-label">REPORTS</div><h2>Results, compatibility & regressions</h2><p>Review what DeckLab has learned without leaving your project context.</p></div></section>
+        <div class="shell-card-grid">
+          <article class="runtime-card shell-action-card"><div class="tiny-label">SDK PROTOCOL AUDIT</div><h3>Coverage project: not complete</h3><p class="hint">The bridge, handlers and targeted QA exist. A canonical contract, exhaustive packet fixtures, version switching and test-backed coverage percentages are still missing.</p><details><summary>Known gaps</summary><p class="hint">Resources, deep-link events, profile switching and trigger descriptions need implementation. Controller and Property Inspector semantics need a systematic audit. Hardware equivalence is unverified.</p></details><p><a href="PROTOCOL-COVERAGE-AUDIT.md" download>Download implementation audit</a></p></article>
+          <article class="runtime-card shell-action-card"><div class="tiny-label">QA HISTORY</div><h3 id="reportsQaHeading">No QA runs yet</h3><p id="reportsQaText" class="hint">Run a plugin test from Device Studio → Test and the result will appear here.</p><div class="project-card-actions"><button id="reportsOpenTestBtn" class="primary" type="button">Open Test</button><button id="reportsCompareBtn" class="secondary" type="button">Compare latest runs</button></div></article>
+          <article class="runtime-card shell-action-card"><div class="tiny-label">DEVICE COMPATIBILITY</div><h3>Compare the current profile</h3><p class="hint">Open the compatibility inspector around the same profile you are editing.</p><div class="project-card-actions"><button id="reportsCompatBtn" class="primary" type="button">Compare devices</button></div></article>
+          <article class="runtime-card shell-action-card"><div class="tiny-label">COMMUNITY TESTING</div><h3>Create a sanitized bug report</h3><p class="hint">Bundle environment, project structure and diagnostics while omitting plugin executables and common secrets.</p><div class="project-card-actions"><button id="reportsBugBtn" class="secondary" type="button">Create bug report</button></div></article>
+          <article class="runtime-card shell-action-card"><div class="tiny-label">PROJECT FILE</div><h3>Portable project snapshot</h3><p class="hint">Save profile state, plugin manifest snapshot and QA history together.</p><div class="project-card-actions"><button id="reportsProjectBtn" class="secondary" type="button">Save project</button></div></article>
+        </div>
+      </main>
+    </section>
+
+    <section id="helpMode" class="mode-view hidden shell-aux-view">
+      <main class="simple-shell-workspace">
+        <section class="shell-page-heading"><div><div class="tiny-label">HELP</div><h2>What do you want to do?</h2><p>DeckLab keeps the simple workflow up front and the SDK plumbing behind an Advanced section.</p></div></section>
+        <div class="shell-card-grid help-action-grid">
+          <button class="help-task-card" data-help-task="preview" type="button"><span>◎</span><strong>Preview a device</strong><small>Press keys, turn dials and watch animated states.</small></button>
+          <button class="help-task-card" data-help-task="build" type="button"><span>▦</span><strong>Build a profile</strong><small>Drag actions onto the selected hardware.</small></button>
+          <button class="help-task-card" data-help-task="test" type="button"><span>✓</span><strong>Test a plugin</strong><small>Run static or live SDK checks.</small></button>
+          <button class="help-task-card" id="helpTourBtn" type="button"><span>?</span><strong>Quick tour</strong><small>Reopen the guided introduction.</small></button>
+        </div>
+        <details class="runtime-card help-advanced-card"><summary><strong>Advanced developer tools</strong><span>Manifest, raw protocol and contexts</span></summary><div class="help-advanced-actions"><button class="secondary" data-inspect-tool="plugin" type="button">Plugin package</button><button class="secondary" data-inspect-tool="host" type="button">Runtime / protocol</button></div></details>
+        <section class="runtime-card help-about-card"><div class="tiny-label">ABOUT</div><h3>DeckLab 1.3.9 Community Alpha</h3><p class="hint">Independent community project. Product-preview artwork is attributed to Elgato; source and licence details are recorded in Third-Party Notices. DeckLab does not launch imported plugin executables automatically.</p></section>
+      </main>
+    </section>
+
+    <section id="deviceMode" class="mode-view hidden">
+      <main class="workspace device-workspace">
+        <aside class="panel left-panel">
+          <div class="tiny-label">DEVICE STUDIO · PREVIEW</div><h2>Action editor</h2>
+          <p class="hint">Select a key, dial, touch segment, or Infobar element.</p>
+          <div id="selectionEmpty" class="empty-state">Nothing selected yet.</div>
+          <form id="editor" class="editor hidden" onsubmit="return false;">
+            <div class="field-row">
+              <label>Element <input id="elementId" disabled /></label>
+              <label>Type <input id="elementType" disabled /></label>
+            </div>
+            <label>Title <input id="titleInput" maxlength="40" /></label>
+            <label>Value <input id="valueInput" maxlength="40" /></label>
+            <label>Icon image
+              <input id="iconInput" type="file" accept=".png,.jpg,.jpeg,.svg,.gif,.webp,image/*" />
+              <span class="field-help">Animated GIF/WebP files play live in DeckLab.</span>
+            </label>
+            <div class="field-row" id="stateFields">
+              <label>State A <input id="stateAInput" maxlength="16" /></label>
+              <label>State B <input id="stateBInput" maxlength="16" /></label>
+            </div>
+            <label id="progressWrap">Progress
+              <input id="progressInput" type="range" min="0" max="100" value="50" />
+            </label>
+            <label id="modeWrap">Interaction
+              <select id="modeInput">
+                <option value="toggle">Toggle state</option>
+                <option value="momentary">Momentary</option>
+              </select>
+            </label>
+            <button id="clearIconBtn" class="secondary" type="button">Clear custom icon</button>
+          </form>
+
+          <div class="legend">
+            <h3>Try it</h3>
+            <p>Click keys. Mouse-wheel over dials. Click a dial to simulate press/release. Click touchscreen or Infobar areas. Interactions appear in the SDK-style event log.</p>
+          </div>
+
+          <div id="activeLayoutCard" class="active-layout-card hidden">
+            <div class="tiny-label">ACTIVE CUSTOM LAYOUT</div>
+            <strong id="activeLayoutName"></strong>
+            <span id="activeLayoutController"></span>
+            <button id="openLayoutLabBtn" class="secondary">Open in Layout Lab</button>
+          </div>
+        </aside>
+
+        <section class="stage-wrap">
+          <div class="stage-title-row">
+            <div>
+              <h2 id="deviceName">Stream Deck +</h2>
+              <span id="deviceMeta"></span>
+              <div id="deviceNote" class="device-note"></div>
+            </div>
+            <span class="status"><i></i> simulated device connected</span>
+          </div>
+          <div class="stage">
+            <div id="deck" class="deck" aria-label="Virtual Stream Deck"></div>
+          </div>
+        </section>
+
+        <aside class="panel right-panel">
+          <h2>SDK event log</h2>
+          <p class="hint">A lightweight preview of the events a plugin host would receive.</p>
+          <div class="log-actions">
+            <button id="clearLogBtn" class="secondary">Clear</button>
+            <button id="downloadLogBtn" class="secondary">Download JSON</button>
+          </div>
+          <pre id="eventLog" class="event-log"></pre>
+        </aside>
+      </main>
+    </section>
+
+    <section id="layoutMode" class="mode-view hidden">
+      <main class="workspace layout-workspace">
+        <aside class="panel layout-controls">
+          <h2>Layout source</h2>
+          <p class="hint">Design feedback for a dial segment or the Neo Infobar. Choose a canvas below; compatible devices are shown beside each source.</p>
+
+          <div class="button-grid">
+            <button class="secondary sample-layout" data-sample="encoder">Dial segment · + / + XL / GALLEON</button>
+            <button class="secondary sample-layout" data-sample="neo">Neo Infobar · Stream Deck Neo</button>
+            <button class="secondary sample-layout" data-sample="gbar">Gradient bar · dial segment</button>
+          </div>
+
+          <label class="file-button">Import layout JSON
+            <input id="layoutFileInput" type="file" accept="application/json,.json" />
+          </label>
+
+          <label>Layout canvas
+            <select id="controllerOverride">
+              <option value="auto">Use layout’s canvas</option>
+              <option value="Encoder">+ / + XL / GALLEON · dial segment · 200 × 100</option>
+              <option value="Neo">Stream Deck Neo · Infobar · 232 × 50</option>
+            </select>
+          </label>
+
+          <div class="section-rule"></div>
+          <h2>Layout items</h2>
+          <div id="layoutItemList" class="item-list"></div>
+
+          <div class="section-rule"></div>
+          <h2>Selected item</h2>
+          <div id="layoutItemEmpty" class="empty-state compact">Select an item on the canvas or from the list.</div>
+          <form id="layoutItemEditor" class="editor hidden" onsubmit="return false;">
+            <div class="field-row">
+              <label>Key <input id="layoutItemKey" disabled /></label>
+              <label>Type <input id="layoutItemType" disabled /></label>
+            </div>
+            <label id="layoutTextValueWrap">Value <input id="layoutTextValue" /></label>
+            <label id="layoutNumericValueWrap">Value
+              <input id="layoutNumericValue" type="number" step="1" />
+            </label>
+            <label id="layoutImageValueWrap">Image / SVG value
+              <textarea id="layoutImageValue" rows="4"></textarea>
+            </label>
+            <label id="layoutImageUploadWrap">Replace with image
+              <input id="layoutImageUpload" type="file" accept="image/*" />
+            </label>
+            <div class="field-row">
+              <label>Opacity <input id="layoutOpacity" type="number" min="0" max="1" step="0.1" /></label>
+              <label class="checkbox-label"><span>Visible</span><input id="layoutEnabled" type="checkbox" /></label>
+            </div>
+            <div id="textStyleFields">
+              <div class="field-row">
+                <label>Text colour <input id="layoutTextColor" placeholder="#ffffff" /></label>
+                <label>Font size <input id="layoutFontSize" type="number" min="1" max="100" /></label>
+              </div>
+              <div class="field-row">
+                <label>Weight <input id="layoutFontWeight" type="number" min="100" max="1000" step="100" /></label>
+                <label>Alignment
+                  <select id="layoutAlignment">
+                    <option value="center">Center</option>
+                    <option value="left">Left</option>
+                    <option value="right">Right</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+            <div id="barStyleFields">
+              <div class="field-row">
+                <label>Range min <input id="layoutRangeMin" type="number" /></label>
+                <label>Range max <input id="layoutRangeMax" type="number" /></label>
+              </div>
+              <label>Fill colour / gradient <input id="layoutBarFill" /></label>
+            </div>
+          </form>
+        </aside>
+
+        <section class="layout-stage-wrap">
+          <div class="layout-stage-heading">
+            <div>
+              <h2 id="layoutName">Custom layout</h2>
+              <span id="layoutMeta"></span>
+            </div>
+            <div id="validationBadge" class="validation-badge">Not validated</div>
+          </div>
+
+          <div class="layout-stage">
+            <div id="layoutCanvasFrame" class="layout-canvas-frame">
+              <div id="layoutCanvas" class="layout-canvas" aria-label="Layout preview canvas"></div>
+            </div>
+          </div>
+
+          <div class="layout-scale-note">Canvas is visually enlarged for editing. Coordinates remain in Elgato logical pixels.</div>
+
+          <section class="feedback-card">
+            <div>
+              <h2>Simulate <code>setFeedback</code></h2>
+              <p class="hint">Primitive values update an item's value; objects merge mutable properties. <code>rect</code>, <code>type</code>, and <code>key</code> are treated as immutable.</p>
+            </div>
+            <textarea id="feedbackInput" class="code-input" spellcheck="false"></textarea>
+            <div class="feedback-actions">
+              <button id="applyFeedbackBtn" class="primary">Apply feedback</button>
+              <button id="resetFeedbackBtn" class="secondary">Reset feedback</button>
+            </div>
+          </section>
+        </section>
+
+        <aside class="panel layout-code-panel">
+          <h2>Layout JSON</h2>
+          <p class="hint">Edit the JSON directly, then apply it. Validation below catches common rules that prevent rendering.</p>
+          <textarea id="layoutJsonInput" class="code-input layout-json-input" spellcheck="false"></textarea>
+          <div class="json-actions">
+            <button id="applyLayoutJsonBtn" class="primary">Apply JSON</button>
+            <button id="formatLayoutJsonBtn" class="secondary">Format</button>
+          </div>
+
+          <div class="section-rule"></div>
+          <h2>Validation</h2>
+          <div id="validationList" class="validation-list"></div>
+
+          <div class="section-rule"></div>
+          <h2>Host output</h2>
+          <pre id="layoutEventLog" class="event-log layout-event-log"></pre>
+        </aside>
+      </main>
+    </section>
+
+    <section id="pluginMode" class="mode-view hidden">
+      <main class="workspace plugin-workspace">
+        <aside class="panel plugin-import-panel">
+          <h2>Plugin package</h2>
+          <p class="hint">Choose an <strong>unpacked <code>.sdPlugin</code> folder</strong>. DeckLab reads its manifest and bundled assets locally. It does not execute the plugin.</p>
+
+          <label class="file-button prominent">Choose plugin folder
+            <input id="pluginFolderInput" type="file" webkitdirectory directory multiple />
+          </label>
+          <button id="loadSamplePluginBtn" class="secondary wide-button" type="button">Load built-in Host Lab sample</button>
+
+          <label class="file-button secondary wide-button plugin-library-button" data-dl-tip="Choose a folder containing multiple .sdPlugin packages. DeckLab scans them locally and does not execute anything.">Scan plugin library folder
+            <input id="pluginLibraryInput" type="file" webkitdirectory directory multiple />
+          </label>
+
+          <div id="pluginImportStatus" class="import-status">No plugin loaded.</div>
+
+          <section id="pluginLibraryPanel" class="plugin-library-panel hidden" aria-labelledby="pluginLibraryTitle">
+            <div class="plugin-library-heading">
+              <div><div class="tiny-label">LOCAL LIBRARY</div><h3 id="pluginLibraryTitle">Plugin packages</h3></div>
+              <button id="pluginLibraryCloseBtn" class="secondary compact-button" type="button">Close</button>
+            </div>
+            <div id="pluginLibraryStats" class="plugin-library-stats"></div>
+            <div class="plugin-library-tools"><input id="pluginLibrarySearch" class="plugin-library-search" type="search" placeholder="Search plugins, authors, actions…" autocomplete="off" /><select id="pluginLibraryFilter" aria-label="Filter plugin packages"><option value="all">All statuses</option><option value="plain">Inspectable</option><option value="protected">Protected</option><option value="invalid">Needs attention</option></select><select id="pluginLibrarySort" aria-label="Sort plugin packages"><option value="name">Name</option><option value="actions">Most actions</option><option value="status">Status</option></select></div><div class="plugin-library-actions"><span id="pluginLibraryCount"></span><button id="pluginLibraryExportBtn" class="secondary compact-button" type="button">Export index</button><button id="pluginLibraryClearBtn" class="secondary compact-button" type="button">Clear index</button></div>
+            <div id="pluginLibraryList" class="plugin-library-list"></div>
+          </section>
+
+          <div id="pluginSummary" class="plugin-summary hidden">
+            <div class="plugin-identity">
+              <img id="pluginIcon" class="plugin-icon hidden" alt="" />
+              <div>
+                <h2 id="pluginName">Plugin</h2>
+                <div id="pluginAuthor" class="hint"></div>
+              </div>
+            </div>
+            <dl class="summary-list">
+              <div><dt>UUID</dt><dd id="pluginUuid"></dd></div>
+              <div><dt>Version</dt><dd id="pluginVersion"></dd></div>
+              <div><dt>SDK</dt><dd id="pluginSdk"></dd></div>
+              <div><dt>Stream Deck</dt><dd id="pluginMinSoftware"></dd></div>
+              <div><dt>Actions</dt><dd id="pluginActionCount"></dd></div>
+              <div><dt>Files</dt><dd id="pluginFileCount"></dd></div>
+            </dl>
+          </div>
+
+          <div class="section-rule"></div>
+          <h2>Package checks</h2>
+          <div id="pluginWarnings" class="validation-list">
+            <div class="validation-entry">Import a plugin to run local checks.</div>
+          </div>
+        </aside>
+
+        <section class="plugin-main">
+          <div class="stage-title-row plugin-heading">
+            <div>
+              <h2>Actions</h2>
+              <span id="pluginActionHint">Manifest actions will appear here.</span>
+            </div>
+            <span class="status"><i></i> safe static inspection</span>
+          </div>
+
+          <div id="pluginEmpty" class="plugin-empty">
+            <div class="plugin-empty-icon">⌁</div>
+            <h2>Import an unpacked Stream Deck plugin</h2>
+            <p>DeckLab 0.4 can inspect <code>manifest.json</code>, action states, controller support, custom Encoder layouts, Neo layout candidates, property inspectors, bundled profiles, and local assets.</p>
+          </div>
+
+          <div id="pluginContent" class="hidden">
+            <div id="pluginActions" class="action-grid"></div>
+
+            <section id="selectedActionPanel" class="selected-action-panel hidden">
+              <div class="selected-action-header">
+                <div>
+                  <div class="tiny-label">SELECTED ACTION</div>
+                  <h2 id="selectedActionName"></h2>
+                  <code id="selectedActionUuid"></code>
+                </div>
+                <div id="selectedActionControllers" class="controller-badges"></div>
+              </div>
+
+              <div class="action-detail-grid">
+                <div>
+                  <h3>Resources</h3>
+                  <div id="selectedActionResources" class="resource-list"></div>
+                </div>
+                <div>
+                  <h3>Preview</h3>
+                  <label>Target device
+                    <select id="pluginPreviewTarget"></select>
+                  </label>
+                  <label>Controller
+                    <select id="pluginPreviewController"></select>
+                  </label>
+                  <div class="preview-buttons">
+                    <button id="previewPluginActionBtn" class="primary">Preview action</button>
+                    <button id="openActionLayoutBtn" class="secondary">Open layout in Layout Lab</button>
+                  </div>
+                  <div class="preview-buttons stacked-actions"><button id="openHostLabBtn" class="secondary" type="button">Open action in Host Lab</button><button id="openProfileLabBtn" class="secondary" type="button">Build in Device Studio</button></div>
+                  <p id="pluginPreviewNote" class="hint"></p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <aside class="panel compatibility-panel">
+          <h2>Target compatibility</h2>
+          <p class="hint">Controller compatibility is derived from the imported action's manifest. Profile coverage is shown separately because an action can work even when the plugin does not bundle a pre-made profile.</p>
+          <div id="compatIntro" class="compat-intro">Select an action to compare it across your target devices.</div>
+          <div id="compatMatrix" class="compat-matrix"></div>
+        </aside>
+      </main>
+    </section>
+
+
+    <section id="hostMode" class="mode-view hidden">
+      <main class="workspace host-workspace">
+        <aside class="panel host-controls">
+          <h2>Action instance</h2>
+          <p class="hint">Create a simulated Stream Deck action instance. DeckLab assigns a unique context and emits SDK lifecycle events as the instance appears, disappears, or its device changes.</p>
+          <div id="hostNoAction" class="empty-state compact">Select an action in Plugin Lab first.</div>
+          <div id="hostActionControls" class="hidden">
+            <div class="host-action-id">
+              <strong id="hostActionName">Action</strong>
+              <code id="hostActionUuid"></code>
+            </div>
+            <label>Target device<select id="hostTargetDevice"></select></label>
+            <label>Controller<select id="hostController"></select></label>
+            <div class="field-row">
+              <label>Column<input id="hostColumn" type="number" min="0" value="0" /></label>
+              <label>Row<input id="hostRow" type="number" min="0" value="0" /></label>
+            </div>
+            <div class="host-button-row">
+              <button id="placeHostActionBtn" class="primary" type="button">Place action</button>
+              <button id="removeHostActionBtn" class="secondary" type="button" disabled>Remove</button>
+            </div>
+            <div class="host-button-row">
+              <button id="hostDeviceToggleBtn" class="secondary" type="button">Disconnect device</button>
+              <button id="hostNavigateBtn" class="secondary" type="button">Simulate page change</button>
+            </div>
+            <div class="host-context-card">
+              <span>Context</span><code id="hostContext">—</code>
+              <span>Device ID</span><code id="hostDeviceId">—</code>
+            </div>
+
+            <div class="section-rule"></div>
+            <h2>Settings store</h2>
+            <label>Action settings<textarea id="hostSettings" class="mini-code" rows="6" spellcheck="false">{}</textarea></label>
+            <button id="applyHostSettingsBtn" class="secondary wide-button" type="button">Set action settings</button>
+            <label>Global settings<textarea id="hostGlobalSettings" class="mini-code" rows="5" spellcheck="false">{}</textarea></label>
+            <button id="applyHostGlobalBtn" class="secondary wide-button" type="button">Set global settings</button>
+          </div>
+        </aside>
+
+        <section class="host-main">
+          <div class="stage-title-row host-heading">
+            <div>
+              <h2>Runtime surface</h2>
+              <span id="hostRuntimeMeta">No action instance placed.</span>
+            </div>
+            <span id="hostConnectionStatus" class="status host-offline"><i></i> device disconnected</span>
+          </div>
+
+          <section class="live-runtime-card">
+            <div class="runtime-card-heading">
+              <div>
+                <div class="tiny-label">DECKLAB COMPANION · REAL WEBSOCKET HOST</div>
+                <h3>Live plugin runtime</h3>
+              </div>
+              <span id="liveCompanionStatus" class="live-status offline">companion offline</span>
+            </div>
+            <p class="hint">Security-first mode: DeckLab bridges a plugin you explicitly start yourself; the browser/companion cannot spawn programs. For the bundled demo, open a second PowerShell window in this folder and run:</p>
+            <pre class="live-process-log safe-command-preview">node "examples\live-plugin\com.decklab.live.sdPlugin\bin\plugin.js" -port 8975 -pluginUUID com.decklab.hostdemo -registerEvent registerPlugin -info "{}"</pre>
+            <div class="hidden">
+              <input id="livePluginPath" />
+              <input id="liveNodePath" />
+              <button id="liveLaunchBtn" type="button" disabled>Auto-launch disabled</button>
+              <button id="liveStopBtn" type="button" disabled>Stop disabled</button>
+              <button id="liveDemoBtn" type="button" disabled>Auto-launch disabled</button>
+            </div>
+            <div class="live-runtime-meta">
+              <span>Process <strong id="liveProcessState">not running</strong></span>
+              <span>Plugin socket <strong id="livePluginSocketState">not connected</strong></span>
+              <span>Animated output <strong id="hostAnimationStatus">idle</strong></span>
+            </div>
+            <pre id="liveProcessLog" class="live-process-log">Live process output will appear here.</pre>
+            <div class="live-security-note"><strong>Explicit execution only:</strong> DeckLab binds to <code>127.0.0.1</code> and does not contain process-spawning code. Only manually run plugin code you trust.</div>
+          </section>
+
+          <div class="host-runtime-grid">
+            <section class="runtime-card">
+              <div class="runtime-card-heading">
+                <div><div class="tiny-label">SIMULATED HARDWARE</div><h3>Action output</h3></div>
+                <div id="hostStateBadge" class="runtime-state-badge">STATE 0</div>
+              </div>
+              <div id="hostSurface" class="host-surface">
+                <div class="host-surface-empty">Place an action to create its runtime surface.</div>
+              </div>
+              <div id="hostInteractionBar" class="host-interaction-bar"></div>
+              <div class="animation-fidelity-note"><strong>Animation fidelity:</strong> manifest/icon-library GIF and animated WebP assets can animate directly. Programmatic animation is previewed from rapid supported <code>setImage</code> frame updates. Animated GIF passed to <code>setImage</code> is intentionally rejected to match Elgato's SDK behaviour.</div>
+            </section>
+
+            <section class="runtime-card">
+              <div class="runtime-card-heading">
+                <div><div class="tiny-label">PROPERTY INSPECTOR</div><h3 id="hostPiTitle">No Property Inspector</h3></div>
+                <span id="hostPiStatus" class="pi-status">inactive</span>
+              </div>
+              <div class="pi-frame-shell">
+                <iframe id="hostPiFrame" title="Sandboxed Property Inspector" sandbox="allow-scripts allow-forms allow-modals"></iframe>
+                <div id="hostPiEmpty" class="pi-empty">When the selected action contains a Property Inspector, DeckLab will load it here in a sandbox and emulate its Stream Deck WebSocket bridge.</div>
+              </div>
+            </section>
+          </div>
+
+          <section class="host-command-card">
+            <div>
+              <div class="tiny-label">HOST COMMAND SIMULATOR</div>
+              <h2>Send output to the action</h2>
+              <p class="hint">These controls model commands a plugin sends to Stream Deck. The simulated hardware above updates immediately and the raw command is recorded at right.</p>
+            </div>
+            <div class="host-command-grid">
+              <label>Title<input id="hostCommandTitle" value="DeckLab runtime" /></label>
+              <button id="hostSetTitleBtn" class="secondary" type="button">setTitle</button>
+              <label>State<select id="hostCommandState"><option value="0">0</option><option value="1">1</option></select></label>
+              <button id="hostSetStateBtn" class="secondary" type="button">setState</button>
+              <label>Image<input id="hostCommandImage" type="file" accept="image/*" /></label>
+              <button id="hostClearImageBtn" class="secondary" type="button">Clear image</button>
+              <button id="hostShowOkBtn" class="success-button" type="button">showOk ✓</button>
+              <button id="hostShowAlertBtn" class="alert-button" type="button">showAlert ⚠</button>
+            </div>
+            <label>Feedback payload<textarea id="hostFeedback" class="code-input host-feedback" rows="6" spellcheck="false">{
+  "title": "CPU",
+  "value": "42%",
+  "load": 42
+}</textarea></label>
+            <div class="host-button-row compact-buttons">
+              <button id="hostSetFeedbackBtn" class="secondary" type="button">setFeedback</button>
+              <button id="hostSetFeedbackLayoutBtn" class="secondary" type="button">setFeedbackLayout from selected action</button>
+            </div>
+          </section>
+
+          <section class="runtime-card comparison-card">
+            <div class="runtime-card-heading">
+              <div><div class="tiny-label">DEVICE COMPARISON</div><h3>Compatible target surfaces</h3></div>
+              <span class="hint-inline">Manifest-derived</span>
+            </div>
+            <div id="hostComparison" class="host-comparison"></div>
+          </section>
+        </section>
+
+        <aside class="panel host-protocol-panel">
+          <h2>Protocol console</h2>
+          <p class="hint">SDK-style traffic between the simulated host, plugin layer, and Property Inspector. When the companion is running, this console includes traffic from the real local WebSocket host as well as manual simulation.</p>
+          <div class="log-actions">
+            <button id="clearHostLogBtn" class="secondary" type="button">Clear</button>
+            <button id="downloadHostLogBtn" class="secondary" type="button">Download JSON</button>
+          </div>
+          <pre id="hostProtocolLog" class="event-log host-event-log"></pre>
+          <div class="section-rule"></div>
+          <h2>Property Inspector traffic</h2>
+          <pre id="hostPiLog" class="event-log pi-event-log"></pre>
+        </aside>
+      </main>
+    </section>
+
+    <section id="profileMode" class="mode-view hidden">
+      <main class="workspace profile-workspace builder-workspace">
+        <aside class="panel profile-controls builder-library-panel">
+          <div class="builder-panel-heading">
+            <div><div class="tiny-label">DEVICE STUDIO · BUILD PROFILE</div><h2>Actions</h2></div>
+            <span id="profileAutosaveBadge" class="live-status online">autosaved</span>
+          </div>
+          <label class="builder-search">Search actions<input id="profileActionSearch" type="search" placeholder="Search actions…" autocomplete="off" /></label>
+          <label class="file-button compact-file">Import profile<input id="profileImportInput" type="file" accept="application/json,.json,.streamDeckProfile" /></label>
+          <div id="profileActionLibrary" class="profile-action-library"></div>
+
+          <div class="section-rule"></div>
+          <h2>Profile</h2>
+          <label>Profile name<input id="profileName" value="DeckLab Profile" maxlength="48" /></label>
+          <label>Target device<select id="profileTargetDevice"></select></label>
+          <div id="profileGridControls" class="field-row hidden">
+            <label>Rows<input id="profileRows" type="number" min="1" max="8" value="5" /></label>
+            <label>Cols<input id="profileCols" type="number" min="1" max="8" value="3" /></label>
+          </div>
+          <div class="profile-connect-row">
+            <button id="profileConnectBtn" class="secondary" type="button">Disconnect device</button>
+            <span id="profileConnectionBadge" class="live-status online">connected</span>
+          </div>
+
+          <div class="section-rule"></div>
+          <h2>Pages & folders</h2>
+          <div class="button-grid">
+            <button id="profileAddPageBtn" class="secondary" type="button">+ Page</button>
+            <button id="profileRenamePageBtn" class="secondary" type="button">Rename page</button>
+            <button id="profileBackBtn" class="secondary" type="button" disabled>← Folder</button>
+            <button id="profileClearPageBtn" class="secondary" type="button">Clear page</button>
+          </div>
+
+          <div class="section-rule"></div>
+          <h2>Session</h2>
+          <div class="button-grid">
+            <button id="profileDemoBtn" class="secondary" type="button">Build demo</button>
+            <button id="profileExportBtn" class="secondary" type="button">Export</button>
+            <button id="profileRestoreAutosaveBtn" class="secondary" type="button">Restore autosave</button>
+          </div>
+          <p class="hint builder-drop-help">Drag an action onto a compatible key/dial/Infobar. Drag placed items to rearrange them. The System section contains folders and Multi Actions.</p>
+        </aside>
+
+        <section class="profile-main builder-main">
+          <div class="stage-title-row profile-heading">
+            <div>
+              <h2 id="profileDeviceName">Virtual Stream Deck</h2>
+              <span id="profileMeta"></span>
+            </div>
+            <div class="profile-live-badges">
+              <span id="profileCompanionBadge" class="live-status offline">companion offline</span>
+              <span id="profilePluginBadge" class="live-status offline">plugin socket offline</span>
+            </div>
+          </div>
+
+          <section class="builder-toolbar-card">
+            <div class="builder-history-controls">
+              <button id="profileUndoBtn" class="secondary" type="button" title="Undo (Ctrl+Z)">↶ Undo</button>
+              <button id="profileRedoBtn" class="secondary" type="button" title="Redo (Ctrl+Y)">↷ Redo</button>
+              <span class="toolbar-divider"></span>
+              <button id="profileCopyBtn" class="secondary" type="button">Copy</button>
+              <button id="profilePasteBtn" class="secondary" type="button">Paste</button>
+              <button id="profileDuplicateBtn" class="secondary" type="button">Duplicate</button>
+              <button id="profileRemoveSelectedBtn" class="secondary danger-soft" type="button">Delete</button>
+              <span class="toolbar-divider"></span>
+              <button id="profileCompatToggleBtn" class="secondary compat-toggle-button" type="button">◎ Compare devices</button>
+            </div>
+            <div id="profilePlacementHint" class="placement-hint">Drag an action onto the virtual device, or click a placed item to configure it.</div>
+          </section>
+
+          <section class="profile-nav-card">
+            <div id="profileBreadcrumbs" class="profile-breadcrumbs"></div>
+            <div id="profilePageTabs" class="profile-page-tabs"></div>
+          </section>
+
+          <section class="profile-stage-card builder-stage-card">
+            <div id="profileDeck" class="profile-deck" aria-label="Multi-instance virtual Stream Deck"></div>
+          </section>
+
+          <section id="profileCompatCard" class="runtime-card profile-compat-card hidden">
+            <div class="runtime-card-heading compat-heading">
+              <div>
+                <div class="tiny-label">DEVICE COMPATIBILITY INSPECTOR</div>
+                <h3>Preview this profile across the Stream Deck ecosystem</h3>
+                <p class="hint">Analysis uses the profile's actual placements, controller types, pages, coordinates, and target display capabilities. It does not execute third-party plugin code.</p>
+              </div>
+              <div class="compat-heading-actions">
+                <button id="profileCompatExportBtn" class="secondary" type="button">Export report</button>
+                <button id="profileCompatCloseBtn" class="secondary" type="button">Close</button>
+              </div>
+            </div>
+            <div id="profileCompatSummary" class="profile-compat-summary"></div>
+            <div id="profileCompatMatrix" class="profile-compat-matrix"></div>
+            <div class="profile-compat-detail-grid">
+              <section class="compat-detail-panel">
+                <div class="compat-detail-title-row">
+                  <div><div class="tiny-label">SELECTED TARGET</div><h3 id="profileCompatTargetTitle">—</h3></div>
+                  <span id="profileCompatTargetStatus" class="compat-pill partial">—</span>
+                </div>
+                <div id="profileCompatTargetMetrics" class="compat-target-metrics"></div>
+                <div id="profileCompatIssues" class="compat-issues"></div>
+              </section>
+              <section class="compat-preview-panel">
+                <div class="compat-detail-title-row">
+                  <div><div class="tiny-label">CURRENT PAGE · EXACT COORDINATES</div><h3 id="profileCompatPreviewTitle">Preview</h3></div>
+                  <span class="hint-inline">No auto-reflow</span>
+                </div>
+                <div id="profileCompatMiniPreview" class="compat-mini-preview"></div>
+                <p id="profileCompatPreviewNote" class="hint compat-preview-note"></p>
+              </section>
+            </div>
+          </section>
+
+          <section id="multiActionEditorCard" class="runtime-card multi-action-editor hidden">
+            <div class="runtime-card-heading">
+              <div><div class="tiny-label">COMPOSITE KEY</div><h3 id="multiActionEditorTitle">Multi Action</h3></div>
+              <div id="multiActionStateTabs" class="multi-state-tabs"></div>
+            </div>
+            <div class="multi-editor-toolbar">
+              <label>Action<select id="multiAddActionSelect"></select></label>
+              <button id="multiAddActionBtn" class="secondary" type="button">+ Action</button>
+              <label>Wait (ms)<input id="multiWaitMs" type="number" min="0" max="60000" step="50" value="500" /></label>
+              <button id="multiAddWaitBtn" class="secondary" type="button">+ Wait</button>
+              <label>Key label<input id="multiTitleInput" maxlength="32" /></label>
+            </div>
+            <div id="multiStepList" class="multi-step-list"></div>
+            <p class="hint">Plugin child actions use independent contexts and <code>isInMultiAction: true</code>. Wait steps run locally in DeckLab. Multi Action Switch alternates between its A and B sequences.</p>
+          </section>
+
+          <section class="runtime-card profile-runtime-card safe-runtime-card">
+            <div class="runtime-card-heading">
+              <div><div class="tiny-label">SAFE EXTERNAL PLUGIN BRIDGE</div><h3>Real plugin runtime</h3></div>
+              <span id="profileInstanceCount" class="runtime-state-badge">0 INSTANCES</span>
+            </div>
+            <p class="hint">DeckLab never launches plugin executables in the safe build. Start a trusted plugin yourself from a terminal; once it connects to <code>127.0.0.1:8975</code>, every visible action context in this profile is sent to it.</p>
+            <pre id="profileProcessLog" class="live-process-log">Waiting for an externally launched plugin connection.</pre>
+          </section>
+        </section>
+
+        <aside class="panel profile-event-panel builder-inspector-panel">
+          <div class="builder-panel-heading">
+            <div><div class="tiny-label">SELECTED ITEM</div><h2 id="profileInspectorTitle">Nothing selected</h2></div>
+            <span id="profileSelectionType" class="compat-pill partial">—</span>
+          </div>
+          <div id="profileInstanceEmpty" class="empty-state compact">Select a placed action, folder, Multi Action, dial, or Infobar item.</div>
+          <div id="builtinActionSettings" hidden></div><p id="builtinSimulationNotice" class="hint" role="status" hidden></p><div id="profileInstanceEditor" class="hidden">
+            <div class="host-context-card">
+              <span>Action</span><code id="profileInstanceAction">—</code>
+              <span>Context</span><code id="profileInstanceContext">—</code>
+              <span>Surface</span><code id="profileInstanceSurface">—</code>
+            </div>
+            <label>Instance settings<textarea id="profileInstanceSettings" class="mini-code" rows="5" spellcheck="false">{}</textarea></label>
+            <button id="profileApplyInstanceSettingsBtn" class="secondary wide-button" type="button">Apply settings</button>
+          </div>
+
+          <section id="profilePiCard" class="profile-pi-card hidden">
+            <div class="runtime-card-heading compact-heading">
+              <div><div class="tiny-label">PROPERTY INSPECTOR</div><h3 id="profilePiTitle">Property Inspector</h3></div>
+              <span id="profilePiStatus" class="pi-status">inactive</span>
+            </div>
+            <div class="pi-frame-shell profile-pi-frame-shell">
+              <iframe id="profilePiFrame" title="Selected action Property Inspector" sandbox="allow-scripts allow-forms allow-modals"></iframe>
+              <div id="profilePiEmpty" class="pi-empty">This action has no Property Inspector.</div>
+            </div>
+          </section>
+
+          <div class="section-rule"></div>
+          <h2>Plugin global settings</h2>
+          <label><textarea id="profileGlobalSettings" class="mini-code" rows="4" spellcheck="false">{}</textarea></label>
+          <button id="profileApplyGlobalSettingsBtn" class="secondary wide-button" type="button">Apply global settings</button>
+
+          <div class="section-rule"></div>
+          <details class="builder-event-details" open>
+            <summary>Profile lifecycle & SDK traffic</summary>
+            <div class="log-actions">
+              <button id="clearProfileLogBtn" class="secondary" type="button">Clear</button>
+              <button id="downloadProfileLogBtn" class="secondary" type="button">Download JSON</button>
+            </div>
+            <pre id="profileEventLog" class="event-log profile-event-log"></pre>
+          </details>
+        </aside>
+      </main>
+    </section>
+
+    <section id="testMode" class="mode-view hidden">
+      <main class="workspace test-workspace">
+        <aside class="panel test-plan-panel">
+          <div class="builder-panel-heading">
+            <div><div class="tiny-label">DECKLAB 1.3.9 COMMUNITY ALPHA</div><h2>Plugin test plan</h2></div>
+            <span id="testPlanBadge" class="live-status online">static ready</span>
+          </div>
+          <p class="hint">Static checks inspect the imported package safely. Live checks send SDK events only when a plugin you explicitly started is already connected to the localhost bridge.</p>
+
+          <label>Scope
+            <select id="testScope">
+              <option value="selected">Selected action</option>
+              <option value="all">All plugin actions</option>
+            </select>
+          </label>
+          <label>Action<select id="testActionSelect"></select></label>
+
+          <div class="section-rule"></div>
+          <h3>Checks</h3>
+          <div class="test-check-list">
+            <label><input id="testCheckPackage" type="checkbox" checked /> Package & manifest</label>
+            <label><input id="testCheckCompatibility" type="checkbox" checked /> Device compatibility</label>
+            <label><input id="testCheckLayouts" type="checkbox" checked /> Layouts & assets</label>
+            <label><input id="testCheckLifecycle" type="checkbox" checked /> Lifecycle</label>
+            <label><input id="testCheckInput" type="checkbox" checked /> Input events</label>
+            <label><input id="testCheckSettings" type="checkbox" checked /> Settings round-trip</label>
+            <label><input id="testCheckReconnect" type="checkbox" checked /> Disconnect / reconnect</label>
+            <label><input id="testCheckOutput" type="checkbox" checked /> Plugin output schema</label>
+          </div>
+          <p class="hint">Lifecycle/input/settings/reconnect become <strong>LIVE</strong> tests when a plugin socket is connected; otherwise they are reported as skipped rather than guessed.</p>
+
+          <div class="section-rule"></div>
+          <div class="test-target-heading"><h3>Target devices</h3><button id="testTargetsAllBtn" class="text-button" type="button">all</button></div>
+          <div id="testTargetList" class="test-target-list"></div>
+
+          <div class="section-rule"></div>
+          <div class="button-grid">
+            <button id="testRunBtn" class="primary" type="button">▶ Run QA</button>
+            <button id="testStopBtn" class="secondary" type="button" disabled>Stop</button>
+            <button id="testClearBtn" class="secondary" type="button">Clear</button>
+            <button id="testLoadDemoBtn" class="secondary" type="button">Load demo plugin</button>
+          </div>
+          <div class="button-grid test-export-buttons">
+            <button id="testExportBtn" class="secondary" type="button">Export report</button>
+            <button id="testExportTraceBtn" class="secondary" type="button">Export trace</button>
+          </div>
+        </aside>
+
+        <section class="test-main">
+          <div class="stage-title-row test-heading">
+            <div>
+              <h2>Automated Plugin QA</h2>
+              <span id="testSubtitle">Import a plugin in Plugin Lab or load the built-in demo.</span>
+            </div>
+            <div class="profile-live-badges">
+              <span id="testCompanionBadge" class="live-status offline">companion offline</span>
+              <span id="testPluginBadge" class="live-status offline">plugin socket offline</span>
+            </div>
+          </div>
+
+          <section class="runtime-card studio-device-dock-card" id="testStudioDeviceDockCard"><div class="studio-device-dock-head"><div><div class="tiny-label">SELECTED DEVICE</div><h3 id="testStudioDeviceName">—</h3></div><button id="testChangeDeviceBtn" class="secondary" type="button">Change device</button></div><div id="testStudioDeviceDock" class="studio-device-dock"></div></section>
+
+          <section class="runtime-card test-progress-card">
+            <div class="runtime-card-heading">
+              <div><div class="tiny-label">CURRENT RUN</div><h3 id="testRunTitle">Ready</h3></div>
+              <span id="testRunState" class="runtime-state-badge">IDLE</span>
+            </div>
+            <div class="test-progress-track"><span id="testProgressBar"></span></div>
+            <div id="testProgressText" class="hint">No test run yet.</div>
+            <div class="test-summary-grid">
+              <div class="test-summary-stat pass"><span>Pass</span><strong id="testPassCount">0</strong></div>
+              <div class="test-summary-stat warn"><span>Warnings</span><strong id="testWarnCount">0</strong></div>
+              <div class="test-summary-stat fail"><span>Failures</span><strong id="testFailCount">0</strong></div>
+              <div class="test-summary-stat skip"><span>Skipped</span><strong id="testSkipCount">0</strong></div>
+            </div>
+          </section>
+
+          <section class="runtime-card qa-history-card">
+            <div class="runtime-card-heading">
+              <div><div class="tiny-label">QA HISTORY</div><h3>Regression comparison</h3></div>
+              <span id="qaHistoryCount" class="runtime-state-badge">0 RUNS</span>
+            </div>
+            <div class="qa-history-controls">
+              <label>Baseline<select id="qaBaselineSelect"></select></label>
+              <label>Compare<select id="qaCompareSelect"></select></label>
+              <button id="qaCompareBtn" class="secondary" type="button">Compare</button>
+              <button id="qaExportComparisonBtn" class="secondary" type="button">Export comparison</button>
+            </div>
+            <div id="qaHistoryEmpty" class="empty-state compact">Complete at least two QA runs to compare regressions.</div>
+            <div id="qaComparisonBody" class="hidden">
+              <div class="qa-regression-stats">
+                <div class="regression"><span>Regressions</span><strong id="qaRegressionCount">0</strong></div>
+                <div class="fixed"><span>Fixed</span><strong id="qaFixedCount">0</strong></div>
+                <div><span>Unchanged</span><strong id="qaUnchangedCount">0</strong></div>
+                <div><span>New / changed</span><strong id="qaNewCount">0</strong></div>
+              </div>
+              <div id="qaComparisonList" class="qa-comparison-list"></div>
+            </div>
+          </section>
+
+          <section class="runtime-card test-results-card">
+            <div class="runtime-card-heading">
+              <div><div class="tiny-label">RESULTS</div><h3>Checks by action and device</h3></div>
+              <div class="test-result-filters">
+                <button class="secondary active" type="button" data-test-filter="all">All</button>
+                <button class="secondary" type="button" data-test-filter="fail">Failures</button>
+                <button class="secondary" type="button" data-test-filter="warn">Warnings</button>
+              </div>
+            </div>
+            <div id="testResultsEmpty" class="empty-state">Run the QA plan to generate a report.</div>
+            <div id="testResults" class="test-results"></div>
+          </section>
+        </section>
+
+        <aside class="panel test-detail-panel">
+          <div class="builder-panel-heading">
+            <div><div class="tiny-label">RESULT DETAIL</div><h2 id="testDetailTitle">Nothing selected</h2></div>
+            <span id="testDetailStatus" class="compat-pill partial">—</span>
+          </div>
+          <div id="testDetailEmpty" class="empty-state compact">Select a result to inspect its evidence.</div>
+          <div id="testDetailBody" class="hidden">
+            <div class="host-context-card test-detail-meta">
+              <span>Action</span><code id="testDetailAction">—</code>
+              <span>Target</span><code id="testDetailTarget">—</code>
+              <span>Check</span><code id="testDetailCheck">—</code>
+            </div>
+            <p id="testDetailMessage" class="test-detail-message"></p>
+            <h3>Evidence</h3>
+            <pre id="testDetailEvidence" class="event-log test-evidence-log"></pre>
+          </div>
+          <div class="section-rule"></div>
+          <details open>
+            <summary>QA protocol trace</summary>
+            <pre id="testTraceLog" class="event-log test-trace-log"></pre>
+          </details>
+          <div class="section-rule"></div>
+          <h3>Live test boundary</h3>
+          <p class="hint">DeckLab Community Alpha never starts plugin executables. To exercise live tests, launch a trusted plugin yourself from a terminal and leave it connected while the suite runs.</p>
+        </aside>
+      </main>
+    </section>
+
+  </div>
+
+  <div id="devicePickerOverlay" class="device-picker-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="devicePickerTitle">
+    <div class="device-picker-card">
+      <div class="device-picker-heading"><div><div class="tiny-label">DEVICE STUDIO</div><h2 id="devicePickerTitle">Choose a device</h2><p>Pick the hardware you want to work with. You can change it at any time.</p></div><button id="devicePickerCloseBtn" class="secondary" type="button">Close</button></div>
+      <div id="devicePickerGroups" class="device-picker-groups"></div>
+    </div>
+  </div>
+
+  <div id="onboardingOverlay" class="onboarding-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="onboardingTitle">
+    <div class="onboarding-card">
+      <div class="onboarding-progress" id="onboardingProgress"></div>
+      <div id="onboardingContent"></div>
+      <div class="onboarding-actions">
+        <button id="onboardingBackBtn" class="secondary" type="button">Back</button>
+        <div class="onboarding-actions-right">
+          <button id="onboardingSkipBtn" class="secondary" type="button">Skip tour</button>
+          <button id="onboardingNextBtn" class="primary" type="button">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="uxTooltip" class="ux-tooltip hidden" role="tooltip"></div>
+
+  <div id="uxToastRegion" class="ux-toast-region" aria-live="polite" aria-atomic="true"></div>
+
+  <div id="uxContextMenu" class="ux-context-menu hidden" role="menu" aria-label="Action menu"></div>
+
+  <div id="commandPaletteOverlay" class="command-palette-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="commandPaletteTitle">
+    <div class="command-palette-card">
+      <div class="command-palette-search-row">
+        <span class="command-palette-icon">⌕</span>
+        <input id="commandPaletteInput" type="search" autocomplete="off" spellcheck="false" placeholder="Search commands, devices, modes, reports…" aria-label="Search DeckLab commands" />
+        <kbd>Esc</kbd>
+      </div>
+      <div id="commandPaletteResults" class="command-palette-results" role="listbox"></div>
+      <div class="command-palette-footer"><span id="commandPaletteTitle">DeckLab commands</span><span>↑↓ Navigate · Enter Run</span></div>
+    </div>
+  </div>
+
+  <div id="modeCoach" class="mode-coach hidden" role="dialog" aria-modal="false" aria-labelledby="modeCoachTitle">
+    <button id="modeCoachClose" class="mode-coach-close" type="button" aria-label="Close help">×</button>
+    <div class="tiny-label">QUICK HELP</div>
+    <h3 id="modeCoachTitle">Device Studio</h3>
+    <div id="modeCoachBody"></div>
+  </div>
+
+  <footer id="uxStatusBar" class="ux-status-bar" aria-label="DeckLab status">
+    <button id="statusSave" type="button" data-dl-tip="Project and profile autosave status"><span class="ux-status-dot good"></span><span>Autosave ready</span></button>
+    <button id="statusDevice" type="button" data-dl-tip="Change the selected device"><span>Device</span><strong>Stream Deck / MK.2</strong></button>
+    <button id="statusMode" type="button" data-dl-tip="Current workspace"><span>Mode</span><strong>Project</strong></button>
+    <button id="statusPlugin" type="button" data-dl-tip="External plugin socket status"><span class="ux-status-dot"></span><span>Plugin offline</span></button>
+    <button id="statusWarnings" type="button" data-dl-tip="Compatibility and QA warnings for the current context"><span>⚠</span><strong>0</strong></button>
+    <span class="ux-status-spacer"></span>
+    <button id="commandPaletteBtn" class="ux-command-button status-command-button" type="button" aria-label="Open command palette"><span>⌕</span><strong>Commands</strong><kbd>Ctrl K</kbd></button>
+    <label class="ux-experience-toggle status-experience-toggle" data-dl-tip="Beginner hides low-level SDK details. Developer keeps raw identifiers, protocol logs and advanced diagnostics visible.">
+      <span>View</span>
+      <select id="experienceModeSelect" aria-label="Experience level"><option value="beginner">Beginner</option><option value="developer">Developer</option></select>
+    </label>
+    <button id="statusHint" type="button" class="ux-status-hint"><span>Tip</span><strong>Ctrl+K opens commands</strong></button>
+  </footer>
+
+  <script src="sdk-data.generated.js?build=1.3.9-alpha.31"></script>
+  <script src="protocol-core.js?build=1.3.9-alpha.31"></script>
+  <script src="protocol-suite.js?build=1.3.9-alpha.31"></script>
+  <script src="device-surface.js?build=1.3.9-alpha.31"></script>
+  <script src="studio-appearance.js?build=1.3.9-alpha.31"></script>
+  <script src="builtin-catalogue.js?build=1.3.9-alpha.31"></script>
+  <script src="builtin-actions.js?build=1.3.9-alpha.31"></script>
+  <script src="native-profile.js?build=1.3.9-alpha.31"></script>
+  <script src="sdk-visuals.js?build=1.3.9-alpha.31"></script>
+  <script src="plugin-settings.js?build=1.3.9-alpha.31"></script>
+  <script src="app.js?build=1.3.9-alpha.31"></script>
+  <script src="protocol-runtime.js?build=1.3.9-alpha.31"></script>
+  <script src="qa10.js?build=1.3.9-alpha.31"></script>
+  <script src="release10.js?build=1.3.9-alpha.31"></script>
+  <script src="community101.js?build=1.3.9-alpha.31"></script>
+  <script src="ux11.js?build=1.3.9-alpha.31"></script>
+  <script src="guidance112.js?build=1.3.9-alpha.31"></script>
+  <script src="plugin-intelligence113.js?build=1.3.9-alpha.31"></script>
+  <script src="plugins-workspace.js?build=1.3.9-alpha.31"></script>
+<script src="native-profile-ui.js?build=1.3.9-alpha.31"></script>
+<script src="studio-clean.js?build=1.3.9-alpha.31"></script>
+<script src="studio-visuals.js?build=1.3.9-alpha.31"></script>
+<script src="protocol-reports.js?build=1.3.9-alpha.31"></script>
+<script src="studio-demos.js?build=1.3.9-alpha.31"></script>
+<script src="icon-pack.js?build=1.3.9-alpha.31"></script>
+<script src="artwork-library.js?build=1.3.9-alpha.31"></script>
+<script src="asset-creator.js?build=1.3.9-alpha.31"></script>
+<script src="profile-explorer.js?build=1.3.9-alpha.31"></script>
+<script src="interaction-tools.js?build=1.3.9-alpha.31"></script>
+<script src="display-artwork.js?build=1.3.9-alpha.31"></script>
+<script src="build-refinement.js?build=1.3.9-alpha.31"></script>
+<script src="display-controls.js?build=1.3.9-alpha.31"></script>
+<script src="colour-templates.js?build=1.3.9-alpha.31"></script>
+<script src="elgato-icons.js?build=1.3.9-alpha.31"></script>
+</body>
+</html>

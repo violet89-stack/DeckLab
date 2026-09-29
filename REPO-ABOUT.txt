@@ -1,0 +1,15 @@
+Suggested repository name:
+DeckLab
+
+Suggested GitHub description:
+Independent local Stream Deck plugin/profile simulator, cross-device previewer, and QA studio. Community alpha.
+
+Suggested topics:
+stream-deck
+elgato
+plugin-development
+simulator
+qa
+developer-tools
+websocket
+stream-deck-plugin
