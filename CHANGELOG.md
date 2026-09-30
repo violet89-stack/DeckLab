@@ -2,6 +2,12 @@
 
 Independent template backgrounds and image/icon foregrounds across keys, Neo, Encoder actions and LCD regions; legacy migration; separate removal; layered persistence and attribution; library template roles; documentation cleanup and current workflow guidance.
 
+## 1.3.12-alpha.34 — Saved icons and profile builds
+
+- Named editable icon designs in My artwork, including layers, titles, A/B recipes and static PNG downloads.
+- Saved profile builds with portable backups, explicit updates, duplication, and recovery before switching.
+- Profile restore retains safe folder/Multi Action ID counters after deletions.
+
 ## 1.3.9-alpha.31 — 2026-09-30
 
 MPL-2.0 source licensing; confirmed CC BY 4.0 product/template attribution; 38 built-in colour-template sheets with 93 tone variants; native-sized key/LCD artwork, region selection, portable credits and regression coverage; 1,241 MIT-licensed Elgato icons with search, recolouring, drag placement and portable licence notices; public DeckLab repository setup.

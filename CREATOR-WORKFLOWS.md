@@ -21,9 +21,33 @@ The built-in Elgato catalogue includes 1,241 MIT-licensed icons. Monochrome icon
 
 ## Asset creator
 
-Create / edit asset edits the foreground's image, text, colour, fit, zoom and position. A colour-template background stays separate; the creator starts transparent when one exists. Choose state A or B, then Apply or Cancel. Adding B artwork does not add state-toggle behaviour to a single-state action. Save to artwork saves the foreground asset.
+Create / edit asset edits the foreground's image, text, colour, fit, zoom and position. A colour-template background stays separate; the creator starts transparent when one exists. Choose state A or B, then Apply or Cancel. Adding B artwork does not add state-toggle behaviour to a single-state action. Save editable design stores the composition and its editing recipe in My artwork.
 
 The creator produces static PNGs: GIF sources become still images. Its safe-area overlay is an editing guide and is not exported or hardware-validated. Canvas sizes are 144 × 144 for keys, 200 × 100 for Encoder feedback and 232 × 50 for Neo.
+
+## Save an editable icon design
+
+1. Select a placed action in **Device Studio → Build** and compose its background, foreground image and title.
+2. Choose **Save icon design**, give it a name, and select **Save to My artwork**.
+3. Open **Icon library → My artwork** and select the saved design to apply it to a matching canvas. The card is marked **editable**. Applying it changes the artwork, preserving the action and its settings.
+
+Designs retain separate layers, titles, source credits, and A/B artwork. In **Create / edit asset**, **Save editable design** also keeps the text, crop, zoom, position and original source so they can be edited after reopening. Save does not require Apply first; Cancel can still leave the original placed artwork unchanged.
+
+Use **PNG** on a saved design card to download a static, composed state-A icon. Use **Export** in My artwork to back up editable designs alongside your images, and **Import** to restore them on another browser or computer. Directly saved GIF artwork preserves its animation in the design; library thumbnails and PNG downloads are still images. The asset creator continues to render static artwork.
+
+Designs use a specific canvas: Keypad, Encoder or Neo. A design cannot silently replace a different canvas or full-screen LCD artwork. Existing image and colour-template library items still apply as separate layers.
+
+## Save and reopen profile builds
+
+Open **Device Studio → Build → Saved builds**. Enter a name and choose **Save new build** to keep a separate local copy. Each saved build offers **Open**, **Download**, **Update**, **Rename**, **Duplicate** and **Delete**. Updating asks before replacing a saved build; Save new build always creates a separate entry.
+
+Builds retain the selected device model, all pages and folders, action assignments and settings, Multi Action sequences, editable icon designs, LCD compositions and embedded artwork. Plugin executables and local plugin global settings are excluded; load the relevant plugin separately to run its behaviour. Unsupported actions remain placeholders.
+
+Opening a saved build first stores your current profile in a **Recovery** entry. Updating stores the previous saved version there. Only the latest recovery is kept; save or download it if you want to keep it permanently. If the recovery write fails, DeckLab leaves your open profile unchanged.
+
+**Download current profile** exports a `.decklab-profile.json` even if you have not saved a library entry. **Back up all builds** downloads a library backup; **Import** accepts that backup or a DeckLab profile JSON and adds copies without replacing the open deck. These are editable DeckLab files, not a claim of native Stream Deck profile export compatibility.
+
+Local saves belong to the browser and localhost origin. Keep the same address and port after upgrading. Download both your artwork library and saved builds before clearing browser data or changing computers. Autosave continues to protect the current working profile separately from named saves.
 
 ## Profiles and examples
 

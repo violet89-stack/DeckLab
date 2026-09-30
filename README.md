@@ -1,6 +1,6 @@
 # DeckLab — Community Alpha
 
-**1.3.11-alpha.33 · community alpha**
+**1.3.12-alpha.34 · community alpha**
 
 DeckLab is an independent local studio for building Stream Deck profiles, previewing artwork and testing documented plugin behaviour on virtual device models. It is not affiliated with, endorsed by, or supported by Elgato or CORSAIR.
 
@@ -14,7 +14,7 @@ You need Python 3.10 or newer and a recent Chrome or Edge browser. Normal use ne
 2. Open that folder in File Explorer. Type `powershell` in its address bar and press Enter.
 3. Run `py -3 decklab_host.py` (or `python decklab_host.py`).
 4. Open **http://127.0.0.1:8975** if the browser does not open automatically.
-5. Confirm Help shows **1.3.11**. Load the demo plugin and build the demo profile.
+5. Confirm Help shows **1.3.12**. Load the demo plugin and build the demo profile.
 
 On macOS/Linux, run `python3 decklab_host.py` in a terminal. Use the same browser and localhost address/port to retain autosaved data. Export a project before switching versions; keeping an old companion running can serve the old build.
 
@@ -23,6 +23,7 @@ On macOS/Linux, run `python3 decklab_host.py` in a terminal. Use the same browse
 - **Plugins:** discover catalogue links, inspect readable development packages, and manage a local plugin library. Marketplace-protected packages are identified; DeckLab does not decrypt them.
 - **Project:** import/export project data and keep project notes.
 - **Device Studio → Build:** edit actions, titles and artwork together. Layouts & assets, LCD artwork, the Icon Library and asset creation belong here. Colour variants and Original / Backlit effect / Light off affect the device preview.
+- **Build → Saved builds:** name, save, reopen, duplicate and download complete profile builds. Select an action and choose **Save icon design** to keep its editable layers in My artwork.
 - **Live Preview:** operate keys and dials and try the built-in simulations. These demo values are simulated, not live PC monitoring.
 - **Advanced → Test / Inspect:** use plugin QA, package details and protocol tooling.
 - **Reports:** inspect SDK coverage, run the protocol fixtures, export reports and compare supplied hardware traces.
@@ -35,7 +36,7 @@ The + and + XL provide full-strip artwork and four/six segments respectively. GA
 
 This is a specification-based simulator, not a hardware-certified emulator. Some documented APIs remain partial or unsupported. The protocol inventory contains 55 directional entries and 256 fixtures; passing rejection tests does not imply support. No API currently has a claim of complete coverage or physical hardware validation. See [protocol coverage](PROTOCOL-COVERAGE.md) and [hardware validation](HARDWARE-VALIDATION.md).
 
-The current release adds an offline Built-in samples artwork source, starting with the animated Neo Dino Runner. Background templates and foreground images/icons remain independent. MPL-2.0 licensing, built-in colour templates and 1,241 Elgato icons remain included. Previous connection hardening, portable tests and Windows/Linux CI configuration remain in place. See [release notes](RELEASE-NOTES-1.3.11-alpha.33.md) and [testing instructions](TESTING.md). Automated browser checks do not establish Windows GPU behaviour, physical touch timing or complete compatibility with real plugins.
+This build adds editable saved icon designs and a named profile-build library with portable backups and recovery copies. The offline Built-in samples artwork source, including the animated Neo Dino Runner, remains included. Background templates and foreground images/icons remain independent. MPL-2.0 licensing, built-in colour templates and 1,241 Elgato icons remain included. Previous connection hardening, portable tests and Windows/Linux CI configuration remain in place. See [release notes](RELEASE-NOTES-1.3.12-alpha.34.md) and [testing instructions](TESTING.md). Automated browser checks do not establish Windows GPU behaviour, physical touch timing or complete compatibility with real plugins.
 
 ## Report a problem
 
@@ -55,7 +56,7 @@ DeckLab does not launch imported plugin executables. Only run code you trust; a 
 
 ## Developers and publication
 
-Run `npm ci --ignore-scripts`, `npx playwright install chromium`, then `npm test`. See [TESTING.md](TESTING.md) for prerequisites and test groups. All 24 suites passed in the local Linux browser environment. Evidence is recorded in `verification/1.3.11/`. The [GitHub Actions workflow](https://github.com/violet89-stack/DeckLab/actions) tests Windows and Linux; consult the run for your exact commit and the published release notes for CI evidence, separately from the recorded local tests.
+Run `npm ci --ignore-scripts`, `npx playwright install chromium`, then `npm test`. See [TESTING.md](TESTING.md) for prerequisites and test groups. The saved-builds regression covers layered GIF designs, editable A/B recipes, browser persistence, fresh-browser imports and recovery copies. All 25 automated suites passed locally on Linux with Chromium 153 headless. Evidence is recorded in `verification/1.3.12/`. The [GitHub Actions workflow](https://github.com/violet89-stack/DeckLab/actions) tests Windows and Linux; consult the run for your exact commit and the published release notes for CI evidence, separately from the recorded local tests.
 
 DeckLab is licensed under MPL-2.0. The product artwork and colour templates are separately licensed CC BY 4.0, with attribution to Elgato and Will Johnson. Elgato Icons are separately licensed MIT, copyright Corsair Memory Inc. The public repository is [violet89-stack/DeckLab](https://github.com/violet89-stack/DeckLab). See [publishing checklist](GITHUB-PUBLISHING-CHECKLIST.md), [licence status](LICENSE-NOTICE.md), [third-party notices](THIRD-PARTY-NOTICES.md) and [contributing](CONTRIBUTING.md).
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # SPDX-License-Identifier: MPL-2.0
-"""DeckLab 1.3.11 Community Alpha safe local companion.
+"""DeckLab 1.3.12 Community Alpha safe local companion.
 
 Serves the DeckLab UI and provides a localhost-only WebSocket bridge for
 explicitly launched Stream Deck plugin processes. It never spawns or terminates
@@ -213,7 +213,7 @@ def handle_browser_control(client: WSClient, message: dict, port: int):
             "launchResult",
             ok=False,
             error=(
-                "Automatic plugin process launching is disabled in DeckLab 1.3.11 Community Alpha. "
+                "Automatic plugin process launching is disabled in DeckLab 1.3.12 Community Alpha. "
                 "Run the plugin explicitly from a terminal instead; see START-HERE-WINDOWS.txt."
             ),
             safeBuild=True,
@@ -232,7 +232,7 @@ def handle_browser_control(client: WSClient, message: dict, port: int):
 
 
 class DeckLabHandler(SimpleHTTPRequestHandler):
-    server_version = "DeckLabCompanion/1.3.11-alpha.33"
+    server_version = "DeckLabCompanion/1.3.12-alpha.34"
     protocol_version = "HTTP/1.1"
 
     def end_headers(self):
@@ -409,7 +409,7 @@ class DeckLabHandler(SimpleHTTPRequestHandler):
 
 
 def parse_args():
-    p = argparse.ArgumentParser(description="DeckLab 1.3.11 Community Alpha safe localhost plugin bridge")
+    p = argparse.ArgumentParser(description="DeckLab 1.3.12 Community Alpha safe localhost plugin bridge")
     p.add_argument("--port", type=int, default=DEFAULT_PORT)
     p.add_argument("--no-browser", action="store_true")
     return p.parse_args()
@@ -425,7 +425,7 @@ def main():
         print("Close any older DeckLab launcher window, then start this version again.")
         return
     url = f"http://127.0.0.1:{args.port}/"
-    print("\nDeckLab 1.3.11 Community Alpha Companion")
+    print("\nDeckLab 1.3.12 Community Alpha Companion")
     print("----------------------")
     print(f"UI + WebSocket: {url}")
     print("Bound to localhost only. Automatic process launching is disabled. Close this window to stop the companion.\n")

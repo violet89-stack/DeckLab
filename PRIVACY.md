@@ -10,7 +10,7 @@ DeckLab itself does not need your IP address or precise location and does not in
 
 ## Browser storage
 
-DeckLab uses browser local storage for application state such as project/profile autosave, onboarding state, and workspace preferences. This data stays in that browser profile unless you export it yourself.
+DeckLab uses browser local storage for application state such as project/profile autosave, onboarding state, and workspace preferences. Artwork, editable icon designs and named profile builds use IndexedDB in the same browser profile. This data stays in that browser profile unless you export it yourself. Saved-build backups include action settings and embedded artwork; local plugin global settings and plugin executables are excluded. Use the sanitized bug report workflow below when sharing diagnostics rather than a complete personal build.
 
 ## Sanitized bug reports
 
