@@ -34,7 +34,7 @@
   profilePushHistory('edit artwork');const current=normalize(p.customVisual),replacesImage=own(patch,'image');
   if(own(patch,'image'))patch={artworkCredit:null,...patch};
   if(current.states){
-   const changes={};for(const k of ['image','fit','artworkCredit','background'])if(own(patch,k))changes[k]=patch[k];
+   const changes={};for(const k of ['image','fit','artworkCredit','background','title','showTitle','colour','size','align'])if(own(patch,k))changes[k]=patch[k];
    if(Object.keys(changes).length){patch={...patch,states:{...current.states,...patch.states,[Number(p.state)||0]:{...current.states[Number(p.state)||0],...patch.states?.[Number(p.state)||0],...changes}}};for(const k of Object.keys(changes))delete patch[k];}
   }
   if(replacesImage&&!own(patch,'creator'))patch.creator=null;
@@ -64,7 +64,7 @@
   $('visualRemoveImage').onclick=()=>commit(selectedProfilePlacement(),{image:null});
   $('visualAction').addEventListener('change',e=>assignAction(e.target.value));
   for(const [id,field] of [['visualSize','size'],['visualColour','colour'],['visualAlign','align'],['visualFit','fit'],['visualShowTitle','showTitle']])$(id).addEventListener('change',e=>commit(selectedProfilePlacement(),{[field]:id==='visualShowTitle'?e.target.checked:id==='visualSize'?Math.max(6,Math.min(32,Number(e.target.value)||12)):e.target.value}));
-  let titleEditing=false;$('visualTitle').addEventListener('focus',()=>titleEditing=false);$('visualTitle').addEventListener('input',e=>{const p=selectedProfilePlacement();if(!p||window.decklabLivePreview)return;if(!titleEditing){profilePushHistory('edit title');titleEditing=true;}p.customVisual={...p.customVisual,title:e.target.value};renderProfileDeck();profileScheduleAutosave();});
+  let titleEditing=false;$('visualTitle').addEventListener('focus',()=>titleEditing=false);$('visualTitle').addEventListener('input',e=>{const value=e.target.value,p=selectedProfilePlacement();if(!p||window.decklabLivePreview)return;if(!titleEditing){profilePushHistory('edit title');titleEditing=true;}const current=normalize(p.customVisual);p.customVisual=current.states?{...current,states:{...current.states,[Number(p.state)||0]:{...current.states[Number(p.state)||0],title:value}}}:{...current,title:value};renderProfileDeck();profileScheduleAutosave();});
   $('visualReset').onclick=()=>{const p=selectedProfilePlacement();if(!p||window.decklabLivePreview)return;profilePushHistory('reset artwork');delete p.customVisual;renderProfileDeck();sync();profileScheduleAutosave();};
   $('visualImageInput').onchange=async e=>{const f=e.target.files?.[0],p=selectedProfilePlacement();e.target.value='';if(!f||!p)return;try{
     if(f.size>8*1024*1024)throw Error('Choose an image smaller than 8 MB.');if(!['image/png','image/jpeg','image/gif','image/webp'].includes(f.type))throw Error('Choose PNG, JPEG, GIF or WebP.');
